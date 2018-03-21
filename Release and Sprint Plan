@@ -34,17 +34,17 @@ Release 3        6
 Supplementary Website Pages        6
 Teacher Schedules        7
 Reports        7
-Delivery Schedule        8
-Sprint 1        9
-Welcome Page - Story ID: 14        9
-Student Login - Story ID: 2        9
-Staff Login - Story ID: 12        9
-Student Account Management - Story ID: 10        9
-Staff Management Page - Story ID: 13        9
-Editing the Databases - Story ID: 28        10
-Potential Employee Contact - Story ID: 4        10
-Sprint 2        11
-Story ID: Title        11
+Delivery Schedule        7
+Sprint 1        8
+Welcome Page - Story ID: 14        8
+Student Login - Story ID: 2        8
+Staff Login - Story ID: 12        8
+Student Account Management - Story ID: 10        8
+Staff Management Page - Story ID: 13        8
+Editing the Databases - Story ID: 28        9
+Potential Employee Contact - Story ID: 4        9
+Sprint 2        10
+Story ID: Title        10
 
 
 
@@ -91,7 +91,7 @@ Story ID
 	8
 	________________
 Account Creation and Management
-This feature provides the ability to create accounts and manage their data after creation for students and admin. A feedback feature is also added for students to comment and rate their teachers. The Staff Management page will provide the administration an interface to manage the business such as: generating reports, and editing databases. Providing the account creation and management feature would implement automation to the organization to save time within administration.
+This feature provides the ability to create accounts and manage their personal account for students and admin. The Staff Management page will provide the administration an interface to manage the business such as: generating reports, and editing databases. The student management page will provide access for students to use their features. Providing the account creation and management features will automate some  of the current business tasks done by the organization to reduce the workload for the administration.
 Story ID
 	Story Title
 	Story Points
@@ -110,7 +110,7 @@ Story ID
 	7
 	
 Lesson / Contract Management 
-Book a lesson feature allows the students to pre-book their lessons ahead of time. The owner will also be able to approve students and teachers contracts. These features grant ease of booking for students while allowing the owner to review student contracts for approval which ensures the students are taking. By automating contract creation, there may be errors in data. The ability to review contracts would eliminate these errors.
+Book a lesson feature allows the students to pre-book their lessons ahead of time. The owner will also be able to approve students and teachers contracts. These features grant ease of booking for students and allows the owner to review student contracts for approval which ensures the students are taking. By automating contract creation, the business owner will have less work to complete for the management of contracts , however the owner will still have the ability to review contracts to make sure the contract details are correct. 
 Story ID
 	Story Title
 	Story Points
@@ -129,7 +129,7 @@ Release 2
 Delivery date: 27/06/18        Total Story Points: 35
 The next release goes more in depth with the features of the website with the Instrument Stock and Hiring which give users the ability to display the database of instrument that are instock. Reports that will be produced by the admin and the owner will be useful for maintaining the efficiency and effectiveness of the business operation. Lastly students and staff members features that allow them to manage their account and schedule. 
 Instrument Stock and Hiring
-This feature will provides the admin with ability to display an accurate database of instrument stock and provide students with an interface to hire instruments. This delivers additional business revenue on top of the base student fees by catering to the student’s needs for musical equipment.
+This feature will provide the admin with ability to display an accurate database of instrument stock and provide students with an interface to hire instruments. This delivers additional business revenue on top of the base student fees by catering to the student’s needs for musical equipment.
 
 
 Story ID
@@ -250,7 +250,7 @@ Story ID
 	
 
 Release 3
-Delivery date: 25/07/18        Total Story Points: 38
+Delivery date: 25/07/18        Total Story Points: 28
 The release 3 is to implement additional web pages, adding additional features to the teacher and student accounts. There the admin/owner will also be able to generate extra reports to better generate an overview in various databases.
 
 
@@ -315,10 +315,7 @@ Story ID
 
 	Story Point Sub-Total:
 	10
-	
-
-________________
-Delivery Schedule
+	Delivery Schedule
 Week 6 
 	Week 7 
 	Week 8 
@@ -353,9 +350,6 @@ Week 14
 
 	Release 2
 	Estimated Velocity Sprint 1:  17
-________________
-
-
 Sprint Plan
 Sprint 1
 Total Story Points: 17        Total Hours: 106
@@ -485,7 +479,9 @@ Task ID
 	7
 	
 
-	Editing the Databases - Story ID: 28 
+	
+
+Editing the Databases - Story ID: 28 
 Task ID
 	Task Description
 	Estimate
@@ -553,6 +549,10 @@ Task ID
 	
 
 	
+
+
+
+
 
 
 
