@@ -1,0 +1,613 @@
+Release and Sprint Plans
+Team Number
+Student Number
+	Team Member Name
+	N8806781
+	Seok Yoon
+	N10014594
+	Ramon Dickins
+	N7242123
+	Christopher Haywood
+	N9482725
+	Rory Eiffe 
+	N9670441
+	Isaiah Dunrobin
+	Tutor: Tara Capel - tara.capel@hdr.qut.edu.au
+Version: 1.0
+Date: 21/03/2018
+________________
+
+
+Table of Contents
+Release 1        2
+Basic Website Layout        2
+Database Management        2
+Account Creation and Management        3
+Lesson / Contract Management        3
+Release 2        4
+Instrument Stock and Hiring        4
+Reports        4
+Student Account Management        5
+Teacher Account Management        5
+Teachers Lesson Planning        6
+Release 3        6
+Supplementary Website Pages        6
+Teacher Schedules        7
+Reports        7
+Delivery Schedule        8
+Sprint 1        9
+Welcome Page - Story ID: 14        9
+Student Login - Story ID: 2        9
+Staff Login - Story ID: 12        9
+Student Account Management - Story ID: 10        9
+Staff Management Page - Story ID: 13        9
+Editing the Databases - Story ID: 28        10
+Potential Employee Contact - Story ID: 4        10
+Sprint 2        11
+Story ID: Title        11
+
+
+
+
+________________
+
+
+Release Plan
+Release 1
+Delivery date: 30/05/18        Total Story Points: 40
+The goals for the first release are to get the most important features of the website running. For this business the four areas: Account Creation and Management, Basic Website Layout, Database Management and Lesson management were judged as most critical. The website feature list plans to implement student and staff logins as well as the welcome page, which acts . The backend will employ various databases for the website features and will allow the administration to view and edit the database with ease. Lesson and contract management provide the owner with a more simplified way of organizing students. Finally the account feature offers a way for the owner and admin to gain information about the students and teachers.
+Basic Website Layout 
+This feature provides the initial architectural design for the website.  The users will have access to a  welcome page available through a public URL, so that staff and students can navigate to the functions of the website. Different account login options provide the ability to access personal accounts of both students and staff. The potential employee contact allows external teachers to apply for a job within the organization. These features provide value to the business by giving the “Pinelands Music School” a web presence and provides the basic functionality of the account management system.
+Story ID
+	Story Title
+	Story Points
+	14
+	Welcome Page
+	1
+	12
+	Staff Login
+	2
+	24
+	Potential Employee Contact 
+	4
+	2
+	Student Login
+	2
+	
+
+	Story Point Sub-Total:
+	9
+	Database Management 
+This feature will allow the administration users to use the website to search the databases for specific results through filters and edit those entries. This will allow the administration to save all the different details that are  used by the school to run the day to day business tasks.  This feature ensures cost reduction on IT resources by eliminating the need to hire specialists to edit the database.
+Story ID
+	Story Title
+	Story Points
+	28
+	Editing the Databases
+	8
+	
+
+	Story Point Sub-Total:
+	8
+	________________
+Account Creation and Management
+This feature provides the ability to create accounts and manage their data after creation for students and admin. A feedback feature is also added for students to comment and rate their teachers. The Staff Management page will provide the administration an interface to manage the business such as: generating reports, and editing databases. Providing the account creation and management feature would implement automation to the organization to save time within administration.
+Story ID
+	Story Title
+	Story Points
+	1
+	Student Account Creation
+	4
+	10
+	Student Account Management
+	1
+	13
+	Staff Management Page
+	2
+	
+
+	Story Point Sub-Total:
+	7
+	
+Lesson / Contract Management 
+Book a lesson feature allows the students to pre-book their lessons ahead of time. The owner will also be able to approve students and teachers contracts. These features grant ease of booking for students while allowing the owner to review student contracts for approval which ensures the students are taking. By automating contract creation, there may be errors in data. The ability to review contracts would eliminate these errors.
+Story ID
+	Story Title
+	Story Points
+	4
+	Book a Lesson
+	8
+	23
+	Owner Contract Approval
+	8
+	
+
+	Story Point Sub-Total:
+	16
+	________________
+Release 2
+Delivery date: 27/06/18        Total Story Points: 35
+The next release goes more in depth with the features of the website with the Instrument Stock and Hiring which give users the ability to display the database of instrument that are instock. Reports that will be produced by the admin and the owner will be useful for maintaining the efficiency and effectiveness of the business operation. Lastly students and staff members features that allow them to manage their account and schedule. 
+Instrument Stock and Hiring
+This feature will provides the admin with ability to display an accurate database of instrument stock and provide students with an interface to hire instruments. This delivers additional business revenue on top of the base student fees by catering to the student’s needs for musical equipment.
+
+
+Story ID
+	Story Title
+	Story Points
+	25
+	Instrument Stock
+	4
+	7
+	Hire Instruments
+	2
+	
+
+	Story Point Sub-Total:
+	6
+	Reports
+Reports that can be generated by admin and the owner will be critical for maintaining efficiency for the business. The most important reports will include an earnings report that shows how the money is flowing throughout the business. The other report that is most imperative to get running is the staff and student reports which will show the currently employed staff and enrolled students.
+Story ID
+	Story Title
+	Story Points
+	35
+	Report Generation Page
+	1
+	17
+	Earnings Report
+	2
+	18
+	Staff and Student Report
+	2
+	
+
+	Story Point Sub-Total:
+	5
+	
+
+
+
+________________
+Student Account Management 
+The features below allows the students to manage their account, contracts and schedule. When a student loses their account details, they may retrieve them by following protocol. The students will also be able to browse their selected classes and manage their booking schedule and contracts. The rating of teachers will ensure they deliver top quality services to their students while allowing easy management to student profile. These features provide more overall control to the students and allow them to sign up with new contracts, while also effectively managing their time schedule as a music student. Providing these features will ensure the students can be more informed in their decisions to reduce mistakes when signing up to a contract.
+
+
+Story ID
+	Story Title
+	Story Points
+	3
+	Account Retrieval 
+	2
+	5
+	Browse Classes
+	2
+	8
+	Manage Bookings
+	2
+	11
+	Manage Contracts
+	2
+	9
+	Student Contract Confirmation
+	1
+	29
+	Student Feedback
+	1
+	
+
+	Story Point Sub-Total:
+	7
+	
+
+Teacher Account Management 
+The teacher account creation and management features allows the admin to create the teachers account profile with their details once they have been approved for hire. The teacher’s account management allows them to utilize the website in regards to the teachers side of site features . These features bring convenience to the teaching staff allowing better experience for the students.
+Story ID
+	Story Title
+	Story Points
+	6
+	Teacher Account Creation
+	4
+	30
+	Teacher Account Management
+	1
+	
+
+	Story Point Sub-Total:
+	5
+	
+
+
+
+
+
+
+
+
+
+
+
+Teachers Lesson Planning 
+This feature provides uploading of lesson materials and updating of subject details to bolster teachers effectiveness in educating students, thus establishing the school as a institution of excellence. It also allows the teachers to review their list of students, enabling them to keep an accurate record creating the basic foundations of a student / teacher relationship, which again will enrich their learning experience. 
+Story ID
+	Story Title
+	Story Points
+	15
+	Uploading Lesson Materials
+	2
+	16
+	Update Subject Details
+	4
+	26
+	Teacher Booking Facilities 
+	4
+	38
+	Teacher’s Student List
+	2
+	
+
+	Story Point Sub-Total:
+	12
+	
+
+Release 3
+Delivery date: 25/07/18        Total Story Points: 38
+The release 3 is to implement additional web pages, adding additional features to the teacher and student accounts. There the admin/owner will also be able to generate extra reports to better generate an overview in various databases.
+
+
+Supplementary Website Pages
+A contact and about us page will show prospecting staff and students what this business does and how to contact it. Another feature is a personal page for each teacher, this provides the teacher with a platform to display their teaching methods, specialities and credentials. The Event Posting feature is to create and post events to the website so that users are informed about upcoming school events. Having these features will reduce costs for IT resources by not hiring other specialists to update the database on daily bases. Each of these pages provides further information about the teacher and the business to visitors and enquirers.
+Story ID
+	Story Title
+	Story Points
+	34
+	About Us Page
+	1
+	36
+	Contact Us Page
+	1
+	33
+	Event Posting
+	4
+	27
+	Teacher’s Personal Page
+	2
+	
+
+	Story Point Sub-Total:
+	8
+	________________
+Teacher Schedules 
+This feature will enable teachers to effectively manage and update their teaching schedule and availabilities, allowing a clear avenue for organisation and  communication between both students and teachers. Teacher announcement posting will provide students and admins with immediate updates on any internal or external events that may lead to alterations on upcoming lessons. This will ensure a high level of of satisfaction for students in regards to timely and consistent communication with their teachers. 
+Story ID
+	Story Title
+	Story Points
+	37
+	Teacher’s lesson schedule
+	2
+	32
+	Teacher Announcement Posting
+	4
+	31
+	Updating Teaching availabilities
+	4
+	
+
+	Story Point Sub-Total:
+	10
+	Reports
+This feature allows for the development of pivotal reports for the owner of the music school. The Popular Instrument report documents the most frequently purchased or hired instruments, allowing for an appropriate restock of instruments. The Feedback report will provide the owner with a comprehensive summary or review of an individual teachers performance. A spending and budget report will also be generated which will include statistics and information that are vital to the running and management of the school as a business. By enabling to generate various reports, the owner can have a detailed overview of the business operation.
+Story ID
+	Story Title
+	Story Points
+	19
+	Popular Instrument Report
+	2
+	20
+	Feedback Report
+	4
+	21
+	Budget Report
+	2
+	22
+	Spending Report
+	2
+	
+
+	Story Point Sub-Total:
+	10
+	
+
+________________
+Delivery Schedule
+Week 6 
+	Week 7 
+	Week 8 
+	Week 9 
+	Week 10 
+	Week 11 
+	Week 12 
+	Week 13 
+	Sprint 1
+	Sprint 2
+	Release 1
+
+	        
+Week 14
+	
+
+	Week 15
+	
+
+	
+
+	
+
+	
+
+	
+
+	Sprint 2 
+	
+
+	
+
+	Release 2
+	Estimated Velocity Sprint 1:  17
+________________
+
+
+Sprint Plan
+Sprint 1
+Total Story Points: 17        Total Hours: 106
+Estimated Velocity:  17
+Welcome Page - Story ID: 14 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	5
+	
+
+	2
+	Verify story is complete (unit tests)
+	3
+	
+
+	
+
+	Story Points: 1        Total Hours:
+	8
+	
+
+	Student Login - Story ID: 2 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	3
+	
+
+	2
+	Account validation function
+	5
+	
+
+	3
+	Account Session handling
+	5
+	
+
+	4
+	Verify story is complete (unit tests)
+	5
+	
+
+	
+
+	Story Points: 2        Total Hours:
+	18
+	
+
+	Staff Login - Story ID: 12 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	3
+	
+
+	2
+	Account validation function
+	5
+	
+
+	3
+	Account Session handling
+	5
+	
+
+	4
+	Verify story is complete (unit tests)
+	5
+	
+
+	
+
+	Story Points: 2        Total Hours:
+	18
+	
+
+	Student Account Management - Story ID: 10 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	3
+	
+
+	2
+	Verify story is complete (unit tests)
+	3
+	
+
+	
+
+	Story Points: 1        Total Hours:
+	6
+	
+
+	Staff Management Page - Story ID: 13
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	4
+	
+
+	2
+	Verify story is complete (unit tests)
+	3
+	
+
+	
+
+	Story Points: 1        Total Hours:
+	7
+	
+
+	Editing the Databases - Story ID: 28 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display         
+	3
+	
+
+	2
+	Edit database function
+	6
+	
+
+	3
+	Delete database function
+	6
+	
+
+	4
+	Search filter 
+	10
+	
+
+	5
+	Verify story is complete (unit tests)
+	6
+	
+
+	
+
+	Story Points: 8        Total Hours:
+	31
+	
+
+	Potential Employee Contact - Story ID: 4 
+Task ID
+	Task Description
+	Estimate
+	Taken
+	1
+	HTML page interface display 
+	3
+	
+
+	2
+	File upload
+	5
+	
+
+	3
+	Save file to database
+	5
+	
+
+	4
+	Verify story is complete (unit tests)
+	5
+	
+
+	
+
+	Story Points: 2        Total Hours:
+	18
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sprint 2
+Total Story Points:        Total Hours: 
+Current Velocity: 
+Story ID: Title
+Task ID
+	Task Description
+	Estimate
+	Taken
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Story Points:         Total Hours:
