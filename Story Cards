@@ -1,0 +1,528 @@
+Owner – As an Owner, I will be able to generate various reports to overview all databases while being able to edit, add and delete accounts, lesson bookings and contract. Interviewing students / teachers. Managing and cementing time slots for lessons etc.
+Admin –  As a Admin, help the owner in managing the database, as well be able to edit, add and delete accounts or lesson bookings, and contracts.
+Student – As a student, the user will be able to create an account or sign in and manage their profiles, lesson bookings, and contracts.
+Teacher – The Teacher role includes organising lessons, updating unit details and materials, setting up their personal schedule and the booking of school facilities.
+
+
+System Roles
+
+1
+Student Account Creation
+As a student, I want to be able to create an account within the website so that I can have access to the websites student features such as booking lessons.
+
+Acceptance Criteria
+The student can click a “create account” button that will take them to a page to input their personal details
+The student is presented with text boxes which ask them to input information in order to create the account.
+If the student is under the age of 18, the user will be prompted to input their parents contact details as well, however if the user
+There is a “submit” button that upon being clicked the information provided by the user is saved to the database and used to create the account.
+
+
+4
+M
+Notes
+The account creation page will have variables to be filled in such as:
+First/last name (minimum 4 character, no special characters), password ( Sex, DOB, Qualification (Level of instrument), Email (must have ‘@example.com’ for a valid email address), Mobil/other phone, and Facebook ID (if any).
+ For child students she also records the details of the parents and their contact information
+Preferences for:
+Days, time, teacher with certain language skills, and gender
+
+
+2
+Student Login
+As a student, I want to be able to log into the website so that I am able to access the website’s functions in relation to my personal account.
+Acceptance Criteria
+There are two input text boxes which the user can type their account ID and password into.
+There is a “Login” button to be pressed to sign in.
+If the user inputs either the wrong id or password more than 3 times, they will be presented an error message.
+2
+M
+Notes
+ 
+
+3
+Account Retrieval
+As a student, I want to be able to retrieve my account if I forgot my account details so that I am able to sign into the website.
+Acceptance Criteria
+There is a “Retrieve password” link the user can click to be redirected to another page.
+The user is presented with a text box to input their email into to retrieve their password via the email.
+Once the user has put in their details they can click the “retrieve” button.
+2
+S
+Notes
+
+
+4
+Book a Lesson
+As a student, I want to be able to enroll into a lesson through the website so I can book out a lesson time that suits my schedule.
+Acceptance Criteria
+The student can click a “book a lesson” link and then be presented with a web page to book their lessons
+The student can select a subject from a dropdown menu and then be presented with the a list of lessons and their details that are available for that subject. In the details of each lesson there will be a dropdown menu that the user to use to select a duration for the lesson(30mins/1hr)
+Next to each lesson description there will be a “Book Now” check box that the user can click to select a lesson to enrol into. However new students can only select one lesson where as old students can select up to three lessons
+The student can select a period of time in weeks that they wish to take the classes for. 
+Once the user has made their lesson selection they can click an enrol button which will generate a mock up contract and save the mock up to the database for the administration team to review and approve.
+8
+M
+Notes
+If a new student or old student tries to select more than the amount of classes that they are allocated they will be prompted to only check the appropriate number of lessons checkboxes 
+
+5
+Browse Classes
+As a student I want to be able to browse various different classes so that I can view the subject details and be more informed when signing up into new contracts.
+Acceptance Criteria
+The user can click on “Browse Classes” link 
+There is a drop down box the user can click on to browse different subjects.
+Once the user selects a subject all the available lessons for that subject are shown to the user in a list on the page.
+Students can click on “Sign Up” button which will take them to a confirmation web page for a to book the lesson.
+1
+S
+Notes
+The students are able to read the information about the course and who is teaching. 
+
+6
+Teacher Account Creation
+As a Admin, I want to be able to create an account for teachers the school hires so I can help them get started working for the school 
+Acceptance Criteria
+The admin can click a “Create Teacher account” link that will redirect them the create teacher account page
+A form with different text boxes to enter the account holders details is presented to the user that they can fill out manually.  
+The admin can click on an “accept” button next to the a list entry from the teacher application search. Once the admin clicks the button, they will be redirected to a teacher account creation page which will have pre-filled data of the selected teacher.
+Once the admin is satisfied with the form, they’re able to click “Submit” button to complete the application.
+Once the form is complete, the account will be saved to the database.
+
+4
+S
+Notes
+The account creation page will have variables to be filled in such as:
+First/last name, password (minimum 4 characters, no special characters), Sex, DOB, Instrument’s taught, Email (must have ‘@example.com’ for a valid email address), Mobile/other phone, and Facebook ID (if any).
+
+7
+Hire Instruments
+As a student I want to be able to view the instruments available so that I can hire an instrument for my current or future lessons.
+Acceptance Criteria
+The user can click a “Hire instruments” link then they are navigated to the hire instruments page
+On the hire instruments page the user can see a list of all the available for hire instruments and the instruments details 
+The user can see the condition of the instrument which are hireable.
+2
+S
+Notes
+Instrument details contain topics such as condition, instrument type, hire cost, condition of the instrument etc
+
+
+8
+Manage Bookings
+As a student I want to manage my lesson bookings so that I can view upcoming lessons or cancel my lesson bookings.
+Acceptance Criteria
+The user can manage their current lesson bookings by clicking on “Manage Bookings” button.
+The user can see the dates, times and teachers of their lesson bookings.
+The user can cancel their lesson bookings by clicking on “Remove Lesson” next to the booked lesson, upon doing so the lesson is added back to the available lessons list
+Once the user removes a lesson the details of the lesson contract are updated
+2
+S
+Notes
+ 
+
+9
+Student Contract Confirmation
+As a student I want to be able to view my new contract prior to final registration so that I can review the contract details.
+Acceptance Criteria 
+The student can click on a “Confirm Contracts” link and be redirected to the confirm contracts page
+The user can check the lesson details, start and end dates, as well as terms and conditions agreement prior to completing their enrollment application.
+Once the contract is approved, the student can either accept or cancel with a simple button click which will prompt them with another confirmation alert notice.
+1
+C
+Notes
+ 
+
+10
+Student Account management 
+As a student, I want to be able to manage my account so that I am able to manage my contract/s or sign up into new contract/s, manage my lesson bookings, and hire instruments.
+Acceptance Criteria
+The student user will be able to click on a “Account” link that will take the user to their personal account management page
+The user can click on links contained within a list with names such as “Manage Bookings”, “Book a lesson”, “Manage Contracts””, “Hire Instruments”, “Confirm Contracts” and “Give Feedback” that will take the user to the respective links page. 
+1
+M
+Notes
+
+
+11
+Manage Contracts
+As a student I want be able to manage my contracts so that I can review my current signed contracts as well as cancel them.
+Acceptance Criteria
+The student can click a “Manage Contracts” link and then is presented with a manage contracts page
+On the manage contracts page the user is presented with all their contracts with the school
+The user can cancel their current contracts by clicking “Cancel Contract” button.
+If the user does not have any contract/s or wants to sign up to new contract/s, they can click on a “Browse Classes” button to be relocated to the “Book a lesson” page.
+2
+C
+Notes
+ The contract will have various information such as start date, end date, lesson type, lesson duration, cost, student type, and instruments hired.
+Possibly show a cancellation warning prior to canceling.
+
+12
+Staff Login
+As an Owner, I want staff to be able to sign in so that my appointed and I can manage the music schools.
+Acceptance Criteria
+There are two input text boxes which the user can type their account ID and password into.
+There is a “Login” button to be pressed to sign in.
+If the user inputs either the wrong id or password more than 3 times, they will be presented an error message.
+The staff will then be directed to the staff management page.
+2
+M
+Notes
+ merge into log in page story
+
+13
+Staff Management Page
+As an Owner, I want to have access to the staff management page as well as my appointed when I/they login so that we can use the websites functions to manage the music school.  
+Acceptance Criteria
+The user can click on an “Account” link and will be navigated to the staff management page
+The user can click on different links in a list with names such as “Staff management”, “Report Generation”, “Edit the Database”, “Post Event”, “Contract approval” that will take the user to the respective topics page.
+2
+M
+Notes
+ 
+
+14
+Welcome Page
+As an owner I want to have a welcome page available through a public URL, so that staff and students can navigate to the functions of the website 
+The user can type the url for the website into the address bar on their browser and then is navigated to the welcome page for the Pinelands music school. 
+User can click links such as the ‘About us’, ‘Contact us’, ‘Create Account’, ‘Student login’, “Staff Login”, “Retrieve account”, “Account”, “Browse classes”  links and Upon a clicking a link the user will be taken to the respective page.
+
+1
+M
+Notes:
+
+
+15
+Uploading lesson materials
+As a Teacher I want to upload lesson materials so that students can better be prepared for my lessons
+Acceptance Criteria
+The teacher can click a “Upload lesson materials” button which will open a pop up window
+The user will be able to select a subject they teach from a drop down menu 
+After a subject is chosen the user will be able to click on a “select file” button which will prompt the user to browse their computer to find a file
+Upon selecting a file it will be added to a list of files pending upload
+When the user is done selecting files to upload the user can click a “upload” button which 
+    will then cause the files to be uploaded into the subjects “lesson materials” page
+2
+C
+Notes
+ 
+
+16
+Update subject details 
+As a Teacher I want to be able to create and update my subject details so that I can inform potential and current students of my lesson details  
+
+Acceptance Criteria
+The teacher will be able to click an “Update subject details” link that will take the user to the subjects details page  
+The subjects details page will display a list of the current subjects being taught by the teacher
+For each subject there is an edit details button, when this button is clicked a pop up box will be shown with the current unit details
+This pop up window can be edited so that the teacher can input the most current or up to date details of the subject
+Once the teacher is finished editing there is a save button which will update the subjects details on the website
+4
+C
+Notes
+ 
+
+17
+Earnings Report
+As an owner I want to produce an “earnings” reports so that the business can better track it’s financials. 
+Acceptance Criteria
+The admin can produce an earnings report by clicking on “Earnings” in reporting the page
+The systems produces reports based on an inputted timeframe of weeks
+The admin can click on a “print” button to print a summary of the report
+There is search bar that can be used to search the report to look for specific information such as earnings from instrument hire or the earnings from lesson bookings for certain instruments.    
+2
+S
+Notes
+ 
+
+18
+Staff and student Report
+As an owner I want to produce “student and staff” reports that can help the show the owner the company enrollment and hire statistics
+Acceptance Criteria
+The user can produce a report of enrollment numbers in the reporting page by clicking on “Students” to find the current number of students and what each student is enrolled for
+The user can produce a report of hired staff in the reporting page by clicking on “Staff” this will show them the current number of staff and which instruments they teach
+The user is able to print a summary of the reports
+There is a search option to filter the report to look for specific information
+The user can print this page
+
+
+2
+S
+Notes
+
+
+19
+Popular Instrument Reports
+As an owner I want to produce instrument reports so that I can see which instruments are the most popular
+Acceptance Criteria
+There is a button to take me to the popular instrument report page called “Popular Instruments”, this page will summarize the popular instruments by showing which instruments are enrolled in the most 
+The owner will then have the option to print the report
+There is also a search bar to filter through the report to find specific information
+2
+C
+Notes
+ 
+
+20
+ Feedback Report
+As an owner I want to produce a report so that can help the show the owner the “Feedback” 
+Acceptance Criteria
+There is a button on the reports page called “feedback”, pressing this button will take the user to a page that has feedback ordered by date
+The feedback is separated into two sections. The top will have a title and a star rating from the student, the bottom section will have more detailed feedback from the student
+The owner will also have the option to click a “send feedback” button, the button will bring up a prompt the user to select a teacher to email the feedback to the specific staff member
+
+4
+C
+Notes
+ 
+
+21
+ Budget Report
+As an owner I want to produce reports so that can help the show the owner the “budget ” 
+Acceptance Criteria
+The admin can click a button called “budget reports”, this will take them to a budgets page
+From this page the user can see an overview of incoming and outgoing payments
+There are summarized points such as: Total income, Total costs, Net income
+The user can also press a “print report” button to print a summarized report
+2
+C
+Notes
+ 
+
+22
+Spending Report
+As an Owner I want to produce reports so that can help the show the owner the “Spending” 
+Acceptance Criteria
+The admin is presented with a button that says “Spending reports”, when pressed the user will be taken to an expense page
+From the expense page the user will be able to view the the outgoing costs of the business
+There is also a “print report” button which will allow the user to print a physical or digital copy of the report.
+2
+C
+Notes
+ 
+
+23
+Owner Contract Approval
+   As an Owner, I want to be able to have access to contract approval, so that I can see all the contract details and approve contracts between teachers and students.
+
+Acceptance Criteria
+ The user can click on “Manage Contracts” link to be brought to another page which shows a database of all digital and scanned contract approval.
+Each contract is under the corresponding name / correspondent of the student or teacher  and is listed in alphabetical order and can be clicked on to be downloaded individually in pdf format. 
+Once a contract is confirmed the relevant lesson will be removed from the list of available lessons until the end date of the students contract
+8
+M
+Notes
+ 
+
+24
+Potential Employee Contact
+   As an Owner, I want potential employees to contact the school through the website so that I can review and hire them.
+
+
+Acceptance Criteria
+There is a link named ‘Careers’ the user can click to be taken to the employee application page
+The user can click a ‘Upload Resume’ button which prompts the user to upload their resume file by browsing through their computers hard drive to select a file to upload
+The page will contain several text boxes that the user must fill out with the requested information such as Full name, Date of Birth, Home address, Email, Phone number, Qualifications, Certificates and subjects they wish to teach etc. 
+Once the user has filled all mandatory fields with the correct information, the user can then select the ‘submit application’ link at the bottom of the screen which will then allow for the Resume file and application information to be received by the employer. 
+4
+M
+Notes
+While all the information of the individual job applicant will be on the Resume, by ensuring they accurately fill out the online application form will essentially sift through all the information and compile the essential bits of information, that will allow the employer to make a decision on whether the applicant is suitable to teach at the institute without actually spending a long period of time of scanning through the uploaded resume. 
+
+25
+Instrument stock
+   As an Owner, I want a database that lists all instruments in stock so that I can update or edit the current availability, condition and prices of the schools instruments.
+
+Acceptance Criteria
+The user can click on the “Instrument stock” button to view a complete list of all instruments to rent 
+The user can click a filter button of available instruments to sift through the bulk of the inventory.
+The user can select individual filter item when filter drop box appears.
+The user can edit the details of an instruments (e.g price, condition etc.) and save those changes by clicking a “Save Changes” button
+
+ 
+
+4
+S
+Notes
+ 
+
+26
+Teacher Booking facilities
+As a Teacher, I want to use the website to book out facilities from the school so that I can reserve school resources for my lessons
+Acceptance Criteria
+The teacher can click a “Book Facilities” link that will send them to the “Booking facilities” page 
+The teacher is presented with a table showing the school bookable rooms and their details along the top row of the table and the available booking times along the left column of the table
+The user can click on a cell in the table that represents the room and time the teacher wishes to book out and then they will be taken to another page where they will be prompted to enter details about their booking such as unit code and duration
+When the user is satisfied with the information they have provided they can click a “Place booking” button which will save their booking details into the book facilities table.  
+
+4
+C
+Notes
+Current bookings will be shown in the tables respective cells
+Users can not select dates/times that are already booked out 
+
+27
+Teacher’s personal page
+As a Teacher I want a personal webpage with my teaching details and student reviews so that I can advertise myself and the lessons I teach
+
+Acceptance Criteria
+The teacher will be able to click a “View/Update personal page” link that will take the user to their personal page
+The user can click a “edit information” button and be presented with a page to edit their personal details such as their contact information, subjects taught and their personal photo
+Once the user is satisfied with the changes they can click a “Save changes” button that will update the their personal page with the new details
+The  list of reviews from the teacher’s students, ordered by most recent, will be visible below their profile.
+2
+C
+Notes
+ 
+
+Acceptance Criteria  
+The admin will be able to click a “Manage Database”button that will redirect them to the database editing page.
+The admin will be able to select filters of dropdown boxes to search different databases and a search bar that can be selected and be typed into to search for a parameter (Student No. / Name/ ETC).
+ With the list of searched results, the admin will be able to click an 'edit' button to make changes to the selected data.
+The admin can also add a new entry to the database, with the “Add” button.
+Once the new data has been entered, it will be saved to the corresponding database.
+The admin can also delete data entries from the database, with the “Delete” button next to the searched results which will update the database once selected.
+28
+Editing the databases 
+As an admin I want to edit the databases so that the database information is up to date and accurate
+
+8
+M
+Notes
+The filter will contain Name, student/teacher, instrument, language, job application
+
+29
+Student Feedback
+As a student, I want to be able submit feedback about my teachers so that I am able to give my opinion about the quality of the teaching I recieved
+Acceptance Criteria
+The user can click  a “Give Feedback” link which will cause the user to be redirected to their “Feedback” page
+The student will be able to select a teacher they have had for music lessons from a dropdown menu. 
+There will be a text box that the student can type out their review of the teacher into 
+The user will be able click on a star rating widget to indicate an overall feeling of satisfaction with their teachers lessons from one to five stars. 
+Once the student is satisfied with the content of their review they can click a submit button that will post their student review to the teachers personal page and update that teachers star rating average. 
+1
+S
+Notes
+
+
+30
+Teacher account management
+As a Teacher I want to be able to manage my account so that I am able to update my personal details, check my schedule, book facilities and manage my lessons 
+Acceptance Criteria
+The teacher can click on an “Account” link and is redirected to their personal account management page
+The user can click on different links in a list with names such as “Personal Page”, “Lesson schedule”, “Student list”, “Update availabilities”, “Book Facilities”, “Update subject details”, “Upload lesson material”, “Book Facilities” and “Create Announcement” that will take the user to the respective links page. 
+1
+S
+Notes
+
+
+31
+Updating Teaching Availabilities 
+As a Teacher I want to update the date and times I am available to teach lessons so that the school and students will have an easier time arranging lesson times with me 
+Acceptance Criteria
+Upon clicking a link called “Update availabilities” the teacher will be taken to a “Update availabilities page” 
+The teacher will then be able to select a upcoming week from a drop down menu and upon doing so they will be presented with a time table of that week
+The user will be able to indicate the available times they can teach by clicking on cells from the table which will become highlighted 
+When the teacher is satisfied with their selection of times they can click a “Submit” button which will then update the time table of their availabilities 
+4
+C
+Notes
+ The timetable will have each day of the selected week broken up into 30 minute segments 
+
+
+32
+Teacher Announcement Posting
+As a Teacher I want to use the website to post announcements so that students can be notified of alterations in upcoming lessons
+Acceptance Criteria
+The teacher will be able to click a “Create Announcement” link that will open a pop up window
+In the pop up window the user will be able to select a subject they teach from a drop down menu 
+The user will then be able to type out the announcement they wish to post in a text box 
+The user will have the option to click a checkbox if they wish to email a copy of the announcement to all the students enrolled in that subject 
+When the user is satisfied with the content of the announcement they can click a “Post Announcement” button
+The announcement will then be visible on that units “announcements” page
+4
+C
+Notes
+ 
+
+33
+Event Posting
+   As an Owner, I would like to create and post events to the website so that Teachers, staff and students can be informed about upcoming school events 
+
+Acceptance Criteria
+The owner will be able to click on a ‘Create event’ button
+Owner will then be prompted to input the details about the event such as title, date, location and event details
+When the owner is satisfied with the details they have entered they can click a confirmation button, which will then cause the event to be posted to the “events” page
+4
+C
+Notes
+ 
+
+34
+About us Page
+As an owner, I want to have an ‘about us’ page so site visitors are able to inform themselves about the music school.
+There is a link called ‘about us’ the user can click on to display the about us page. 
+The user will be shown a paragraph summarising the music schools goals and  written by the owner as well as photos and reviews of the school from students and the community.
+As an staff account the user should be able to edit the “about us” summary and upload new photos to the photo gallery.  Once the user is satisfied with their changes they can click a “submit” button to save the changes to that page.
+1
+C
+
+
+Acceptance Criteria
+The user can click a “Generate reports” link that will redirect the user to the report generation page
+The admin can select various reports from a list of links containing links such as Earnings Reports, Popular Instruments Reports , Budget Reports, Spending Reports, Feedback Reports and Instrument stock
+
+
+
+35
+ Report Generation page
+As an owner I want to access a reporting page so I can generate different reports for the running of the business 
+
+1
+S
+Notes
+Numerical data for number of students, teachers, classes, etc. should be stored in the database and be easily accessed and visualised. 
+Database should be able to create a summary of the statistics in an excel spreadsheet via the ‘produce spreadsheet’ link visible only the the owner. 
+
+36
+Contact Us page
+   As an owner, I want the contact information for ‘pinelands music school’ and it’s staff present on the website, so that people have access to the contact details of the school and links to the schools social media.
+
+
+Acceptance Criteria
+ The user can click a “Contact us” link that will redirect the user to the websites contact us page. 
+Contact details such as phone, fax, email, facebook page and address of the school will be presented to the user on the webpage
+A list of links with the schools teachers names will be shown to the user that they can click to be taken to the corresponding teachers personal page.   
+
+1
+C
+Notes
+
+
+Acceptance Criteria
+The Teacher can click on a “Lesson schedule” button that will redirect the user to their lesson schedule page
+The user will be presented with an overview of their lesson schedule displayed as a list of the lessons and their details such as date, time, student’s name, length of the lesson and which instrument they are learning
+Displayed next to lessons in the list is a “cancel lesson” button that when clicked by the user will open a pop up window. From this window the teacher can write a brief description for why they are not able to attend the class. 
+If the user cancels a class an automatic message with the teachers message will be sent to the students email telling them that the class is cancelled
+
+
+37
+Teacher’s lesson schedule 
+As a Teacher I want to see a list that shows me the date and time of lessons that students have booked with me so that I can plan and prepare for upcoming lessons
+
+2
+C
+Notes
+ 
+
+38
+Teacher’s student list
+As a Teacher I want to see a list of the students that I teach or have taught so that I can know who I teach and their personal and contract details 
+Acceptance Criteria
+Upon clicking a “students list” link a new page will be presented to the teacher that contains a list of the students that the user has had a contract with 
+The list will contain details of the students such as: date of birth, gender, phone number, email address and facebook ID and preferred instruments and contract history
+The user will be able to click on the students name which will open a pop up window and show all the contracts the teacher has had with the student 
+2
+C
+Notes
+ 
