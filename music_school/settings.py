@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pineland_music_school.urls'
+ROOT_URLCONF = 'music_school.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pineland_music_school.wsgi.application'
+WSGI_APPLICATION = 'music_school.wsgi.application'
 
 
 # Database
