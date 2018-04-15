@@ -1,4 +1,4 @@
-"""pineland_music_school URL Configuration
+"""IFB299_piped_piper URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,10 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.contrib import admin
 from django.urls import path, include
-from . import views
+
+
+
+
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('admin/', admin.site.urls),
+    #path('home/', include('welcome_page.urls')),
+    # path('student_login', include('student_login.urls')),
+
 ]
