@@ -1,29 +1,33 @@
 {% extends "header.html" %}
 {% block content %}
-    <h2>Sign in</h2>
-    <br>
-    <form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
 
-            ID:<br>
-            <input type="text" name="Username" value=" ">
-            <br>
-            Password:<br>
-            <input type="text" name="Password" value=" ">
-            <br><br>
+            </div>
+
+            <div class="col-sm">
+                <h2>Sign in</h2>
+                <br>
+                <form method="post">
+
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    ID:<br>
+                    <input type="text" name="Username" value=" ">
+                    <br>
+                    Password:<br>
+                    <input type="text" name="Password" value=" ">
+                    <br><br>
+                    <a class="link" href='/CreateAccount/'>Create an account</a>
+                    <br><br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
-            <a class="link" href='/CreateAccount/'>Create an account</a>
-
-
-
-        <br><br>
-
-
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-
-
-
-    </form>
 {% endblock %}
