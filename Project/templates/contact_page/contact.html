@@ -5,42 +5,49 @@
 
 
     <!-- Control the column width, and how they should appear on different devices -->
-    <div class="container" style="max-width: 500px; padding: 10px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%">
-        <form action="/action_page.php">
+    <div class="container" style="max-width: 500px; padding: 10px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
+        <form action="/action_page.php" class="md-form" >
             <div class="form-group">
-                <label for="FullName">Full name:</label>
-                <input type="text" class="form-control" id="FullName">
+                <label for="FullName">Full name: *</label>
+                <input type="text" class="form-control" id="FullName" required>
             </div>
             <div class="form-group">
-                <label for="DoB">Date of Birth:</label>
-                <input type="date" class="form-control" id="DoB">
+                <label for="DoB">Date of Birth: *</label>
+                <input type="date" class="form-control" id="DoB" required>
             </div>
             <div class="form-group">
                 <label for="HomeAddress">Home address:</label>
                 <input type="text" class="form-control" id="HomeAddress">
             </div>
             <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
+                <label for="email">Email address: *</label>
+                <input type="email" class="form-control" id="email" required>
             </div>
             <div class="form-group">
-                <label for="certificates">Certificates:</label>
-                <textarea class="form-control" rows="4" id="certificates"></textarea>
+                <label for="pNumber">Phone Number: *</label>
+                <input type="text" class="form-control" id="pNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="certificates">Qualifications: * (e.g. certificates, experience)</label>
+                <textarea class="form-control" rows="4" id="certificates" required></textarea>
             </div>
             <div class="form-group">
                 <label for="subjects">Subject you would like to teach:</label>
-                <textarea class="form-control" rows="2" id="subjects"></textarea>
+                <textarea class="form-control" rows="2" id="subjects" ></textarea>
             </div>
-            <p>Upload your resume below</p>
-            <button type="button" class="upload">upload</button>
-            <button type="submit" class="submit">Submit</button>
-        </form>
+            <p>Upload your resume below *</p>
 
-        <form method="POST" enctype="multipart/form-data" action="upload.php">
-            <input type="file" name="myfile">
-            <input type="submit" name="submit" value="Upload Now">
-        </form>
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" required>
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
 
+            <div class="form-group">
+                <button type="submit" style="float: right;" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
 
 
