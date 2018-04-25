@@ -1,0 +1,49 @@
+{#{% extends "contact_page/../header.html" %}#}
+{% extends "header.html" %}
+
+{% block content %}
+
+
+    <!-- Control the column width, and how they should appear on different devices -->
+    <div class="container" style="max-width: 500px; padding: 10px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%">
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="FullName">Full name:</label>
+                <input type="text" class="form-control" id="FullName">
+            </div>
+            <div class="form-group">
+                <label for="DoB">Date of Birth:</label>
+                <input type="date" class="form-control" id="DoB">
+            </div>
+            <div class="form-group">
+                <label for="HomeAddress">Home address:</label>
+                <input type="text" class="form-control" id="HomeAddress">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="certificates">Certificates:</label>
+                <textarea class="form-control" rows="4" id="certificates"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="subjects">Subject you would like to teach:</label>
+                <textarea class="form-control" rows="2" id="subjects"></textarea>
+            </div>
+            <p>Upload your resume below</p>
+            <button type="button" class="upload">upload</button>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+
+        <form method="POST" enctype="multipart/form-data" action="upload.php">
+            <input type="file" name="myfile">
+            <input type="submit" name="submit" value="Upload Now">
+        </form>
+
+    </div>
+
+
+
+    {% include "contact_page/includes/teach_contact.html" %}
+{% endblock %}
