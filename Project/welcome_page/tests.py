@@ -28,5 +28,7 @@ class HomePageTests(SimpleTestCase):
         self.assertNotContains(
             response, 'Hi there! I should not be on the page.')
 
+
+
 if __name__ == '__main__':
     unittest.main()
