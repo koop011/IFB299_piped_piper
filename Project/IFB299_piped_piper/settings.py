@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'loginPage.apps.LoginPageConfig',
     'welcome_page',
     'contact_page',
     'django.contrib.admin',
