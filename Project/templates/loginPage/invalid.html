@@ -1,13 +1,15 @@
 {% extends "header.html" %}
 {% block content %}
+
+    <center>
+        <h1>Invalid username or password!</h1>
+        <font color="red"><h2>Your Username or Password is incorrect. Please check them and try again</h2></font>
+    </center>
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col-sm">
             </div>
-            <div class="col-sm">
-
-            </div>
-
             <div class="col-sm">
                 <h2>Sign in</h2>
                 <br>
@@ -26,8 +28,11 @@
                     <button type="submit">Login</button>
                 </form>
             </div>
+
+            <div class="col-sm">
+
+            </div>
         </div>
     </div>
-
 
 {% endblock %}
