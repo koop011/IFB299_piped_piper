@@ -22,8 +22,6 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/templates" />
-        <option value="$MODULE_DIR$/templates/welcome_page" />
-        <option value="$MODULE_DIR$/templates/welcome_page/includes" />
       </list>
     </option>
   </component>
