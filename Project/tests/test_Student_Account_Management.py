@@ -11,6 +11,8 @@ class test_login_page(TestCase):
     def test_urls(self):
         response = self.client.get('/account/')
         self.assertEquals(response.status_code, self.expected_response_200)
+        response = self.client.get('/account/Manage_Booking')
+        self.assertEquals(response.status_code, self.expected_response_301)
         response = self.client.get('/account/BookLesson')
         self.assertEquals(response.status_code, self.expected_response_301)
         response = self.client.get('/account/ManageContract')
@@ -23,6 +25,5 @@ class test_login_page(TestCase):
         self.assertEquals(response.status_code, self.expected_response_301)
 
 
-
 if __name__ == '__main__':
-    unittest.main()
+    TestCase.main()
