@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 from django import forms
+
+
 class TeacherData(models.Model):
     FullName = models.CharField(max_length=200)
     DoB = models.CharField(max_length=20)
