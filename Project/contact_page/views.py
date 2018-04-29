@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import TeacherData
 
 
-def index(request):
-    return render(request, 'contact_page/contact.html')
+# def index(request):
+#     return render(request, 'contact_page/contact.html')
 
 
 def submit_contact_form(request):

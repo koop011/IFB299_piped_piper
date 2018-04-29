@@ -1,4 +1,3 @@
-{#{% extends "contact_page/../header.html" %}#}
 {% extends "header.html" %}
 
 {% block content %}
@@ -6,55 +5,108 @@
 
     <!-- Control the column width, and how they should appear on different devices -->
     <div class="container">
-{#        <form  class="md-form" method="post">#}
-        <form method="post">
+        <form method="post">-->
             {% csrf_token %}
-            fullname
-            <input type="text" class="form-control" name="FullName" required>
-{#            <div class="form-group">#}
-{#                <label for="FullName">Full name: *</label>#}
-{#                <input type="text" class="form-control" name="FullName" required>#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="DoB">Date of Birth: *</label>#}
-{#                <input type="date" class="form-control" id="DoB" required>#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="HomeAddress">Home address:</label>#}
-{#                <input type="text" class="form-control" id="HomeAddress">#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="email">Email address: *</label>#}
-{#                <input type="email" class="form-control" id="email" required>#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="pNumber">Phone Number: *</label>#}
-{#                <input type="text" class="form-control" id="pNumber" required>#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="certificates">Qualifications: * (e.g. certificates, experience)</label>#}
-{#                <textarea class="form-control" rows="4" id="certificates" required></textarea>#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="subjects">Subject you would like to teach:</label>#}
-{#                <textarea class="form-control" rows="2" id="subjects" ></textarea>#}
-{#            </div>#}
-{#            <p>Upload your resume below *</p>#}
-{##}
-{#            <div class="form-group">#}
-{#                <div class="custom-file">#}
-{#                    <input type="file" class="custom-file-input" id="customFile" required>#}
-{#                    <label class="custom-file-label" for="customFile">Choose file</label>#}
-{#                </div>#}
-{#            </div>#}
+
+<!--<input type="text" class="form-control" name="FullName" required>-->
+            <div class="form-group">
+                <label>Full name: *</label>
+                <input type="text" class="form-control" id="FullName" required>
+            </div>
+            <div class="form-group">
+                <label>Date of Birth: *</label>
+                <input type="date" class="form-control" id="DoB" required>
+            </div>
+            <div class="form-group">
+                <label>Home address:</label>
+                <input type="text" class="form-control" id="HomeAddress">
+            </div>
+            <div class="form-group">
+                <label>Email address: *</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label">Phone Number: *</label>
+                <input type="text" class="form-control" id="pNumber" required>
+            </div>
+            <div class="form-group">
+                <label>Qualifications: * (e.g. certificates, experience)</label>
+                <textarea class="form-control" rows="4" id="certificates" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Subject you would like to teach:</label>
+                <textarea class="form-control" rows="2" id="subjects" ></textarea>
+            </div>
+            <p>Upload your resume below *</p>
+
+            <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" required>
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+
+            <!--<form method="post">-->
+            <!--{% csrf_token %}-->
+            <!--{{ form.as_p }}-->
+            <!--ID:<br>-->
+            <!--<input type="text" name="Username" value="">-->
+            <!--<br>-->
+            <!--Password:<br>-->
+            <!--<input type="password" name="Password" value="">-->
+            <!--<br><br>-->
+            <!--<a class="link" href='/createAccount/'>Create an account</a>-->
+            <!--<p>Forgot your password or username? <a class="link" href='/retrieveAccount/'>Click Here</a> to retrieve them.</p>-->
+            <!--<br><br>-->
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+        <!--</form>-->
+        <!---->
+<!--{#        <form  class="md-form" method="post">-->
+        <!--<form method="post">-->
+            <!--{% csrf_token %}-->
+            <!--fullname-->
+            <!--<input type="text" class="form-control" name="FullName" required>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="FullName">Full name: *</label>-->
+<!--{#                <input type="text" class="form-control" name="FullName" required>-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="DoB">Date of Birth: *</label>-->
+<!--{#                <input type="date" class="form-control" id="DoB" required>-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="HomeAddress">Home address:</label>-->
+<!--{#                <input type="text" class="form-control" id="HomeAddress">-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="email">Email address: *</label>-->
+<!--{#                <input type="email" class="form-control" id="email" required>-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="pNumber">Phone Number: *</label>-->
+<!--{#                <input type="text" class="form-control" id="pNumber" required>-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="certificates">Qualifications: * (e.g. certificates, experience)</label>-->
+<!--{#                <textarea class="form-control" rows="4" id="certificates" required></textarea>-->
+<!--{#            </div>-->
+<!--{#            <div class="form-group">-->
+<!--{#                <label for="subjects">Subject you would like to teach:</label>-->
+<!--{#                <textarea class="form-control" rows="2" id="subjects" ></textarea>-->
+<!--{#            </div>-->
+<!--{#            <p>Upload your resume below *</p>-->
+<!--{#-->
+<!--{#            <div class="form-group">-->
+<!--{#                <div class="custom-file">-->
+<!--{#                    <input type="file" class="custom-file-input" id="customFile" required>-->
+<!--{#                    <label class="custom-file-label" for="customFile">Choose file</label>-->
+<!--{#                </div>-->
+<!--{#            </div>-->
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
 
         </form>
     </div>
 
-
-
-    {% include "contact_page/includes/teach_contact.html" %}
 {% endblock %}
