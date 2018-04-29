@@ -11,3 +11,5 @@ def comingSoon(request):
 
 def bookLessons(request):
     return render(request, 'comingSoon.html')
+
+DELETE THIS
