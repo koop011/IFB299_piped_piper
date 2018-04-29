@@ -13,7 +13,11 @@ from requests import Response
 
 
 
-
+'''
+Unit tests are limited as the functions used within the loginPage.views uses a Django module which needs sessions.
+Sessions are necessary to use the authentication function which cannot be accessed through testing.
+The loginPage uses this authentication to function to redirect various users to different htmls and states.
+'''
 class test_login_page(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
