@@ -53,14 +53,29 @@
         <a class="nav-link" href='/browse/'>Browse classes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href='/student/'>Student Login</a>
-      </li>
-        <li class="nav-item">
-            <a class="nav-link" href='/staff/'>Staff Login</a>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link" href='/retrieve/'>Retrieve account</a>
-      </li>	  
+         <a class="nav-link" href='/careers/'>Careers</a>
+       </li>
+        {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/account/'>Account</a>
+            </li>
+        {% endif %}
+        {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/login/'>Login</a>
+            </li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/login/loggedOut/'>Log Out</a>
+            </li>
+        {% endif %}
+{##}
+{#      <li class="nav-item">#}
+{#          <a class="nav-link" href='/retrieve/'>Retrieve account</a>#}
+{#      </li>#}
+
+
     </ul>
   </div>
 </nav>
@@ -81,7 +96,7 @@
 	
 </body>
 
-{% load static %}
-<script src="/static/js/bootstrap.js/bootstrap.min.js"></script>
+{#{% load static %}#}
+{#<script src="/static/js/bootstrap.js/bootstrap.min.js"></script>#}
 
 </html>
