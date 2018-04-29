@@ -1,0 +1,15 @@
+{% extends "header.html" %}
+{% block content %}
+
+
+    <center>
+        <h1>You have logged out</h1>
+        <p>You will be redirected in 3 seconds</p>
+        <script>
+            var timer = setTimeout(function() {
+                window.location='http://localhost:8000'
+            }, 3000);
+        </script>
+    </center>
+
+{% endblock %}
