@@ -11,8 +11,6 @@ import base64
 from mock import MagicMock, patch
 from requests import Response
 
-
-
 '''
 Unit tests are limited as the functions used within the loginPage.views uses a Django module which needs sessions.
 Sessions are necessary to use the authentication function which cannot be accessed through testing.
