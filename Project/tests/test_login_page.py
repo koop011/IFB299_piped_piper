@@ -29,9 +29,15 @@ class test_login_page(TestCase):
         path = reverse('loginIndex')
         assert resolve(path).view_name == 'loginIndex'
 
-    def test_login_page_status_code(self):
+    def test_urls(self):
         response = self.client.get('/login/')
         self.assertEquals(response.status_code, self.expected_response_200)
+        response = self.client.get('/login/loggedOut')
+        self.assertEquals(response.status_code, self.expected_response_301)
+        response = self.client.get('/login/loggedIn')
+        self.assertEquals(response.status_code, self.expected_response_301)
+        response = self.client.get('/login/invalid')
+        self.assertEquals(response.status_code, self.expected_response_301)
 
     def test_user_invalid(self):
 
@@ -40,11 +46,12 @@ class test_login_page(TestCase):
         response = loginIndex(request)
         self.assertTrue(response)
 
-    # def test_url(self):
-    #     request = self.factory.get('/loggedOut')
-    #     request.user = self.user
-    #     response = loggedOut(request)
-    #     self.assertEquals(response.status_code, self.expected_response_200)
+
+
+        # request = self.factory.get('/login/loggedOut')
+        # request.user = self.user
+        # response = loggedOut(request)
+        # self.assertEquals(response.status_code, self.expected_response_200)
 
     # def test_authentication(self):
     #     s = self.client.session
