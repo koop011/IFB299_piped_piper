@@ -1,20 +1,13 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
-from loginPage import views
-import requests
-import time
+
 
 def loginIndex (request):
-    language = 'en-gb'
-    sessions_language = 'en-gb'
-
-    if 'lang' in request.COOKIES:
-        language = request.COOKIES['lang']
-
     context = {}
 
     if request.method == 'POST':
+        print('CHECK: ', request.POST.get('Username'), " ", request.POST.get('Password'))
         # uses django authentication module to check users
         user = auth.authenticate(username=request.POST.get('Username'), password=request.POST.get('Password'))
         if user is not None:
@@ -23,7 +16,7 @@ def loginIndex (request):
 
         else:
             return HttpResponseRedirect(reverse('invalid'))
-
+    #raise Http404
     return render(request, 'loginPage/loginHome.html', context, )
 
 
