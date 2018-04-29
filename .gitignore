@@ -4,6 +4,6 @@
 .idea
 db.sqlite3
 venv
-Clone.iml
-env
 Project.iml
+env
+Clone.iml
