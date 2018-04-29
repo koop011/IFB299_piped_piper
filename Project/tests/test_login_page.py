@@ -49,7 +49,9 @@ class test_login_page(TestCase):
         self.assertTrue(response)
 
 
-
+'''
+Code graveyard for session unit testing and authentication
+'''
         # request = self.factory.get('/login/loggedOut')
         # request.user = self.user
         # response = loggedOut(request)
