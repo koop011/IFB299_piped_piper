@@ -4,4 +4,6 @@
 .idea
 db.sqlite3
 venv
+Project.iml
 env
+Clone.iml
