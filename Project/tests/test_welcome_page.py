@@ -32,8 +32,28 @@ class HomePageTests(SimpleTestCase):
         response = self.client.get('/careers')
         self.assertEquals(response.status_code, 301)
 
+    def test_about_url_by_name(self):
+        response = self.client.get('/about')
+        self.assertEquals(response.status_code, 301)
+
     def test_contact_url_by_name(self):
-        response = self.client.get('/careers')
+        response = self.client.get('/contact')
+        self.assertEquals(response.status_code, 301)
+
+    def test_browse_url_by_name(self):
+        response = self.client.get('/browse')
+        self.assertEquals(response.status_code, 301)
+
+    def test_login_url_by_name(self):
+        response = self.client.get('/login')
+        self.assertEquals(response.status_code, 301)
+
+    def test_loggedOut_url_by_name(self):
+        response = self.client.get('/login/loggedOut/')
+        self.assertEquals(response.status_code, 301)
+
+    def test_account_url_by_name(self):
+        response = self.client.get('/account/')
         self.assertEquals(response.status_code, 301)
 
 if __name__ == '__main__':
