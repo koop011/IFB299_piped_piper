@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import TeacherData
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 
 def index(request):
@@ -24,5 +25,7 @@ def submit_contact_form(request):
         print('form is donezo')
         all = TeacherData.objects.all()
         print('check:', all.objects.filter(FullName='test'))
+        return HttpResponse(submit_contact_form)
+
 
     return render(request, 'contact_page/contact.html')
