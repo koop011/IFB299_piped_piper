@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'loginPage.apps.LoginPageConfig',
     'welcome_page',
     'contact_page',
+    'student_account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
