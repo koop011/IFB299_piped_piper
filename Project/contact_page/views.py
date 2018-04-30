@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from .models import TeacherData
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
@@ -16,7 +16,10 @@ def submit_contact_form(request):
         teacher_data = TeacherData(FullName=FullName, DoB=DoB, HomeAddress=HomeAddress, email=email, pNumber=pNumber, certificates=certificates, subjects=subjects)
         teacher_data.save()
 
-        return HttpResponse(submit_contact_form)
+        return HttpResponseRedirect(reverse('submitForm'))
 
 
     return render(request, 'contact_page/contact.html')
+
+def submitForm(request):
+    return render(request, 'contact_page/form_submitted.html')
