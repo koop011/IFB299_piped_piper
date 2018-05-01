@@ -34,3 +34,10 @@ def loggedOut(request):
 def invalid(request):
     context={}
     return render(request, 'loginPage/invalid.html', context)
+
+def retrieveAccount(request):
+    return render(request, 'loginPage/retrieve.html')
+
+def comingSoon(request):
+    context = {}
+    return render(request, 'comingSoon.html', context)

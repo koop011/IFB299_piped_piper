@@ -30,7 +30,7 @@
 				  </center>
 			  </div>
 		</div><hr>
-		
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,13 +52,16 @@
       </li>
       <li class="nav-item">
          <a class="nav-link" href='/careers/'>Careers</a>
-       </li>
+      </li>
         {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href='/account/'>Account</a>
             </li>
         {% endif %}
         {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/create_account/'>Create Student Account</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href='/login/'>Login</a>
             </li>
@@ -78,16 +81,15 @@
   </div>
 </nav>
 
-        <div class="row">
-		  <div class="col-sm-10">
-		  
-			<div class='container-fluid'>
-			<br><br>
-			   {% block content %}
-			   {% endblock %}	
-			</div>
-		  </div>
-		</div> 
+
+
+    <div class='container-fluid'>
+    <br><br>
+       {% block content %}
+       {% endblock %}
+    </div>
+
+
 	</div>
 	<footer>
 	</footer>	

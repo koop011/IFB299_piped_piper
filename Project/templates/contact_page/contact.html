@@ -2,13 +2,16 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container" style="max-width: 1000px; padding: 15px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
 
-        <form method="post">
+        <form enctype="multipart/form-data"﻿ method="post" >
             {% csrf_token %}
 
-            <label>Full name: *</label>
-            <input type="text" class="form-control" name="FullName" required>
+            <label>First Name: *</label>
+            <input type="text" class="form-control" name="fname" required>
+
+            <label>Last Name: *</label>
+            <input type="text" class="form-control" name="lname" required>
 
 
             <label>Date of Birth: *</label>
@@ -33,13 +36,19 @@
 
             <label>Subject you would like to teach:</label>
             <textarea class="form-control" rows="2" name="subjects" ></textarea>
+            
+            <br>
 
             <p>Upload your resume below *</p>
 
-            <input type="file" class="custom-file-input" id="customFile" required>
-            <label class="custom-file-label" for="customFile">Choose file</label>
+            <label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">
+                <input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>
+                Upload
+            </label>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+            <button type="submit" style="background-color: #4CAF50; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Submit</button>
         </form>
     </div>
 
