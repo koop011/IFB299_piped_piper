@@ -18,6 +18,7 @@ class Account(models.Model):
     lastName = models.CharField(max_length=20)
     email = models.CharField(max_length=100)
     contactNumber = models.CharField(max_length=10)
+    gender = models.CharField(max_length=10, default='none')
 
     def __str__(self):
         return self.firstName + ' ' + self.lastName + ' - ' + self.userName

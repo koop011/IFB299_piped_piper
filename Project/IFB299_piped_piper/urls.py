@@ -24,6 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('welcome_page.urls')),
     path('careers/', include('contact_page.urls')),
-    path('login/', include('loginPage.urls')),
+    path('account/', include('Student_Account_Management.urls')),
+    path('contact/', include('contact_page.urls')),
+    path('student/', include('loginPage.urls')),
+    path('staffManagement/', include('staff_management_page.urls')),
+    path('login/', include('loginPage.urls'), name='login'),
 
 ]

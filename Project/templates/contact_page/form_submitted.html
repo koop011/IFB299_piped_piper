@@ -1,0 +1,15 @@
+{% extends "header.html" %}
+{% block content %}
+
+
+<center>
+    <h1>Thank you for your submission!</h1>
+    <p>You will be redirected to the home page in 3 seconds</p>
+    <script>
+        var timer = setTimeout(function() {
+            window.location='http://localhost:8000'
+        }, 3000);
+    </script>
+</center>
+
+{% endblock %}
