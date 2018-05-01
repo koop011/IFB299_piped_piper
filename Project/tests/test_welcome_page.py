@@ -28,11 +28,29 @@ class HomePageTests(SimpleTestCase):
         self.assertNotContains(
             response, 'Hi there! I should not be on the page.')
 
-    def test_link_url_by_name(self):
-        url = "/create_account/"
-        response = self.client.get(reverse('url'))
-        self.assertEquals(response.status_code, 200)
+    def test_career_url_by_name(self):
+        response = self.client.get('/careers')
+        self.assertEquals(response.status_code, 301)
 
+    def test_about_url_by_name(self):
+        response = self.client.get('/about')
+        self.assertEquals(response.status_code, 301)
+
+    def test_contact_url_by_name(self):
+        response = self.client.get('/contact')
+        self.assertEquals(response.status_code, 301)
+
+    def test_browse_url_by_name(self):
+        response = self.client.get('/browse')
+        self.assertEquals(response.status_code, 301)
+
+    def test_login_url_by_name(self):
+        response = self.client.get('/login')
+        self.assertEquals(response.status_code, 301)
+
+    def test_account_url_by_name(self):
+        response = self.client.get('/account/')
+        self.assertEquals(response.status_code, 301)
 
 
 if __name__ == '__main__':
