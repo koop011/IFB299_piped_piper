@@ -55,15 +55,15 @@
       <li class="nav-item">
          <a class="nav-link" href='/careers/'>Careers</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href='/create_account/'>Create Student Account</a>
-      </li>
         {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href='/account/'>Account</a>
             </li>
         {% endif %}
         {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/create_account/'>Create Student Account</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href='/login/'>Login</a>
             </li>

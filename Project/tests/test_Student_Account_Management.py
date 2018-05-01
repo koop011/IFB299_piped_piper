@@ -11,7 +11,7 @@ class test_login_page(TestCase):
     def test_urls(self):
         response = self.client.get('/account/')
         self.assertEquals(response.status_code, self.expected_response_200)
-        response = self.client.get('/account/Manage_Booking')
+        response = self.client.get('/account/Manage_Bookings')
         self.assertEquals(response.status_code, self.expected_response_301)
         response = self.client.get('/account/BookLesson')
         self.assertEquals(response.status_code, self.expected_response_301)
