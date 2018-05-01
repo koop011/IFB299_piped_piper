@@ -29,8 +29,7 @@ class HomePageTests(SimpleTestCase):
             response, 'Hi there! I should not be on the page.')
 
     def test_link_url_by_name(self):
-        url = "/create_account/"
-        response = self.client.get(reverse('url'))
+        response = self.client.get(reverse('create_account'))
         self.assertEquals(response.status_code, 200)
 
 
