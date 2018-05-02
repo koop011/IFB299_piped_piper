@@ -1,58 +1,56 @@
-{#{% extends "contact_page/../header.html" %}#}
 {% extends "header.html" %}
 
 {% block content %}
 
+    <div class="container" style="max-width: 1000px; padding: 15px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
 
-    <!-- Control the column width, and how they should appear on different devices -->
-    <div class="container" style="max-width: 500px; padding: 10px; background-color: #d6d8d9; margin: auto; min-height: 100%; overflow: hidden">
-        <form  method="post" class="md-form" >
+        <form enctype="multipart/form-data"﻿ method="post" >
             {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-group">
-                <label for="FullName">Full name: *</label>
-                <input type="text" class="form-control" id="FullName"  name="FullName" required>
-            </div>
-            <div class="form-group">
-                <label for="DoB">Date of Birth: *</label>
-                <input type="date" class="form-control" id="DoB" name="DoB" required>
-            </div>
-            <div class="form-group">
-                <label for="HomeAddress">Home address:</label>
-                <input type="text" class="form-control" id="HomeAddress" name="HomeAddress">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address: *</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="pNumber">Phone Number: *</label>
-                <input type="text" class="form-control" id="pNumber" name="pNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="certificates">Qualifications: * (e.g. certificates, experience)</label>
-                <textarea class="form-control" rows="4" id="certificates" name="certificates" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="subjects">Subject you would like to teach:</label>
-                <textarea class="form-control" rows="2" id="subjects" name="subjects" ></textarea>
-            </div>
+
+            <label>First Name: *</label>
+            <input type="text" class="form-control" name="fname" required>
+
+            <label>Last Name: *</label>
+            <input type="text" class="form-control" name="lname" required>
+
+
+            <label>Date of Birth: *</label>
+            <input type="date" class="form-control" name="DoB" required>
+
+
+            <label>Home address:</label>
+            <input type="text" class="form-control" name="HomeAddress">
+
+
+            <label>Email address: *</label>
+            <input type="email" class="form-control" name="email" required>
+
+
+            <label>Phone Number: *</label>
+            <input type="text" class="form-control" name="pNumber" required>
+
+
+            <label>Qualifications: * (e.g. certificates, experience)</label>
+            <textarea class="form-control" rows="4" name="certificates" required></textarea>
+
+
+            <label>Subject you would like to teach:</label>
+            <textarea class="form-control" rows="2" name="subjects" ></textarea>
+            
+            <br>
+
             <p>Upload your resume below *</p>
 
-            <div class="form-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile" name="customFile" required>
-                    <label class="custom-file-label" for="customFile">Choose file</label>
-                </div>
-            </div>
+            <label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">
+                <input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>
+                Upload
+            </label>
 
-            <div class="form-group">
-                <button type="submit" style="float: right;" class="btn btn-primary">Submit</button>
-            </div>
+            <button type="submit" style="background-color: #4CAF50; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Submit</button>
         </form>
     </div>
 
-
-
-    {% include "contact_page/includes/teach_contact.html" %}
 {% endblock %}
+
+
+
