@@ -49,7 +49,7 @@ class HomePageTests(SimpleTestCase):
         self.assertEquals(response.status_code, 301)
 
     def test_account_url_by_name(self):
-        response = self.client.get('/account/')
+        response = self.client.get('/create_account')
         self.assertEquals(response.status_code, 301)
 
 
