@@ -1,0 +1,71 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+
+
+<div class="container" style="max-width: 1200px; padding: 10px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
+    <form method=post class="md-form" >
+        {% csrf_token %}
+        <div class="form-row">
+                <label for="LastName">First Name: *</label>
+            <div class="col">
+                <input type="text" class="form-control" name = "FirstName" id="FirstName"  placeholder="First name" required>
+            </div>
+                <label for="FirstName">Last Name: *</label>
+            <div class="col">
+                <input type="text" class="form-control" name = "LastName" id="LastName" placeholder="Last name" required>
+            </div>
+        </div>
+    <br>
+        <div class="form-row">
+            <label for="LastName">User name:*</label>
+            <div class="col">
+                <input type="text" class="form-control" name = "UserName" id="UserName"  placeholder="User Name" required>
+            </div>
+                <label for="password">Password:</label>
+            <div class="col">
+                <input type="text" class="form-control" name = "password" id="password" placeholder="Password" required>
+            </div>
+        </div>
+    <br>
+        <div class="form-group">
+            <label for="DoB">Date of Birth: *</label>
+            <input type="date" class="form-control" name="DoB" id="DoB" required>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Male" value="Male" required>
+            <label class="form-check-label" for="Male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Female" value="Female">
+            <label class="form-check-label" for="Female">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Other" value="Other">
+            <label class="form-check-label" for="Other">Other</label>
+        </div>
+        <div class="form-group">
+            <label for="HomeAddress">Home address:</label>
+            <input type="text" class="form-control" name="HomeAddress" id="HomeAddress" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address: *</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="pNumber">Phone Number: *</label>
+            <input type="text" class="form-control" name="pNumber" id="pNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="subjects">What instruments are you interested in learning?</label>
+            <textarea class="form-control" rows="2" name="subjects" id="subjects"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" style="float: right;" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+
+
+{% endblock %}
