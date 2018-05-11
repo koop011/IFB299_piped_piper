@@ -84,10 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'root',
-        'PASSWORD': 'Ifb299',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'leo',
+        'PASSWORD': 'passwording',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
