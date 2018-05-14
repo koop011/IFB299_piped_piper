@@ -19,9 +19,9 @@ def student_account(request):
 
 
 
-        student_data = StudentData(FirstName=FirstName, LastName=LastName, GenderRadioOptions=GenderRadioOptions, password=password, DoB=DoB, HomeAddress=HomeAddress, Email=Email, pNumber=pNumber, subjects=subjects)
+        student_data = StudentData(FirstName=FirstName, LastName=LastName, GenderRadioOptions=GenderRadioOptions, UserName = UserName, password=password, DoB=DoB, HomeAddress=HomeAddress, Email=Email, pNumber=pNumber, subjects=subjects)
         student_data.save()
-        user = User.objects.create_user(username=UserName , email=Email, first_name=FirstName, last_name=LastName)
+        user = User.objects.create_user(username=UserName, password=password, email=Email, first_name=FirstName, last_name=LastName)
 
 
         return HttpResponseRedirect(reverse('submitForm'))

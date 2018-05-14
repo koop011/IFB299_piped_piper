@@ -26,3 +26,7 @@ def submit_contact_form(request):
 
 def submitForm(request):
     return render(request, 'contact_page/form_submitted.html')
+
+def comingSoon(request):
+    context = {}
+    return render(request, 'comingSoon.html', context)

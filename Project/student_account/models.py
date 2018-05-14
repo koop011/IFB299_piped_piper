@@ -12,7 +12,7 @@ class StudentData(models.Model):
     LastName = models.CharField(max_length=200, default='none')
     UserName = models.CharField(max_length=20, default='none')
     password = models.CharField(max_length=20, default='none')
-    GenderRadioOptions = models.CharField(max_length=5, choices=GENDER_CHOICES, default='Other')
+    GenderRadioOptions = models.CharField(max_length=7, choices=GENDER_CHOICES, default='Other')
     DoB = models.CharField(max_length=20, default='none')
     HomeAddress = models.CharField(max_length=200, default='none')
     Email = models.CharField(max_length=200, default='none')
