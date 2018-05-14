@@ -1,0 +1,119 @@
+{% extends "header.html" %}
+{% block content %}
+
+<div class="container">
+    <form>
+        <form id="formname" name="formname" method="post" action="submitform.asp" >
+            <table width="50%" border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td width="41%" align="right" valign="middle">Category1 :</td>
+                    <td width="59%" align="left" valign="middle">
+                        <select name="category1" id="category1">
+                            <option value="">Select Category1</option>
+                            <option value="home_ware">Home Ware</option>
+                            <option value="education">Education</option>
+                            <option value="books">Books</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" valign="middle">Category2 :</td>
+                    <td align="left" valign="middle">
+                        <select disabled="disabled" class="subcat" id="category2" name="category2">
+                            <option value>Select Category2</option>
+                            <!-- Home Ware -->
+                            <optgroup data-rel="home_ware">
+                                <option value="air-conditioners_coolers">Air-Conditioners/Coolers</option>
+                                <option value="audio-video">Audio/Video</option>
+                                <option value="beddings">Beddings</option>
+                                <option value="camera">Camera</option>
+                                <option value="cell-phones">Cell Phones</option>
+                            </optgroup>
+                            <!-- Education -->
+                            <optgroup data-rel="education">
+                                <option value="Colleges">Colleges</option>
+                                <option value="Institutes">Institutes</option>
+                                <option value="Schools">Schools</option>
+                                <option value="Tuitions">Tuitions</option>
+                                <option value="Universities">Universities</option>
+                            </optgroup>
+                            <!-- Books -->
+                            <optgroup data-rel="books">
+                                <option value="College Books">College Books</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Magazines">Magazines</option>
+                                <option value="Medicine">Medicine</option>
+                                <option value="References">References</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" valign="middle">Category3 :</td>
+                    <td align="left" valign="middle">
+                        <select disabled="disabled" class="subcat" id="category3" name="category3">
+                            <option value>Select Category3</option>
+                            <!-- Home Ware -->
+                            <optgroup data-rel="home_ware">
+                                <option value="foo1">category3 home ware 1</option>
+                                <option value="foo2">category3 home ware 2</option>
+                            </optgroup>
+                            <!-- Education -->
+                            <optgroup data-rel="education">
+                                <option value="foo3">category3 Education 1</option>
+                                <option value="foo4">category3 Education 2</option>
+                            </optgroup>
+                            <!-- Books -->
+                            <optgroup data-rel="books">
+                                <option value="foo5">category3 Books 1</option>
+                                <option value="foo6">category3 Books 2</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </form>
+</div>
+
+<script>
+    $(function(){
+
+        var $cat = $("#category1"),
+            $subcat = $(".subcat");
+
+        var optgroups = {};
+
+        $subcat.each(function(i,v){
+            var $e = $(v);
+            var _id = $e.attr("id");
+            optgroups[_id] = {};
+            $e.find("optgroup").each(function(){
+                var _r = $(this).data("rel");
+                $(this).find("option").addClass("is-dyn");
+                optgroups[_id][_r] = $(this).html();
+            });
+        });
+        $subcat.find("optgroup").remove();
+
+        var _lastRel;
+        $cat.on("change",function(){
+            var _rel = $(this).val();
+            if(_lastRel === _rel) return true;
+            _lastRel = _rel;
+            $subcat.find("option").attr("style","");
+            $subcat.val("");
+            $subcat.find(".is-dyn").remove();
+            if(!_rel) return $subcat.prop("disabled",true);
+            $subcat.each(function(){
+                var $el = $(this);
+                var _id = $el.attr("id");
+                $el.append(optgroups[_id][_rel]);
+            });
+            $subcat.prop("disabled",false);
+        });
+
+    });
+</script>
+
+{% endblock %}
