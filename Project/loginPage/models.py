@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class AccountManager(models.Model):
-    def create_account(self, title):
-        account = self.Create(title = title)
-        # do something?
-        return account
+# class AccountManager(models.Model):
+#     def create_account(self, title):
+#         account = self.Create(title = title)
+#         # do something?
+#         return account
 
 
 class Account(models.Model):
