@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'contact_page',
     'welcome_page',
     'student_account',
+    'lessonBooking',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

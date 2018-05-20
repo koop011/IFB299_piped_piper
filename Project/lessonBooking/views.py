@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from Project.loginPage.models import Account
+#from .models import Account
 
 # Create your views here.
 def browseClass(request):
@@ -23,6 +23,9 @@ def browseClass(request):
 #
 #
 #     return render(request, 'lessonBooking/lessonConfirm.html', context)
+
+
+
 
 
 

@@ -8,7 +8,12 @@ from django.contrib.auth.models import User
 #         account = self.Create(title = title)
 #         # do something?
 #         return account
-
+#
+#
+# class base(models.Model):
+#     class Meta:
+#         abstract=True
+#         app_label='student_db'
 
 class Account(models.Model):
     title = models.CharField(max_length=20)
@@ -22,6 +27,9 @@ class Account(models.Model):
 
     def __str__(self):
         return self.firstName + ' ' + self.lastName + ' - ' + self.userName
+
+    # class Meta:
+    #     app_label = 'student_db'
     #ainstrument = models.CharField(max_length=20)
 
     #objects = AccountManager()
