@@ -36,27 +36,36 @@
             <label for="DoB">Date of Birth: *</label>
             <input type="date" class="form-control" name="DoB" id="DoB" required>
         </div>
-        <div class="form-row" id="parentPermission">
-            <label for="LastName">Parent First Name: *</label>
+        <div class="form-group" id="parentPermission">
+            <div class="form-row">
+            <label for="pLastName">Parent First Name: *</label>
             <div class="col">
-                <input type="text" class="form-control" name = "PFirstName" id="PFirstName"  placeholder="First name" required>
+                <input type="text" class="form-control" name = "pFirstName" id="pFirstName"  placeholder="First name">
             </div>
-            <label for="FirstName">Parent Last Name: *</label>
+            <label for="pFirstName">Parent Last Name: *</label>
             <div class="col">
-                <input type="text" class="form-control" name = "PLastName" id="PLastName" placeholder="Last name" required>
+                <input type="text" class="form-control" name = "pLastName" id="pLastName" placeholder="Last name">
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="parentsNumber">Parents Phone Number: *</label>
+                <input type="text" class="form-control" name="parentsNumber" id="parentsNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="pEmail">Parents Email address: *</label>
+                <input type="email" class="form-control" name="pEmail" id="pEmail" required>
             </div>
         </div>
-        <br>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Male" value="Male" required>
+            <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male" required>
             <label class="form-check-label" for="Male">Male</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Female" value="Female">
+            <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female">
             <label class="form-check-label" for="Female">Female</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="GenderRadioOptions" id="Other" value="Other">
+            <input class="form-check-input" type="radio" name="Gender" id="Other" value="Other">
             <label class="form-check-label" for="Other">Other</label>
         </div>
         <div class="form-group">
@@ -90,7 +99,6 @@
         $("#DoB").change(function () {
             toggleFields();
         });
-
     });
 
     function getAge(DOB) {
