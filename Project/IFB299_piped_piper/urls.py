@@ -31,4 +31,5 @@ urlpatterns = [
     path('student/', include('loginPage.urls')),
     path('staffManagement/', include('staff_management_page.urls')),
     path('login/', include('loginPage.urls'), name='login'),
+    path('contactus/', include('Contact_Us.urls')),
 ]
