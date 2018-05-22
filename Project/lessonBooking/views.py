@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from datetime import datetime, timedelta
+from django.utils import timezone
 #from .models import Account
-
 # Create your views here.
+
+
 def browseClass(request):
-    return render(request, 'lessonBooking/lessonBooking.html')
+    context = {}
+    context['newStudent'] = newStudent(request)
+    print(context['newStudent'])
+    return render(request, 'lessonBooking/lessonBooking.html', context)
 
 # def lessonConfirm(request):
 #     context = {}
@@ -23,6 +29,28 @@ def browseClass(request):
 #
 #
 #     return render(request, 'lessonBooking/lessonConfirm.html', context)
+
+
+def newStudent(request):
+    dtNow = timezone.now()
+    dtJoined = request.user.date_joined
+
+    N = 90
+
+    date_N_days_ago = dtNow - timedelta(days=N)
+    print(dtNow)
+    print(date_N_days_ago)
+    print(dtJoined)
+    if dtJoined > date_N_days_ago:
+        print('true')
+        return True
+    else:
+        print('false')
+        return False
+
+
+
+
 
 
 
