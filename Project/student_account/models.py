@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 GENDER_CHOICES = [
     ('Male', 'Male'),
     ('Female', 'Female'),
@@ -14,7 +15,7 @@ class StudentData(models.Model):
     UserName = models.CharField(max_length=20, default='none')
     password = models.CharField(max_length=20, default='none')
     Gender = models.CharField(max_length=7, choices=GENDER_CHOICES, default='Other')
-    DoB = models.CharField(max_length=20, default='none')
+    DoB = models.DateField(blank=True, null=True)
     HomeAddress = models.CharField(max_length=200, default='none')
     Email = models.CharField(max_length=200, default='none')
     pNumber = models.CharField(max_length=13, default='none')
