@@ -5,18 +5,18 @@ from .models import StudentData
 from django.contrib.admin.filters import DateFieldListFilter
 
 
-class MyDateTimeFilter(DateFieldListFilter):
-    def __init__(self, *args, **kwargs):
-        super(MyDateTimeFilter, self).__init__(*args, **kwargs)
-        
-        today = datetime.now()
-
-        self.links += ((
-            (_('Under 18'), {
-                self.lookup_kwarg_since: str(today),
-                self.lookup_kwarg_until: str(today - datetime.timedelta(years=18)),
-            }),
-        ))
+# class MyDateTimeFilter(DateFieldListFilter):
+#     def __init__(self, *args, **kwargs):
+#         super(MyDateTimeFilter, self).__init__(*args, **kwargs)
+#
+#         today = datetime.now()
+#
+#         self.links += ((
+#             (_('Under 18'), {
+#                 self.lookup_kwarg_since: str(today),
+#                 self.lookup_kwarg_until: str(today - datetime.timedelta(years=18)),
+#             }),
+#         ))
 
 # min_age = 24
 # max_date = date.today()
