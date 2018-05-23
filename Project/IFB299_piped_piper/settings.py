@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,11 +33,10 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-
 INSTALLED_APPS = [
-    'loginPage.apps.LoginPageConfig',
-    'welcome_page',
+    'loginPage',
     'contact_page',
+    'welcome_page',
     'student_account',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,12 +80,13 @@ WSGI_APPLICATION = 'IFB299_piped_piper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'chris',
-        'PASSWORD': 'password',
+        'USER': 'leo',
+        'PASSWORD': 'passwording',
         'HOST': '',
         'PORT': '',
     }
