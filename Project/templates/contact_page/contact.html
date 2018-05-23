@@ -1,13 +1,19 @@
 {% extends "header.html" %}
 
 {% block content %}
-
     <div class="container" style="max-width: 800px; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
 
         <form enctype="multipart/form-data"﻿ method="post" >
+            <style>
+                label{
+                    margin: 0px;
+
+                    padding: 5px;
+                }
+            </style>
             {% csrf_token %}
 
-            <label>First name: *</label>
+            <label style="">First name: *</label>
             <input type="text" class="form-control" name="fname" required>
 
             <label>Last name: *</label>
@@ -41,60 +47,110 @@
 
 
             <label>Subject you would like to teach:</label>
-                <div class="grid-container" style="display: grid; grid-template-columns: auto auto auto auto auto;">
+                <div class="grid-container" style="width: 100%; height: 100px;  display: grid; grid-template-columns: auto auto auto auto auto; grid-gap: 2px;">
+                <style>
 
 
-                    <label class="form-control">electric_guitar
-                        <input type="checkbox" name="electric_guitar">
-                        <span class="checkmark"></span>
+            /* The container */
+                .box {
+                    display: block;
+                    position: relative;
+                    width: 150.4px;
+                    height: 100%;
+                    cursor: pointer;
+                    font-size: 20px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background-color: #f6f6f7;
+
+                }
+
+                /* Hide the browser's default checkbox */
+                .box input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0px;
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
+                    {#position: absolute;#}
+                    {#top: 0;#}
+                    {#left: 0;#}
+                    
+                    padding-top: 8px;
+                    padding-left: 14px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #ffffff;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-weight: 300;
+                    float: right;
+
+                }
+                /* On mouse-over, add a grey background color */
+                .checkmark:hover {
+                    background-color: #ececec;
+                }
+                /* When the checkbox is checked, add a blue background */
+                .box input:checked ~ .checkmark {
+                    background-color: #2ca0f3;
+                }
+                </style>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="electric_guitar" class="checkbox">
+                        <span class="checkmark">Electric Guitar</span>
                     </label>
 
-                    <label class="">Two
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="guitar" class="checkbox">
+                        <span class="checkmark">Guitar</span>
                     </label>
 
-                    <label class="">Three
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="keyboard" class="checkbox">
+                        <span class="checkmark">Keyboard</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="piano" class="checkbox">
+                        <span class="checkmark">Piano</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="drums" class="checkbox">
+                        <span class="checkmark">Drums</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="violin" class="checkbox">
+                        <span class="checkmark">Violin</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="saxophone" class="checkbox">
+                        <span class="checkmark">Saxophone</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="flute" class="checkbox">
+                        <span class="checkmark">Flute</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="cello" class="checkbox">
+                        <span class="checkmark">Cello</span>
                     </label>
 
-                    <label class="">Four
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="clarinet" class="checkbox">
+                        <span class="checkmark">Clarinet</span>
                     </label>
-
-
                 </div>
             <br>
 
@@ -109,6 +165,18 @@
         </form>
     </div>
 
+{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+{#<script>#}
+{##}
+{#    $(document).ready(function () {#}
+{#        if#}
+{#        $('#electric_guitar').is(':checked');#}
+{##}
+{#    });#}
+{##}
+{##}
+{##}
+{#</script>#}
 {% endblock %}
 
 
