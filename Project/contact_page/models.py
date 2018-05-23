@@ -13,7 +13,18 @@ class TeacherData(models.Model):
     # file = models.FileField(default='none')
     experience = models.CharField(max_length=200, default='none')
     reference = models.CharField(max_length=200, default='none')
-    subjects = models.CharField(max_length=200, default='none')
+    electric_guitar = models.BooleanField(default='False')
+    guitar = models.BooleanField(default='False')
+    keyboard = models.BooleanField(default='False')
+    piano = models.BooleanField(default='False')
+    drums = models.BooleanField(default='False')
+    violin = models.BooleanField(default='False')
+    saxophone = models.BooleanField(default='False')
+    flute = models.BooleanField(default='False')
+    cello = models.BooleanField(default='False')
+    clarinet = models.BooleanField(default='False')
+
+
     def __str__(self):
         return self.fname + ' ' + self.lname
 
