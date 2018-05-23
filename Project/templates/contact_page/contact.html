@@ -2,19 +2,19 @@
 
 {% block content %}
 
-    <div class="container" style="max-width: 1000px; padding: 15px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
+    <div class="container" style="max-width: 800px; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
 
         <form enctype="multipart/form-data"﻿ method="post" >
             {% csrf_token %}
 
-            <label>First Name: *</label>
+            <label>First name: *</label>
             <input type="text" class="form-control" name="fname" required>
 
-            <label>Last Name: *</label>
+            <label>Last name: *</label>
             <input type="text" class="form-control" name="lname" required>
 
 
-            <label>Date of Birth: *</label>
+            <label>Date of birth: *</label>
             <input type="date" class="form-control" name="DoB" required>
 
 
@@ -26,12 +26,18 @@
             <input type="email" class="form-control" name="email" required>
 
 
-            <label>Phone Number: *</label>
+            <label>Phone number: *</label>
             <input type="text" class="form-control" name="pNumber" required>
 
+            <label>Previous experience: *</label>
+            <textarea class="form-control" rows="4" name="experience" required></textarea>
 
-            <label>Qualifications: * (e.g. certificates, experience)</label>
+
+            <label>Qualifications: * (e.g. certificates)</label>
             <textarea class="form-control" rows="4" name="certificates" required></textarea>
+
+            <label>Reference: </label>
+            <textarea class="form-control" rows="2" name="reference"></textarea>
 
 
             <label>Subject you would like to teach:</label>
@@ -39,14 +45,12 @@
             
             <br>
 
-            <p>Upload your resume below *</p>
+            <!--<p>Upload your resume below *</p>-->
 
-            <label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">
-                <input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>
-                Upload
-            </label>
-
-
+            <!--<label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">-->
+                <!--<input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>-->
+                <!--Upload-->
+            <!--</label>-->
 
             <button type="submit" style="background-color: #4CAF50; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Submit</button>
         </form>
