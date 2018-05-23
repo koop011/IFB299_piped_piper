@@ -3,6 +3,9 @@ from .models import TeacherData
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 
+
+
+
 def submit_contact_form(request):
     context = {}
     if request.method == 'POST':
@@ -15,10 +18,10 @@ def submit_contact_form(request):
         experience = request.POST.get("experience")
         certificates = request.POST.get("certificates")
         reference = request.POST.get("reference")
-        subjects = request.POST.get("subjects")
+        electric_guitar = request.POST.get("electric_guitar")
         # file = request.POST.get("file")
 
-        teacher_data = TeacherData(fname=fname, lname=lname, DoB=DoB, HomeAddress=HomeAddress, email=email, pNumber=pNumber, certificates=certificates, subjects=subjects, experience=experience, reference=reference)
+        teacher_data = TeacherData(fname=fname, lname=lname, DoB=DoB, HomeAddress=HomeAddress, email=email, pNumber=pNumber, certificates=certificates, experience=experience, reference=reference, electric_guitar=electric_guitar)
         teacher_data.save()
 
         return HttpResponseRedirect(reverse('submitForm'))
