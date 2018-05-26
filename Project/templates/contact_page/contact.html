@@ -1,20 +1,26 @@
 {% extends "header.html" %}
 
 {% block content %}
-
-    <div class="container" style="max-width: 1000px; padding: 15px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
+    <div class="container" style="max-width: 800px; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
 
         <form enctype="multipart/form-data"﻿ method="post" >
+            <style>
+                label{
+                    margin: 0px;
+
+                    padding: 5px;
+                }
+            </style>
             {% csrf_token %}
 
-            <label>First Name: *</label>
+            <label style="">First name: *</label>
             <input type="text" class="form-control" name="fname" required>
 
-            <label>Last Name: *</label>
+            <label>Last name: *</label>
             <input type="text" class="form-control" name="lname" required>
 
 
-            <label>Date of Birth: *</label>
+            <label>Date of birth: *</label>
             <input type="date" class="form-control" name="DoB" required>
 
 
@@ -26,27 +32,134 @@
             <input type="email" class="form-control" name="email" required>
 
 
-            <label>Phone Number: *</label>
+            <label>Phone number: *</label>
             <input type="text" class="form-control" name="pNumber" required>
 
+            <label>Previous experience: *</label>
+            <textarea class="form-control" rows="4" name="experience" required></textarea>
 
-            <label>Qualifications: * (e.g. certificates, experience)</label>
+
+            <label>Qualifications: * (e.g. certificates)</label>
             <textarea class="form-control" rows="4" name="certificates" required></textarea>
+
+            <label>Reference: </label>
+            <textarea class="form-control" rows="2" name="reference"></textarea>
 
 
             <label>Subject you would like to teach:</label>
-            <textarea class="form-control" rows="2" name="subjects" ></textarea>
-            
+                <div class="grid-container" style="width: 100%; height: 100px;  display: grid; grid-template-columns: auto auto auto auto auto; grid-gap: 2px;">
+                <style>
+
+
+            /* The container */
+                .box {
+                    display: block;
+                    position: relative;
+                    width: 150.4px;
+                    height: 100%;
+                    cursor: pointer;
+                    font-size: 20px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background-color: #f6f6f7;
+
+                }
+
+                /* Hide the browser's default checkbox */
+                .box input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0px;
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
+                    {#position: absolute;#}
+                    {#top: 0;#}
+                    {#left: 0;#}
+                    
+                    padding-top: 8px;
+                    padding-left: 14px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #ffffff;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-weight: 300;
+                    float: right;
+
+                }
+                /* On mouse-over, add a grey background color */
+                .checkmark:hover {
+                    background-color: #ececec;
+                }
+                /* When the checkbox is checked, add a blue background */
+                .box input:checked ~ .checkmark {
+                    background-color: #2ca0f3;
+                }
+                </style>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="electric_guitar" class="checkbox">
+                        <span class="checkmark">Electric Guitar</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="guitar" class="checkbox">
+                        <span class="checkmark">Guitar</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="keyboard" class="checkbox">
+                        <span class="checkmark">Keyboard</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="piano" class="checkbox">
+                        <span class="checkmark">Piano</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="drums" class="checkbox">
+                        <span class="checkmark">Drums</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="violin" class="checkbox">
+                        <span class="checkmark">Violin</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="saxophone" class="checkbox">
+                        <span class="checkmark">Saxophone</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="flute" class="checkbox">
+                        <span class="checkmark">Flute</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="cello" class="checkbox">
+                        <span class="checkmark">Cello</span>
+                    </label>
+
+                    <label class="box" style="padding: 0px">
+                        <input type="checkbox" name="clarinet" class="checkbox">
+                        <span class="checkmark">Clarinet</span>
+                    </label>
+                </div>
             <br>
 
-            <p>Upload your resume below *</p>
+            <!--<p>Upload your resume below *</p>-->
 
-            <label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">
-                <input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>
-                Upload
-            </label>
-
-
+            <!--<label class="custom-file-upload" style="background-color: #3490DC; border-radius: 3px; border: none; color: white;padding: 7px 10px;text-decoration: none;margin: 4px 2px;">-->
+                <!--<input type="file" id="testButton"  name="filename" style="display: none;" value="Upload" required>-->
+                <!--Upload-->
+            <!--</label>-->
 
             <button type="submit" style="background-color: #4CAF50; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Submit</button>
         </form>

@@ -80,17 +80,17 @@ WSGI_APPLICATION = 'IFB299_piped_piper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
         'USER': 'root',
-        'PASSWORD': 'Dunrobin22',
+        'PASSWORD': 'Password',
         'HOST': '',
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
