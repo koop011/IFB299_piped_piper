@@ -2,7 +2,7 @@
 {% block content %}
 <title>{{newStudent}}</title>
 <div class="container">
-    <form id="id_bookLessons" name="bookLessons" method="post" action="" name="bookLessons">
+    <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
         {% csrf_token %}
         <label>Pick an Instrument:</label>
         <br>
@@ -26,14 +26,14 @@
 
         <div id="hidden_opt">
             <label><b>Choose the length of your lesson.</b></label>
-            {% if context.newStudent %}
+            {% if context.newStudent == True %}
                 <br>
                 <input type="radio" name="timeChoice" id="id_half"> 30 Minutes<br>
                 <input type="radio" name="timeChoice" id="id_full"> 1 Hour<br>
 
                 <br>
-            {% endif %}
-            {% if not context.newStudent %}
+            {% elif context.newStudent == False %}
+            <!--{% if not context.newStudent %}-->
 
                 <div class="container">
                     <div class="row">

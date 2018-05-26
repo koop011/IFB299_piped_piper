@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.utils import timezone
-from .models import StudentData
+from django.apps import apps
+
 # Create your views here.
 
 
@@ -9,23 +10,28 @@ def browseClass(request):
     context = {}
     context['newStudent'] = newStudent(request)
     print(context['newStudent'])
+
+
     return render(request, 'lessonBooking/lessonBooking.html', context)
 
 def lessonConfirm(request):
+
+    studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     if request.method == "POST":
         context['instrument'] = request.POST.get('instruments')
-        #Account(instruments=context['instrument'])
+        studentModel(instrument=context['instrument'])
+        print(studentModel.objects.all())
 
-        #check for the student status and assign time
-        if StudentData.objects.filter(student_status='new'):
-            #Account(instruments=context['instrument'])
-            pass
-        else:
-            #Account(instruments=context['instrument'])
-            pass
-        #Account.save()
-
+        #
+        # #check for the student status and assign time
+        # if StudentData.objects.filter(student_status='new'):
+        #     #Account(instruments=context['instrument'])
+        #     pass
+        # else:
+        #     #Account(instruments=context['instrument'])
+        #     pass
+        # #Account.save()
 
 
     return render(request, 'lessonBooking/lessonConfirm.html', context)

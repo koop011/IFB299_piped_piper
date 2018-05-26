@@ -18,6 +18,8 @@ class StudentData(models.Model):
     Email = models.CharField(max_length=200, default='none')
     pNumber = models.CharField(max_length=13, default='none')
     subjects = models.CharField(max_length=200, default='none')
+    instrument = models.CharField(max_length=20, default='none')
+
 
     def __str__(self):
         return self.FirstName +(' - ') + self.LastName +(' - ') + self.GenderRadioOptions +(' - ') + self.DoB  +(' - ') + self.HomeAddress +(' - ') + self.Email +(' - ') + self.pNumber
@@ -25,3 +27,7 @@ class StudentData(models.Model):
 
     def get_absolute_url(self):
         return reverse('student_account:student_account.html')
+    #
+    # class Meta:
+    #     abstract = True
+    #     app_label = 'student_account'
