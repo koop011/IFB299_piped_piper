@@ -26,14 +26,14 @@
 
         <div id="hidden_opt">
             <label><b>Choose the length of your lesson.</b></label>
-            {% if context.newStudent == True %}
+            {% if newStudent %}
                 <br>
                 <input type="radio" name="timeChoice" id="id_half"> 30 Minutes<br>
                 <input type="radio" name="timeChoice" id="id_full"> 1 Hour<br>
 
                 <br>
-            {% elif context.newStudent == False %}
-            <!--{% if not context.newStudent %}-->
+            {% endif %}
+            {% if not newStudent %}
 
                 <div class="container">
                     <div class="row">
@@ -65,24 +65,26 @@
                 </div>
             {% endif %}
 
-            <!--<label><b>Choose your lesson time.</b></label>-->
-            <!--{% if context.newStudent %}-->
-  <!---->
-            <!--{% else %}-->
-            <!--<div class="container">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-sm">-->
-                        <!--One of three columns-->
-                    <!--</div>-->
-                    <!--<div class="col-sm">-->
-                        <!--One of three columns-->
-                    <!--</div>-->
-                    <!--<div class="col-sm">-->
-                        <!--One of three columns-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--{% endif %}-->
+            <label><b>Choose your lesson time.</b></label>
+            {% if context.newStudent %}
+                <div class="col-sm">
+                    One of three columns
+                </div>
+            {% else %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        One of three columns
+                    </div>
+                    <div class="col-sm">
+                        One of three columns
+                    </div>
+                    <div class="col-sm">
+                        One of three columns
+                    </div>
+                </div>
+            </div>
+            {% endif %}
 
 
 

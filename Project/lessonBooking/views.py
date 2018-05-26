@@ -8,6 +8,7 @@ from django.apps import apps
 
 def browseClass(request):
     context = {}
+
     context['newStudent'] = newStudent(request)
     print(context['newStudent'])
 
@@ -22,6 +23,17 @@ def lessonConfirm(request):
         context['instrument'] = request.POST.get('instruments')
         studentModel(instrument=context['instrument'])
         print(studentModel.objects.all())
+
+        # currentStudent = studentModel.objects.filter(username=request.user.username)
+        # first_name = currentStudent.first_name
+        # context['firstname'] = first_name
+
+        # context = {
+        #   'firstname': first_name,
+        #   'lastname': last_name,
+        # }
+        # currentSTudnet.
+
 
         #
         # #check for the student status and assign time
@@ -40,18 +52,16 @@ def lessonConfirm(request):
 def newStudent(request):
     dtNow = timezone.now()
     dtJoined = request.user.date_joined
+    new = 'new'
+    old = 'old'
 
     N = 90
 
     date_N_days_ago = dtNow - timedelta(days=N)
-    print(dtNow)
-    print(date_N_days_ago)
-    print(dtJoined)
+    
     if dtJoined > date_N_days_ago:
-        print('true')
         return True
     else:
-        print('false')
         return False
 
 
