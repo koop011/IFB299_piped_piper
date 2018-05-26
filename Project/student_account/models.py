@@ -28,7 +28,7 @@ class StudentData(models.Model):
 
     def get_absolute_url(self):
         return reverse('student_account:student_account.html')
-
-    class Meta:
-        abstract = True
-        app_label = 'student_account'
+    #
+    # class Meta:
+    #     abstract = True
+    #     app_label = 'student_account'
