@@ -58,7 +58,7 @@ def newStudent(request):
     N = 90
 
     date_N_days_ago = dtNow - timedelta(days=N)
-    
+
     if dtJoined > date_N_days_ago:
         return True
     else:
