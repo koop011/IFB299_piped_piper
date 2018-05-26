@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 # Create your models here.
 class electric_guitar_hour(models.Model):
     start_at = models.TimeField()

@@ -21,7 +21,6 @@ class StudentData(models.Model):
     instrument = models.CharField(max_length=20, default='none')
 
 
-
     def __str__(self):
         return self.FirstName +(' - ') + self.LastName +(' - ') + self.GenderRadioOptions +(' - ') + self.DoB  +(' - ') + self.HomeAddress +(' - ') + self.Email +(' - ') + self.pNumber
 

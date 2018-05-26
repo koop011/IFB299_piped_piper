@@ -3,7 +3,6 @@ from datetime import timedelta
 from django.utils import timezone
 from django.apps import apps
 
-
 # Create your views here.
 
 
@@ -11,17 +10,12 @@ def browseClass(request):
     context = {}
     context['newStudent'] = newStudent(request)
     print(context['newStudent'])
-    #print(StudentData.objects.)
-    # if context['newStudent']:
-    #     sd = StudentData(student_status='new')
-    #     sd.save()
-    # else:
-    #     sd = StudentData(student_status='old')
-    #     sd.save()
+
 
     return render(request, 'lessonBooking/lessonBooking.html', context)
 
 def lessonConfirm(request):
+
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     if request.method == "POST":
@@ -38,7 +32,6 @@ def lessonConfirm(request):
         #     #Account(instruments=context['instrument'])
         #     pass
         # #Account.save()
-
 
 
     return render(request, 'lessonBooking/lessonConfirm.html', context)
