@@ -3,9 +3,8 @@ from datetime import timedelta
 from django.utils import timezone
 from django.apps import apps
 
+
 # Create your views here.
-
-
 def browseClass(request):
     context = {}
 
@@ -15,8 +14,8 @@ def browseClass(request):
 
     return render(request, 'lessonBooking/lessonBooking.html', context)
 
-def lessonConfirm(request):
 
+def lessonConfirm(request):
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     if request.method == "POST":
@@ -52,8 +51,6 @@ def lessonConfirm(request):
 def newStudent(request):
     dtNow = timezone.now()
     dtJoined = request.user.date_joined
-    new = 'new'
-    old = 'old'
 
     N = 90
 
