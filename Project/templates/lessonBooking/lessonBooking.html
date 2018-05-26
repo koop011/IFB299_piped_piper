@@ -32,8 +32,7 @@
                 <input type="radio" name="timeChoice" id="id_full"> 1 Hour<br>
 
                 <br>
-            {% endif %}
-            {% if not newStudent %}
+            {% else %}
 
                 <div class="container">
                     <div class="row">
@@ -66,24 +65,24 @@
             {% endif %}
 
             <label><b>Choose your lesson time.</b></label>
-            {% if context.newStudent %}
+            {% if newStudent %}
                 <div class="col-sm">
                     One of three columns
                 </div>
             {% else %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        One of three columns
-                    </div>
-                    <div class="col-sm">
-                        One of three columns
-                    </div>
-                    <div class="col-sm">
-                        One of three columns
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            One of three columns
+                        </div>
+                        <div class="col-sm">
+                            One of three columns
+                        </div>
+                        <div class="col-sm">
+                            One of three columns
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endif %}
 
 
