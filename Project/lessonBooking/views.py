@@ -11,13 +11,7 @@ def browseClass(request):
     context = {}
     context['newStudent'] = newStudent(request)
     print(context['newStudent'])
-    #print(StudentData.objects.)
-    # if context['newStudent']:
-    #     sd = StudentData(student_status='new')
-    #     sd.save()
-    # else:
-    #     sd = StudentData(student_status='old')
-    #     sd.save()
+
 
     return render(request, 'lessonBooking/lessonBooking.html', context)
 
