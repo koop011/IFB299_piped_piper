@@ -2,7 +2,7 @@
 {% block content %}
 <title>{{newStudent}}</title>
 <div class="container">
-    <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
+    <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/timeBooking/" name="bookLessons">
         {% csrf_token %}
         <label>Pick an Instrument:</label>
         <br>
@@ -28,8 +28,8 @@
             <label><b>Choose the length of your lesson.</b></label>
             {% if newStudent %}
                 <br>
-                <input type="radio" name="timeChoice" id="id_half"> 30 Minutes<br>
-                <input type="radio" name="timeChoice" id="id_full"> 1 Hour<br>
+                <input type="radio" name="timeChoice" id="id_half" value="half"> 30 Minutes<br>
+                <input type="radio" name="timeChoice" id="id_full" value="full"> 1 Hour<br>
 
                 <br>
             {% else %}
@@ -39,24 +39,24 @@
                         <div class="col-sm">
                             <br>
                             <b>1st Class</b><br>
-                            <input type="radio" name="timeChoice" id="one_id_half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice" id="one_id_full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice1" id="one_id_half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice1" id="one_id_full"> 1 Hour<br>
 
                             <br>
                         </div>
                         <div class="col-sm">
                             <br>
                             <b>2nd Class</b><br>
-                            <input type="radio" name="timeChoice" id="two_id_half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice" id="two_id_full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice2" id="two_id_half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice2" id="two_id_full"> 1 Hour<br>
 
                             <br>
                         </div>
                         <div class="col-sm">
                             <br>
                             <b>3rd Class</b><br>
-                            <input type="radio" name="timeChoice" id="three_id_half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice" id="three_id_full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice3" id="three_id_half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice3" id="three_id_full"> 1 Hour<br>
 
                             <br>
                         </div>
@@ -64,26 +64,26 @@
                 </div>
             {% endif %}
 
-            <label><b>Choose your lesson time.</b></label>
-            {% if newStudent %}
-                <div class="col-sm">
-                    One of three columns
-                </div>
-            {% else %}
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                            One of three columns
-                        </div>
-                        <div class="col-sm">
-                            One of three columns
-                        </div>
-                        <div class="col-sm">
-                            One of three columns
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
+            <!--<label><b>Choose your lesson time.</b></label>-->
+            <!--{% if newStudent %}-->
+                <!--<div class="col-sm">-->
+                    <!--One of three columns-->
+                <!--</div>-->
+            <!--{% else %}-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-sm">-->
+                            <!--One of three columns-->
+                        <!--</div>-->
+                        <!--<div class="col-sm">-->
+                            <!--One of three columns-->
+                        <!--</div>-->
+                        <!--<div class="col-sm">-->
+                            <!--One of three columns-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--{% endif %}-->
 
 
 
