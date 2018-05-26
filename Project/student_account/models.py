@@ -19,7 +19,7 @@ class StudentData(models.Model):
     pNumber = models.CharField(max_length=13, default='none')
     subjects = models.CharField(max_length=200, default='none')
     instrument = models.CharField(max_length=20, default='none')
-    student_status = models.CharField(max_length=3, default='none')
+
 
 
     def __str__(self):
