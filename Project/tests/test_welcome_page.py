@@ -52,6 +52,5 @@ class HomePageTests(SimpleTestCase):
         response = self.client.get('/create_account')
         self.assertEquals(response.status_code, 301)
 
-
 if __name__ == '__main__':
     unittest.main()
