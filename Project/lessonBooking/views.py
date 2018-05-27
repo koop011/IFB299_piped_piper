@@ -76,81 +76,83 @@ def timeBooking(request):
         context['timePeriod1'] = request.POST.get('timeChoice1')
         context['timePeriod2'] = request.POST.get('timeChoice2')
         context['timePeriod3'] = request.POST.get('timeChoice3')
+        if context['newStudent']:
+            print('new student')
+            # timePeriod
+            if context['timePeriod'] == 'half':
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                #half_class = context['instrument_time_half']
+                if context['instrument_time_half'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_half']]:
+                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-        # timePeriod
-        if context['timePeriod'] == 'half':
-            context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
-            #half_class = context['instrument_time_half']
-            if context['instrument_time_half'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_half']]:
-                    context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_half']][i])
+            if context['timePeriod'] == 'full':
+                context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
+                #full_class = context['instrument_time_full']
+                if context['instrument_time_full'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_full']]:
+                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
+        else:
+            print('old student')
+            # timePeriod1
+            if context['timePeriod1'] == 'half':
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                #half_class = context['instrument_time_half']
+                if context['instrument_time_half'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_half']]:
+                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-        if context['timePeriod'] == 'full':
-            context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
-            #full_class = context['instrument_time_full']
-            if context['instrument_time_full'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_full']]:
-                    context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_full']][i])
+            if context['timePeriod1'] == 'full':
+                context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
+                #full_class = context['instrument_time_full']
+                if context['instrument_time_full'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_full']]:
+                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
 
-        # timePeriod1
-        if context['timePeriod1'] == 'half':
-            context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
-            #half_class = context['instrument_time_half']
-            if context['instrument_time_half'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_half']]:
-                    context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_half']][i])
+            # timePeriod2
+            if context['timePeriod2'] == 'half':
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                #half_class = context['instrument_time_half']
+                if context['instrument_time_half'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_half']]:
+                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-        if context['timePeriod1'] == 'full':
-            context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
-            #full_class = context['instrument_time_full']
-            if context['instrument_time_full'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_full']]:
-                    context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_full']][i])
+            if context['timePeriod2'] == 'full':
+                context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
+                #full_class = context['instrument_time_full']
+                if context['instrument_time_full'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_full']]:
+                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
+            # timePeriod3
+            if context['timePeriod3'] == 'half':
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                #half_class = context['instrument_time_half']
+                if context['instrument_time_half'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_half']]:
+                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-        # timePeriod2
-        if context['timePeriod2'] == 'half':
-            context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
-            #half_class = context['instrument_time_half']
-            if context['instrument_time_half'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_half']]:
-                    context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_half']][i])
-
-        if context['timePeriod2'] == 'full':
-            context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
-            #full_class = context['instrument_time_full']
-            if context['instrument_time_full'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_full']]:
-                    context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_full']][i])
-        # timePeriod3
-        if context['timePeriod3'] == 'half':
-            context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
-            #half_class = context['instrument_time_half']
-            if context['instrument_time_half'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_half']]:
-                    context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_half']][i])
-
-        if context['timePeriod3'] == 'full':
-            context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
-            #full_class = context['instrument_time_full']
-            if context['instrument_time_full'] in context['timeSheet']:
-                for i in context['objects'][context['instrument_time_full']]:
-                    context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                    #defaultdict(context['instrument_time_half'])
-                    print("List: ", context['timeSheet'][context['instrument_time_full']][i])
+            if context['timePeriod3'] == 'full':
+                context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
+                #full_class = context['instrument_time_full']
+                if context['instrument_time_full'] in context['timeSheet']:
+                    for i in context['objects'][context['instrument_time_full']]:
+                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        #defaultdict(context['instrument_time_half'])
+                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
 
 
 
