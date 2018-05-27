@@ -11,6 +11,9 @@ def loginIndex (request):
         # uses django authentication module to check users
         user = auth.authenticate(username=request.POST.get('Username'), password=request.POST.get('Password'))
         if user is not None:
+            # if user.is_staff:
+            #     return HttpResponseRedirect('/admin')
+
             auth.login(request, user)
             return HttpResponseRedirect(reverse('loggedIn'))
 
