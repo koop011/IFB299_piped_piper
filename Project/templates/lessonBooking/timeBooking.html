@@ -2,6 +2,8 @@
 {% block content %}
 <div class="container">
     <center>
+        <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
+            {% csrf_token %}
         <label><b>Choose your lesson time.</b></label>
         {% if newStudent %}
             {% if instrument == 'electric_guitar' %}
@@ -256,6 +258,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
+                        <br>
+                        <b>1st Class</b><br>
                         {% if instrument == 'electric_guitar' %}
                             {% if timePeriod11 == 'half' %}
                             <br>
@@ -478,6 +482,8 @@
 
                     </div>
                     <div class="col-sm">
+                        <br>
+                        <b>2nd Class</b><br>
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
@@ -700,6 +706,8 @@
 
                     </div>
                     <div class="col-sm">
+                        <br>
+                        <b>3rd Class</b><br>
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
@@ -924,6 +932,10 @@
                 </div>
             </div>
         {% endif %}
+            <br><br>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+
+        </form>
     </center>
 </div>
 {% endblock %}
