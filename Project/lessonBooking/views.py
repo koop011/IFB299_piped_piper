@@ -213,12 +213,14 @@ def lessonConfirm(request):
         if request.POST.get('selected_instrument') == "violin":
             context['instrument'] = 'Violin'
 
-        print(context['instrument'])
+        # print(context['instrument'])
         # studentModel(instrument=context['instrument'])
         # print(studentModel.objects.all())
         #
-        # pending_contract = pendingLessonContracts(first_name=first_name, last__name=last__name, instument=instrument, time=time)
-        # pending_contract.save()
+        pending_contract = pendingLessonContracts(first_name=request.user.first_name, last_name=request.user.last_name,
+                                                  instrument=context['instrument'],
+                                                  time=request.POST.get('instruments'))
+        pending_contract.save()
 
 
 
