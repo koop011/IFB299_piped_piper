@@ -29,6 +29,10 @@ class StudentData(models.Model):
     parentsNumber = models.CharField(max_length=13, default='none')
     pEmail = models.CharField(max_length=200, default='none')
 
+    def year_born_in(self):
+        return self.DoB.strftime('%Y')[:4]
+    year_born_in.short_description = 'Birth Year'
+
     def __str__(self):
         return self.FirstName
                # + (' - ') + self.LastName + (' - ') + self.GenderRadioOptions + (' - ') + self.DoB + (

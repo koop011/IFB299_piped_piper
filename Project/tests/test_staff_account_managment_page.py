@@ -14,7 +14,7 @@ class MyTestCase(TestCase):
         self.assertEquals(response.status_code, self.expected_response_200)
         response = self.client.get('/staffManagement/reportGeneration')
         self.assertEquals(response.status_code, self.expected_response_301)
-        response = self.client.get('/staffManagement/editTheDatabase')
+        response = self.client.get('/staffManagement/admin')
         self.assertEquals(response.status_code, self.expected_response_301)
         response = self.client.get('/staffManagement/postEvent')
         self.assertEquals(response.status_code, self.expected_response_301)
