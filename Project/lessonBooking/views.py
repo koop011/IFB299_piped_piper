@@ -69,6 +69,7 @@ def timeBooking(request):
     #print(context['objects']['electric_guitar_half_hour'])
     #print(keyboard_half_hour.objects.get(id=8).start_at)
     context['newStudent'] = newStudent(request)
+    print(context['newStudent'])
 
     if request.method == "POST":
         context['instrument'] = request.POST.get('instruments')
@@ -97,7 +98,6 @@ def timeBooking(request):
                         #defaultdict(context['instrument_time_half'])
                         print("List: ", context['timeSheet'][context['instrument_time_full']][i])
         else:
-            print('old student')
             # timePeriod1
             if context['timePeriod1'] == 'half':
                 context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
@@ -108,7 +108,7 @@ def timeBooking(request):
                         #defaultdict(context['instrument_time_half'])
                         print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-            if context['timePeriod1'] == 'full':
+            else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
@@ -127,7 +127,7 @@ def timeBooking(request):
                         #defaultdict(context['instrument_time_half'])
                         print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-            if context['timePeriod2'] == 'full':
+            else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
@@ -145,7 +145,7 @@ def timeBooking(request):
                         #defaultdict(context['instrument_time_half'])
                         print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
-            if context['timePeriod3'] == 'full':
+            else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
