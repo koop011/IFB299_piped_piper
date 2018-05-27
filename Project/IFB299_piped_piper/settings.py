@@ -33,18 +33,18 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-INSTALLED_APPS = [
-    'loginPage',
-    'contact_page',
-    'welcome_page',
-    'student_account',
+INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'welcome_page',
+    'loginPage',
+    'contact_page.apps.TeachContactConfig',
+    'student_account',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,8 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'leo',
-        'PASSWORD': 'passwording',
+        'USER': 'chris',
+        'PASSWORD': 'password',
         'HOST': '',
         'PORT': '',
     }
