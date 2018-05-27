@@ -6,9 +6,16 @@
             {% csrf_token %}
         <label><b>Choose your lesson time for {{instrument}}:</b></label>
         <br>
-
             <p hidden><input type="text" name="selected_instrument" value="{{instrument}}"></input></p>
+            <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
         {% if newStudent %}
+
+            <select id="id_days" name="days">
+                {% for i in timeSheet.days%}
+                <option value={{ i }}>{{i}}</option>
+                {% endfor %}
+            </select>
+            <br>
             {% if instrument == 'electric_guitar' %}
                 {% if timePeriod == 'half' %}
                     <br>
