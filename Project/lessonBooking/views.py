@@ -166,22 +166,58 @@ def timeBooking(request):
 def lessonConfirm(request):
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
+    context['newStudent'] = newStudent(request)
     if request.method == "POST":
 
         # get student name
         currentstudent = studentModel.objects.filter(FirstName=request.user.first_name)
         print(studentModel.objects.all())
-        first_name = FirstName=request.user.first_name
+        first_name = request.user.first_name
         context['FirstName'] = first_name
-        last_name = LastName=request.user.last_name
+        last_name = request.user.last_name
         context['LastName'] = last_name
 
+
         # get lesson time
-        # context['time'] = request.POST.get('start_at')
-        # studentModel(time=context['time'])
-        #
-        # # get instrument
-        # context['instrument'] = request.POST.get('instruments')
+
+        context['time'] = request.POST.get('instruments')
+        print(context['time'])
+
+        context['time1'] = request.POST.get('instruments1')
+        print(context['time1'])
+
+        context['time2'] = request.POST.get('instruments2')
+        print(context['time2'])
+
+        context['time3'] = request.POST.get('instruments3')
+        print(context['time3'])
+
+
+
+
+        # get instrument
+        if request.POST.get('selected_instrument') == "cello":
+            context['instrument'] = 'Cello'
+        if request.POST.get('selected_instrument') == "clarinet":
+            context['instrument'] = 'Clarinet'
+        if request.POST.get('selected_instrument') == "drums":
+            context['instrument'] = 'Drums'
+        if request.POST.get('selected_instrument') == "electric_guitar":
+            context['instrument'] = 'Electric Guitar'
+        if request.POST.get('selected_instrument') == "flute":
+            context['instrument'] = 'Flute'
+        if request.POST.get('selected_instrument') == "guitar":
+            context['instrument'] = 'Guitar'
+        if request.POST.get('selected_instrument') == "keyboard":
+            context['instrument'] = 'Keyboard'
+        if request.POST.get('selected_instrument') == "piano":
+            context['instrument'] = 'Piano'
+        if request.POST.get('selected_instrument') == "saxophone":
+            context['instrument'] = 'Saxophone'
+        if request.POST.get('selected_instrument') == "violin":
+            context['instrument'] = 'Violin'
+
+        print(context['instrument'])
         # studentModel(instrument=context['instrument'])
         # print(studentModel.objects.all())
         #

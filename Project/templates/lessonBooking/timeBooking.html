@@ -4,14 +4,17 @@
     <center>
         <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
             {% csrf_token %}
-        <label><b>Choose your lesson time.</b></label>
+        <label><b>Choose your lesson time for {{instrument}}:</b></label>
+        <br>
+
+            <p hidden><input type="text" name="selected_instrument" value="{{instrument}}"></input></p>
         {% if newStudent %}
             {% if instrument == 'electric_guitar' %}
                 {% if timePeriod == 'half' %}
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.electric_guitar_half_hour %}
-                            <option value="electric_guitar">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -19,7 +22,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.electric_guitar_hour %}
-                        <option value="electric_guitar">{{i}}</option>
+                        <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -33,7 +36,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.keyboard_half_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -41,7 +44,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.keyboard_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -55,7 +58,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.piano_half_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -63,7 +66,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.piano_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -77,7 +80,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.guitar_half_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -85,7 +88,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.guitar_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -99,7 +102,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.drums_half_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -107,7 +110,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.drums_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -121,7 +124,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.violin_half_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{i}}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -129,7 +132,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.violin_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value="{{i}}">{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -143,7 +146,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.saxophone_half_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -151,7 +154,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.saxophone_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -165,7 +168,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.flute_half_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -173,7 +176,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.flute_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -187,7 +190,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.cello_half_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -195,7 +198,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.cello_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -209,7 +212,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.clarinet_half_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -217,7 +220,7 @@
                     <br>
                     <select id="id_instruments" name="instruments">
                         {% for i in timeSheet.clarinet_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                         {% endfor %}
 
                     </select>
@@ -263,17 +266,17 @@
                         {% if instrument == 'electric_guitar' %}
                             {% if timePeriod11 == 'half' %}
                             <br>
-                                <select id="id_instruments" name="instruments">
+                                <select id="id_instruments" name="instruments1">
                                     {% for i in timeSheet.electric_guitar_half_hour %}
-                                        <option value="electric_guitar">{{i}}</option>
+                                        <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
 
                                 </select>
                             {% else %}
                                 <br>
-                                <select id="id_instruments" name="instruments">
+                                <select id="id_instruments" name="instruments1">
                                     {% for i in timeSheet.electric_guitar_hour %}
-                                        <option value="electric_guitar">{{i}}</option>
+                                        <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
 
                                 </select>
@@ -285,17 +288,17 @@
                         {% if instrument == 'keyboard' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.keyboard_half_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.keyboard_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -307,17 +310,17 @@
                         {% if instrument == 'piano' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.piano_half_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.piano_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -329,17 +332,17 @@
                         {% if instrument == 'guitar' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.guitar_half_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.guitar_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -351,17 +354,17 @@
                         {% if instrument == 'drums' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.drums_half_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.drums_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -373,17 +376,17 @@
                         {% if instrument == 'violin' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.violin_half_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.violin_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -395,17 +398,17 @@
                         {% if instrument == 'saxophone' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.saxophone_half_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.saxophone_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -417,17 +420,17 @@
                         {% if instrument == 'flute' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.flute_half_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.flute_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -439,17 +442,17 @@
                         {% if instrument == 'cello' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.cello_half_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.cello_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -461,17 +464,17 @@
                         {% if instrument == 'clarinet' %}
                         {% if timePeriod1 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.clarinet_half_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments1">
                             {% for i in timeSheet.clarinet_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -487,17 +490,17 @@
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.electric_guitar_half_hour %}
-                            <option value="electric_guitar">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.electric_guitar_hour %}
-                            <option value="electric_guitar">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -509,17 +512,17 @@
                         {% if instrument == 'keyboard' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.keyboard_half_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.keyboard_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -531,17 +534,17 @@
                         {% if instrument == 'piano' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.piano_half_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.piano_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -553,17 +556,17 @@
                         {% if instrument == 'guitar' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.guitar_half_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.guitar_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -575,17 +578,17 @@
                         {% if instrument == 'drums' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.drums_half_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.drums_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -597,17 +600,17 @@
                         {% if instrument == 'violin' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.violin_half_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.violin_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -619,17 +622,17 @@
                         {% if instrument == 'saxophone' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.saxophone_half_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.saxophone_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -641,17 +644,17 @@
                         {% if instrument == 'flute' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.flute_half_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.flute_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -663,17 +666,17 @@
                         {% if instrument == 'cello' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.cello_half_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.cello_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -685,17 +688,17 @@
                         {% if instrument == 'clarinet' %}
                         {% if timePeriod2 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.clarinet_half_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments2">
                             {% for i in timeSheet.clarinet_hour %}
-                            <option value="clarinet">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -711,17 +714,17 @@
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.electric_guitar_half_hour %}
-                            <option value="electric_guitar">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.electric_guitar_hour %}
-                            <option value="electric_guitar">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -733,17 +736,17 @@
                         {% if instrument == 'keyboard' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.keyboard_half_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.keyboard_hour %}
-                            <option value="keyboard">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -755,17 +758,17 @@
                         {% if instrument == 'piano' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.piano_half_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.piano_hour %}
-                            <option value="piano">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -777,17 +780,17 @@
                         {% if instrument == 'guitar' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.guitar_half_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.guitar_hour %}
-                            <option value="guitar">{{i}}</option>
+                            <option value="{{ i }}">{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -799,17 +802,17 @@
                         {% if instrument == 'drums' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.drums_half_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.drums_hour %}
-                            <option value="drums">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -821,17 +824,17 @@
                         {% if instrument == 'violin' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.violin_half_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.violin_hour %}
-                            <option value="violin">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -843,17 +846,17 @@
                         {% if instrument == 'saxophone' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.saxophone_half_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.saxophone_hour %}
-                            <option value="saxophone">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -865,17 +868,17 @@
                         {% if instrument == 'flute' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.flute_half_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.flute_hour %}
-                            <option value="flute">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -887,17 +890,17 @@
                         {% if instrument == 'cello' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.cello_half_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
                         {% else %}
                         <br>
-                        <select id="id_instruments" name="instruments">
+                        <select id="id_instruments" name="instruments3">
                             {% for i in timeSheet.cello_hour %}
-                            <option value="cello">{{i}}</option>
+                            <option value={{ i }}>{{i}}</option>
                             {% endfor %}
 
                         </select>
@@ -909,17 +912,17 @@
                         {% if instrument == 'clarinet' %}
                             {% if timePeriod3 == 'half' %}
                                 <br>
-                                <select id="id_instruments" name="instruments">
+                                <select id="id_instruments" name="instruments3">
                                     {% for i in timeSheet.clarinet_half_hour %}
-                                        <option value="clarinet">{{i}}</option>
+                                        <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
 
                                 </select>
                             {% else %}
                                 <br>
-                                <select id="id_instruments" name="instruments">
+                                <select id="id_instruments" name="instruments3">
                                     {% for i in timeSheet.clarinet_hour %}
-                                        <option value="clarinet">{{i}}</option>
+                                        <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
 
                                 </select>

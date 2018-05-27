@@ -105,11 +105,23 @@ class clarinet_half_hour(models.Model):
         return str(self.start_at)
 
 class pendingLessonContracts(models.Model):
-    # first_name = models.CharField(max_length=200, default='none')
-    # last_name = models.CharField(max_length=200, default='none')
-    # instrument = models.CharField(max_length=200, default='none')
-    # time = models.TimeField()
+    first_name = models.CharField(max_length=200, default='none')
+    last_name = models.CharField(max_length=200, default='none')
+    instrument = models.CharField(max_length=200, default='none')
+    time = models.TimeField(default='00:00:00')
 
 
     def __str__(self):
         return str(self.start_at)
+
+class days(models.Model):
+    day = models.CharField(max_length=10, default='none')
+
+    def __str__(self):
+        return self.day
+
+class period(models.Model):
+    months=models.CharField(max_length=10, default='none')
+
+    def __str__(self):
+        return self.months

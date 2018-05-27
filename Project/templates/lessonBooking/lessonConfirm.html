@@ -2,20 +2,32 @@
 {% block content %}
 
     <div class="container">
-        <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/timeBooking/" name="bookLessons">
-            {% csrf_token %}
-            <label>Name:</label>
-            <br>
-            <label>Instrument:</label>
-            <br>
-            <label>Lesson Time:</label>
+        <div style=" max-width: 40%; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden;
+">
+            <form method="post">
+                {% csrf_token %}
 
-            <br>
-            <br>
+                <label>Name:</label>
+                {{ FirstName }} {{ LastName }}
+                <br>
+                <label>Instrument:</label>
+                {{instrument}}
+                <br>
+                <label>Lesson Time:</label>
+                {% if newStudent %}
+                    {{ time }}
+                {% else %}
+                    {{ time1 }},{{ time2 }},{{ time3 }}
+                {% endif %}
+                <br>
+                <br>
 
-            <button type="submit" class="btn btn-primary">Cancel</button>
-            <button type="submit" class="btn btn-primary">Confirm</button>
-        </form>
+                <button type="submit" style="background-color: #4CAF50; cursor: pointer; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Submit</button>
+                <a type="button" href='/browse/' style="background-color: #adb19c; -webkit-appearance: none; border-radius: 3px; border: none; color: white;padding: 7px 10px; text-decoration: none;margin: 4px 2px; float: right;">Cancel</a>
+
+
+            </form>
+        </div>
     </div>
 
 {% endblock %}
