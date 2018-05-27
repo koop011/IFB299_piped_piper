@@ -4,6 +4,15 @@
 <div class="container">
     <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/timeBooking/" name="bookLessons">
         {% csrf_token %}
+        <label>Select the period of contract:</label>
+        <br>
+        <select id="id_months" name="months">
+            {% for i in timeSheet.months %}
+            <option value={{ i }}>{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
         <label>Pick an Instrument:</label>
         <br>
         <select id="id_instruments" onchange="descFunction()" name="instruments">

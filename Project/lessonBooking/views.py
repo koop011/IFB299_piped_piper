@@ -8,10 +8,17 @@ from collections import defaultdict
 
 # Create your views here.
 def browseClass(request):
-    context = {}
-
+    context = {
+        'timeSheet':{
+            'months': {},
+        },
+        'objects':{
+            'months': period.objects.all(),
+        }
+    }
     context['newStudent'] = newStudent(request)
-
+    for i in context['objects']['months']:
+        context['timeSheet']['months'][i] = i.months
 
     return render(request, 'lessonBooking/lessonBooking.html', context)
 
@@ -19,6 +26,7 @@ def browseClass(request):
 def timeBooking(request):
     context = {
         'timeSheet': {
+            'days': {},
             'electric_guitar_half_hour': {},
             'electric_guitar_hour': {},
             'keyboard_half_hour': {},
@@ -41,6 +49,7 @@ def timeBooking(request):
             'clarinet_hour': {},
         },
         'objects': {
+            'days': days.objects.all(),
             'electric_guitar_half_hour': electric_guitar_half_hour.objects.all(),
             'electric_guitar_hour': electric_guitar_hour.objects.all(),
             'keyboard_half_hour': keyboard_half_hour.objects.all(),
@@ -69,7 +78,10 @@ def timeBooking(request):
     #print(context['objects']['electric_guitar_half_hour'])
     #print(keyboard_half_hour.objects.get(id=8).start_at)
     context['newStudent'] = newStudent(request)
-    print(context['newStudent'])
+    context['contract_period'] = request.POST.get('months')
+    for i in context['objects']['days']:
+        context['timeSheet']['days'][i] = i.day
+
 
     if request.method == "POST":
         context['instrument'] = request.POST.get('instruments')
@@ -77,17 +89,15 @@ def timeBooking(request):
         context['timePeriod1'] = request.POST.get('timeChoice1')
         context['timePeriod2'] = request.POST.get('timeChoice2')
         context['timePeriod3'] = request.POST.get('timeChoice3')
+
+        # create dictionary of time schedule for each instruments
         if context['newStudent']:
-            print('new student')
             # timePeriod
             if context['timePeriod'] == 'half':
                 context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
-                #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
                         context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
             if context['timePeriod'] == 'full':
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
@@ -95,8 +105,6 @@ def timeBooking(request):
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
         else:
             # timePeriod1
             if context['timePeriod1'] == 'half':
@@ -105,8 +113,6 @@ def timeBooking(request):
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
                         context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
@@ -114,8 +120,6 @@ def timeBooking(request):
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
 
             # timePeriod2
             if context['timePeriod2'] == 'half':
@@ -124,8 +128,6 @@ def timeBooking(request):
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
                         context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
@@ -133,8 +135,6 @@ def timeBooking(request):
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
             # timePeriod3
             if context['timePeriod3'] == 'half':
                 context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
@@ -142,8 +142,6 @@ def timeBooking(request):
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
                         context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_half']][i])
 
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
@@ -151,8 +149,6 @@ def timeBooking(request):
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
-                        #defaultdict(context['instrument_time_half'])
-                        print("List: ", context['timeSheet'][context['instrument_time_full']][i])
 
 
 
