@@ -1,6 +1,21 @@
 {% extends "header.html" %}
 {% block content %}
 
+    <div class="container">
+        <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/timeBooking/" name="bookLessons">
+            {% csrf_token %}
+            <label>Name:</label>
+            <br>
+            <label>Instrument:</label>
+            <br>
+            <label>Lesson Time:</label>
 
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+    </div>
 
 {% endblock %}

@@ -167,16 +167,29 @@ def lessonConfirm(request):
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     if request.method == "POST":
-        context['instrument'] = request.POST.get('instruments')
-        studentModel(instrument=context['instrument'])
+
+        # get student name
+        currentstudent = studentModel.objects.filter(FirstName=request.user.first_name)
         print(studentModel.objects.all())
-
-        currentStudent = studentModel.objects.filter(username=request.user.username)
-        first_name = currentStudent.first_name
+        first_name = FirstName=request.user.first_name
         context['FirstName'] = first_name
+        last_name = LastName=request.user.last_name
+        context['LastName'] = last_name
+
+        # get lesson time
+        # context['time'] = request.POST.get('start_at')
+        # studentModel(time=context['time'])
+        #
+        # # get instrument
+        # context['instrument'] = request.POST.get('instruments')
+        # studentModel(instrument=context['instrument'])
+        # print(studentModel.objects.all())
+        #
+        # pending_contract = pendingLessonContracts(first_name=first_name, last__name=last__name, instument=instrument, time=time)
+        # pending_contract.save()
 
 
-        currentStudent.firstname
+
 
 
         #
