@@ -34,5 +34,6 @@ def student_account(request):
     return render(request, 'student_account/student_account.html')
 
 
+
 def submitForm(request):
     return render(request, 'contact_page/form_submitted.html')
