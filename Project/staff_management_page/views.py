@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 
 def staff_managementIndex(request):
@@ -8,20 +8,7 @@ def staff_managementIndex(request):
 
 def comingSoon(request):
     context = {}
-    return render(request, 'reportGeneration/comingSoon.html', context)
-
-def comingSoon(request):
-    context = {}
-    return render(request, 'editTheDatabase/comingSoon.html', context)
-
-def comingSoon(request):
-    context = {}
-    return render(request, 'postEvent/comingSoon.html', context)
-
-def comingSoon(request):
-    context = {}
-    return render(request, 'contractApproval/comingSoon.html', context)
-
-def comingSoon(request):
-    context = {}
-    return render(request, 'StaffManagement/comingSoon.html', context)
+    return render(request, 'comingSoon.html', context)
+#
+# def adminRedirect(request):
+#     return HttpResponseRedirect(request, 'http://localhost:8000/admin')
