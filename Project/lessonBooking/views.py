@@ -171,15 +171,12 @@ def lessonConfirm(request):
         studentModel(instrument=context['instrument'])
         print(studentModel.objects.all())
 
-        # currentStudent = studentModel.objects.filter(username=request.user.username)
-        # first_name = currentStudent.first_name
-        # context['firstname'] = first_name
+        currentStudent = studentModel.objects.filter(username=request.user.username)
+        first_name = currentStudent.first_name
+        context['FirstName'] = first_name
 
-        # context = {
-        #   'firstname': first_name,
-        #   'lastname': last_name,
-        # }
-        # currentSTudnet.
+
+        currentStudent.firstname
 
 
         #
