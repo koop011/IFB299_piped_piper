@@ -268,8 +268,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
+
                         <br>
                         <b>1st Class</b><br>
+                        <select id="id_days1" name="days1">
+                            {% for i in timeSheet.days%}
+                            <option value={{ i }}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
                         {% if instrument == 'electric_guitar' %}
                             {% if timePeriod11 == 'half' %}
                             <br>
@@ -492,8 +499,15 @@
 
                     </div>
                     <div class="col-sm">
+
                         <br>
                         <b>2nd Class</b><br>
+                        <select id="id_days2" name="days2">
+                            {% for i in timeSheet.days%}
+                            <option value={{ i }}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod2timePeriod3 == 'half' %}
                         <br>
@@ -718,6 +732,12 @@
                     <div class="col-sm">
                         <br>
                         <b>3rd Class</b><br>
+                        <select id="id_days3" name="days3">
+                            {% for i in timeSheet.days%}
+                            <option value={{ i }}>{{i}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
                         {% if instrument == 'electric_guitar' %}
                         {% if timePeriod3 == 'half' %}
                         <br>
