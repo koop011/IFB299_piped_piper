@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'loginPage',
     'contact_page.apps.TeachContactConfig',
     'student_account',
+    'lessonBooking',
 )
 
 MIDDLEWARE = [

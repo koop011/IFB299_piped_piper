@@ -37,7 +37,7 @@ class StudentModelTest(TestCase):
     def test_First_name_label(self):
         Student=StudentData.objects.get(id=1)
         field_label = Student._meta.get_field('FirstName').verbose_name
-        self.assertEquals(field_label,'First Name')
+        self.assertEquals(field_label,'FirstName')
 
     def test_Last_name_label(self):
         Student=StudentData.objects.get(id=1)
