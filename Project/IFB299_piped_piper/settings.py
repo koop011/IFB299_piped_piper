@@ -33,19 +33,18 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-INSTALLED_APPS = [
-    'loginPage',
-    'contact_page',
-    'welcome_page',
-    'lessonBooking',
-    'student_account',
+INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'welcome_page',
+    'loginPage',
+    'contact_page.apps.TeachContactConfig',
+    'student_account',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,17 +80,17 @@ WSGI_APPLICATION = 'IFB299_piped_piper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'Password',
         'HOST': '',
         'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
