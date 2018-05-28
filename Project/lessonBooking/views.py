@@ -163,27 +163,36 @@ def lessonConfirm(request):
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     context['newStudent'] = newStudent(request)
+    if context['newStudent']:
+        context['day'] = request.POST.get('days')
+    else:
+        context['day1'] = request.POST.get('days1')
+        context['day2'] = request.POST.get('days2')
+        context['day3'] = request.POST.get('days3')
+
     if request.method == "POST":
 
         # get student name
-        currentstudent = studentModel.objects.filter(FirstName=request.user.first_name)
-        print(studentModel.objects.all())
+        #currentstudent = studentModel.objects.filter(FirstName=request.user.first_name)
+        #print(studentModel.objects.all())
         first_name = request.user.first_name
         context['FirstName'] = first_name
         last_name = request.user.last_name
         context['LastName'] = last_name
 
-        contract_period = request.POST.get('contract_period')
-        print(contract_period)
-
+        #contract_period = request.POST.get('contract_period')
+        #print(contract_period)
+        context['contract_period'] = request.POST.get('contract_period')
 
         if context['newStudent']:
             # get lesson time
             time = '00:00:00'
             context['time'] = request.POST.get('instruments')
             time = context['time']
-            print(context['time'])
+            print("new student  Time : ", context['time'])
+
         else:
+
             time1 = '00:00:00'
             context['time1'] = request.POST.get('instruments1')
             time1 = request.POST.get('instruments1')
@@ -200,40 +209,40 @@ def lessonConfirm(request):
 
 
 
-        # get instrument
-        instrument = 'none'
-        if request.POST.get('selected_instrument') == "cello":
-            context['instrument'] = 'Cello'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "clarinet":
-            context['instrument'] = 'Clarinet'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "drums":
-            context['instrument'] = 'Drums'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "electric_guitar":
-            context['instrument'] = 'Electric Guitar'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "flute":
-            context['instrument'] = 'Flute'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "guitar":
-            context['instrument'] = 'Guitar'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "keyboard":
-            context['instrument'] = 'Keyboard'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "piano":
-            context['instrument'] = 'Piano'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "saxophone":
-            context['instrument'] = 'Saxophone'
-            instrument = context['instrument']
-        if request.POST.get('selected_instrument') == "violin":
-            context['instrument'] = 'Violin'
-            instrument = context['instrument']
+            # get instrument
+            instrument = 'none'
+            if request.POST.get('selected_instrument') == "cello":
+                context['instrument'] = 'Cello'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "clarinet":
+                context['instrument'] = 'Clarinet'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "drums":
+                context['instrument'] = 'Drums'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "electric_guitar":
+                context['instrument'] = 'Electric Guitar'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "flute":
+                context['instrument'] = 'Flute'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "guitar":
+                context['instrument'] = 'Guitar'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "keyboard":
+                context['instrument'] = 'Keyboard'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "piano":
+                context['instrument'] = 'Piano'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "saxophone":
+                context['instrument'] = 'Saxophone'
+                instrument = context['instrument']
+            if request.POST.get('selected_instrument') == "violin":
+                context['instrument'] = 'Violin'
+                instrument = context['instrument']
 
-    return render(request, 'lessonBooking/lessonConfirm.html', context)
+        return render(request, 'lessonBooking/lessonConfirm.html', context)
 
 
 
@@ -247,13 +256,11 @@ def bookingConfirm(request):
         context['LastName'] = last_name
         print(first_name, last_name)
 
-        instrument = request.POST.get('selected_instrument')
-        print(instrument)
-        contract_period = request.POST.get('contract_period')
-        print(contract_period)
+        context['selected_instrument'] = request.POST.get('selected_instrument')
+        print(context['selected_instrument'] )
+        context['contract_period'] = request.POST.get('contract_period')
+        print("CONTREACT PERIOD: ", context['contract_period'] )
 
-        # contract_period2 = context['contract_period']
-        print(contract_period)
         context['instruments3'] = request.POST.get('time3')
         time3 = request.POST.get('time3')
         print(context['instruments3'])
@@ -263,35 +270,43 @@ def bookingConfirm(request):
             time = '00:00:00'
             context['time'] = request.POST.get('instruments')
             time = context['time']
-            print(context['time'])
+            context['day'] = request.POST.get('days')
+            print("DAY: ", context['day'])
+            print("time: ", context['time'])
         else:
+            context['day1'] = request.POST.get('day1')
+            context['day2'] = request.POST.get('day2')
+            context['day3'] = request.POST.get('day3')
+            print("DAY1: ", context['day1'])
+            print("DAY2: ", context['day2'])
+            print("DAY3: ", context['day3'])
             time1 = '00:00:00'
             context['time1'] = request.POST.get('time1')
             time1 = request.POST.get('time1')
-            print(context['time1'])
+            print("time1: ", context['time1'])
 
             context['time2'] = request.POST.get('time2')
-            print(context['time2'])
+            print("time2: ",context['time2'])
             time2 = request.POST.get('time2')
 
             context['time3'] = request.POST.get('instruments3')
-            print(context['time3'])
+            print("time3: ",context['time3'])
             time3 = request.POST.get('instruments3')
-            print(time3)
 
 
 
 
-        if context['newStudent']:
-            pending_contract_new = pendingLessonContracts_new(first_name=request.user.first_name, last_name=request.user.last_name,
-                                                              instrument=instrument,
-                                                              time=time)
-            pending_contract_new.save()
-        else:
-            pending_contract_old = pendingLessonContracts_old(first_name=request.user.first_name, last_name=request.user.last_name,
-                                                              instrument=instrument,
-                                                              time1='working', time2='', time3=time3)
-            pending_contract_old.save()
+
+        # if context['newStudent']:
+        #     pending_contract_new = pendingLessonContracts_new(first_name=request.user.first_name, last_name=request.user.last_name,
+        #                                                       instrument=instrument,
+        #                                                       time=time)
+        #     pending_contract_new.save()
+        # else:
+        #     pending_contract_old = pendingLessonContracts_old(first_name=request.user.first_name, last_name=request.user.last_name,
+        #                                                       instrument=instrument,
+        #                                                       time1='working', time2='', time3=time3)
+        #     pending_contract_old.save()
 
     return render(request, 'lessonBooking/bookingConfirm.html', context)
 
