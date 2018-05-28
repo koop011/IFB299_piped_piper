@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'root',
-        'PASSWORD': 'semaphoredb',
+        'USER': 'chris',
+        'PASSWORD': 'password',
         'HOST': '',
         'PORT': '',
     }
