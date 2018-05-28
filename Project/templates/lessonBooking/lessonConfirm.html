@@ -2,9 +2,23 @@
 {% block content %}
 
     <div class="container">
-        <div style=" max-width: 40%; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden;
-">
-            <form method="post">
+        <div style=" max-width: 40%; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden;">
+
+            <form method="post" action="/browse/bookingConfirm/">
+
+                <p hidden><input type="text" name="time" value="{{time}}"></input></p>
+                <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
+                <p hidden><input type="text" name="days" value="{{days}}"></input></p>
+                <p hidden><input type="text" name="selected_instrument" value="{{instrument}}"></input></p>
+
+
+                <p hidden><input type="text" name="time1" value="{{time1}}"></input></p>
+                <p hidden><input type="text" name="time2" value="{{time2}}"></input></p>
+                <p hidden><input type="text" name="time3" value="{{time3}}"></input></p>
+                <p hidden><input type="text" name="days1" value="{{days1}}"></input></p>
+                <p hidden><input type="text" name="days2" value="{{days2}}"></input></p>
+                <p hidden><input type="text" name="instruments3" value="{{instruments3}}"></input></p>
+                <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
                 {% csrf_token %}
 
                 <label>Name:</label>
