@@ -2,12 +2,20 @@
 {% block content %}
 
     <div class="container">
-        <div style=" max-width: 40%; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden;">
+        <div style="  padding: 20px;  margin: 0 auto; min-height: 100%; overflow: hidden;">
 
-            <form method="post" action="//">
-                
 
-            </form>
+
+                    <h1>Thank You, {{request.user.first_name}} {{ request.user.last_name }} your class contract is being reviewed</h1>
+
+                    <p>You will be redirected to the home page in 5 seconds</p>
+                    <script>
+                        var timer = setTimeout(function() {
+                            window.location='http://localhost:8000'
+                        }, 5000);
+                    </script>
+
+
         </div>
     </div>
 

@@ -24,12 +24,21 @@
                 months
                 {% endif %}
                 <br>
-                <label>Lesson Times:</label>
+                <label>Lesson details:</label>
                 {% if newStudent %}
                 <p hidden><input type="text" name="timePeriod" value="{{timePeriod}}"></input></p>
                 <p hidden><input type="text" name="day" value={{day}}></input></p>
                 <p hidden><input type="text" name="time" value={{time}}></input></p>
-                    {{ time }}{{ timePeriod }}{{ day }}
+                    <div style="background-color: #bcc2cc; padding: 3px;">
+                        Time: {{ ft }}
+                        {% if timePeriod == 'full' %}
+                            Duration: 60 minutes
+                        {% else %}
+                            Duration: 30 minutes
+                        {% endif %}&nbsp&nbsp&nbsp&nbsp{{ day }}&nbsp&nbsp&nbsp
+
+                    </div>
+
                 {% else %}
                     <p hidden><input type="text" name="timePeriod1" value="{{timePeriod1}}"></input></p>
                     <p hidden><input type="text" name="timePeriod2" value="{{timePeriod2}}"></input></p>
@@ -42,28 +51,35 @@
                     <p hidden><input type="text" name="time3" value={{time3}}></input></p>
 
 
-                    <div style="background-color: #90a8af; padding: 3px;">{{ day1 }},{{ ft1 }},
+                    <div style="background-color: #bcc2cc; padding: 3px;">
+                        Time: {{ ft1 }}&nbsp&nbsp&nbsp
                         {% if timePeriod1 == 'full' %}
-                            1 Hour
+                            Duration: 60 minutes
                         {% else %}
-                            30 minutes
-                        {% endif %}
+                            Duration: 30 minutes
+                        {% endif %}&nbsp&nbsp&nbsp&nbsp{{ day1 }}
                     </div>
+
                     <div style=" padding: 3px;";></div>
-                    <div style="background-color: #90a8af; padding: 3px;">{{ day2 }},{{ ft2 }},
+
+                    <div style="background-color: #bcc2cc; padding: 3px;">
+                        Time: {{ ft2 }}&nbsp&nbsp&nbsp
                         {% if timePeriod2 == 'full' %}
-                            1 Hour
+                            Duration: 60 minutes
                         {% else %}
-                            30 minutes
-                        {% endif %}
+                            Duration: 30 minutes
+                        {% endif %}&nbsp&nbsp&nbsp&nbsp{{ day2 }}
                     </div>
+
                     <div style=" padding: 3px;";></div>
-                    <div style="background-color: #90a8af; padding: 3px;">{{ day3 }},{{ ft3 }},
+
+                    <div style="background-color: #bcc2cc; padding: 3px;">
+                        Time: {{ ft3 }}&nbsp&nbsp&nbsp
                         {% if timePeriod3 == 'full' %}
-                            1 Hour
+                            Duration: 60 minutes
                         {% else %}
-                            30 minutes
-                        {% endif %}
+                            Duration: 30 minutes
+                        {% endif %}&nbsp&nbsp&nbsp&nbsp{{ day3 }}
                     </div>
 
                 {% endif %}
