@@ -12,14 +12,24 @@ class MyTestCase(TestCase):
     def test_urls(self):
         response = self.client.get('/staffManagement/')
         self.assertEquals(response.status_code, self.expected_response_200)
+
+    def test_urls(self):
         response = self.client.get('/staffManagement/reportGeneration')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+    def test_urls(self):
         response = self.client.get('/admin')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+    def test_urls(self):
         response = self.client.get('/staffManagement/postEvent')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+    def test_urls(self):
         response = self.client.get('/staffManagement/contractApproval')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+
 
 if __name__ == '__main__':
     TestCase.main()
