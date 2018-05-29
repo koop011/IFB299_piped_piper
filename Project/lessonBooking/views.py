@@ -257,8 +257,14 @@ def lessonConfirm(request):
 
         if context['newStudent']:
             # get lesson time
-            time = '00:00:00'
+
             context['time'] = request.POST.get('instruments')
+            d = datetime.strptime(context['time'], "%H:%M:%S")
+            t = d.time()
+            ft = t.strftime("%I:%M %p")
+            print(ft)
+            context['ft'] = ft
+            print(context['time'])
             time = context['time']
             print("new student  Time : ", context['time'])
 
