@@ -1,36 +1,53 @@
 import datetime
-
-from django.contrib import admin
+from datetime import date
+from django.utils.translation import gettext_lazy as _
 from .models import StudentData
-from django.contrib.admin.filters import DateFieldListFilter
+from django.contrib import admin
 
 
-# class MyDateTimeFilter(DateFieldListFilter):
-#     def __init__(self, *args, **kwargs):
-#         super(MyDateTimeFilter, self).__init__(*args, **kwargs)
-#
-#         today = datetime.now()
-#
-#         self.links += ((
-#             (_('Under 18'), {
-#                 self.lookup_kwarg_since: str(today),
-#                 self.lookup_kwarg_until: str(today - datetime.timedelta(years=18)),
-#             }),
-#         ))
+class AgeFilter(admin.SimpleListFilter):
+    # Human-readable title which will be displayed in the
+    # right admin sidebar just above the filter options.
+    title = _('Age Bracket')
 
-# min_age = 24
-# max_date = date.today()
-# try:
-#     max_date = max_date.replace(year=max_date.year - min_age)
-# except ValueError: # 29th of february and not a leap year
-#     assert max_date.month == 2 and max_date.day == 29
-#     max_date = max_date.replace(year=max_date.year - min_age, month=2, day=28)
-# StudentData = StudentData.objects.filter(DoB=max_date)
+    # Parameter for the filter that will be used in the URL query.
+    parameter_name = 'AgeBracket'
 
+
+    def lookups(self, request, model_admin):
+        """
+        Returns a list of tuples. The first element in each
+        tuple is the coded value for the option that will
+        appear in the URL query. The second element is the
+        human-readable name for the option that will appear
+        in the right sidebar.
+        """
+        return (
+            ('Over 18', _('Adult')),
+            ('Under 18', _('Child')),
+        )
+
+    def queryset(self, request, queryset):
+        """
+        Returns the filtered queryset based on the value
+        provided in the query string and retrievable via
+        `self.value()`.
+        """
+        # Compare the requested value
+        # to decide how to filter the queryset.
+        today = datetime.date.today()
+
+        if self.value() == 'Over 18':
+            return queryset.filter(DoB__gte=date(1800, 1, 1),
+                                   DoB__lte=datetime.date.today() - datetime.timedelta(weeks=938))
+        if self.value() == 'Under 18':
+            return queryset.filter(DoB__gte=datetime.date.today() - datetime.timedelta(weeks=938),
+                                   DoB__lte=datetime.date.today())
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('FirstName', 'LastName', 'UserName', 'DoB', 'Gender', 'Email' , 'pNumber')
-    list_filter = ('Gender', 'DoB')
+    list_display = ('FirstName', 'LastName', 'UserName', 'DoB', 'Gender', 'Email' , 'pNumber', 'year_born_in')
+    list_filter = ('Gender', AgeFilter)
+
     search_fields = ('FirstName', 'LastName', 'UserName', 'Email')
 
 
