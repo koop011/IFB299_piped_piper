@@ -14,8 +14,8 @@ class MyTestCase(TestCase):
 
 
     def test_first_name(self):
-        author=TeacherData.objects.get(id=1)
-        field_label = author._meta.get_field('fname').verbose_name
+        teacher=TeacherData.objects.get(id=1)
+        field_label = teacher._meta.get_field('fname').verbose_name
         self.assertEquals(field_label, 'fname')
 
 
