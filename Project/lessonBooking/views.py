@@ -85,13 +85,12 @@ def timeBooking(request):
 
     if request.method == "POST":
         context['instrument'] = request.POST.get('instruments')
-        context['timePeriod'] = request.POST.get('timeChoice')
-        context['timePeriod1'] = request.POST.get('timeChoice1')
-        context['timePeriod2'] = request.POST.get('timeChoice2')
-        context['timePeriod3'] = request.POST.get('timeChoice3')
+
+
 
         # create dictionary of time schedule for each instruments
         if context['newStudent']:
+            context['timePeriod'] = request.POST.get('timeChoice')
             # timePeriod
             if context['timePeriod'] == 'half':
                 context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
@@ -106,9 +105,12 @@ def timeBooking(request):
                     for i in context['objects'][context['instrument_time_full']]:
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
         else:
+            context['timePeriod1'] = request.POST.get('timeChoice1')
+            context['timePeriod2'] = request.POST.get('timeChoice2')
+            context['timePeriod3'] = request.POST.get('timeChoice3')
             # timePeriod1
             if context['timePeriod1'] == 'half':
-                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod1'] + '_' + 'hour'
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
@@ -123,7 +125,7 @@ def timeBooking(request):
 
             # timePeriod2
             if context['timePeriod2'] == 'half':
-                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod2'] + '_' + 'hour'
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
@@ -137,7 +139,7 @@ def timeBooking(request):
                         context['timeSheet'][context['instrument_time_full']][i] = i.start_at
             # timePeriod3
             if context['timePeriod3'] == 'half':
-                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod'] + '_' + 'hour'
+                context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod3'] + '_' + 'hour'
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
@@ -163,14 +165,21 @@ def lessonConfirm(request):
     studentModel = apps.get_model('student_account', 'StudentData')
     context = {}
     context['newStudent'] = newStudent(request)
-    if context['newStudent']:
-        context['day'] = request.POST.get('days')
-    else:
-        context['day1'] = request.POST.get('days1')
-        context['day2'] = request.POST.get('days2')
-        context['day3'] = request.POST.get('days3')
 
     if request.method == "POST":
+        if context['newStudent']:
+            context['day'] = request.POST.get('days')
+            context['timePeriod'] = request.POST.get('timePeriod')
+        else:
+            context['day1'] = request.POST.get('days1')
+            context['day2'] = request.POST.get('days2')
+            context['day3'] = request.POST.get('days3')
+            context['timePeriod1'] = request.POST.get('timePeriod1')
+            context['timePeriod2'] = request.POST.get('timePeriod2')
+            context['timePeriod3'] = request.POST.get('timePeriod3')
+            print("timePeriod1: ", context['timePeriod1']) # half, full
+            print("timePeriod2: ", context['timePeriod2']) # half, full
+            print("timePeriod3: ", context['timePeriod3']) # half, full
 
         # get student name
         #currentstudent = studentModel.objects.filter(FirstName=request.user.first_name)
@@ -183,6 +192,8 @@ def lessonConfirm(request):
         #contract_period = request.POST.get('contract_period')
         #print(contract_period)
         context['contract_period'] = request.POST.get('contract_period')
+
+        context['selected_instrument'] = request.POST.get('selected_instrument')
 
         if context['newStudent']:
             # get lesson time
@@ -249,50 +260,88 @@ def lessonConfirm(request):
 def bookingConfirm(request):
     context = {}
     context['newStudent'] = newStudent(request)
+
     if request.method == "POST":
-        first_name = request.user.first_name
-        context['FirstName'] = first_name
-        last_name = request.user.last_name
-        context['LastName'] = last_name
-        print(first_name, last_name)
-
         context['selected_instrument'] = request.POST.get('selected_instrument')
-        print(context['selected_instrument'] )
         context['contract_period'] = request.POST.get('contract_period')
-        print("CONTREACT PERIOD: ", context['contract_period'] )
-
-        context['instruments3'] = request.POST.get('time3')
-        time3 = request.POST.get('time3')
-        print(context['instruments3'])
+        context['timePeriod']= request.POST.get('timePeriod')
+        print("Instrument: ", context['selected_instrument'])
+        print("COntract Period: ", context['contract_period'])
 
         if context['newStudent']:
-            # get lesson time
-            time = '00:00:00'
-            context['time'] = request.POST.get('instruments')
-            time = context['time']
-            context['day'] = request.POST.get('days')
+            context['time'] = request.POST.get('time')
+            context['day'] = request.POST.get('day')
+            context['timePeriod'] = request.POST.get('timePeriod')
+            print("Time: ", context['time'])
             print("DAY: ", context['day'])
-            print("time: ", context['time'])
+            print("timePeriod: ", context['timePeriod']) # half, full
         else:
+            context['time1'] = request.POST.get('time1')
+            context['time2'] = request.POST.get('time2')
+            context['time3'] = request.POST.get('time3')
             context['day1'] = request.POST.get('day1')
             context['day2'] = request.POST.get('day2')
             context['day3'] = request.POST.get('day3')
+            context['timePeriod1'] = request.POST.get('timePeriod1')
+            context['timePeriod2'] = request.POST.get('timePeriod2')
+            context['timePeriod3'] = request.POST.get('timePeriod3')
+            print("Time1: ", context['time1'])
+            print("Time2: ", context['time2'])
+            print("Time3: ", context['time3'])
             print("DAY1: ", context['day1'])
             print("DAY2: ", context['day2'])
             print("DAY3: ", context['day3'])
-            time1 = '00:00:00'
-            context['time1'] = request.POST.get('time1')
-            time1 = request.POST.get('time1')
-            print("time1: ", context['time1'])
+            print("timePeriod1: ", context['timePeriod1']) # half, full
+            print("timePeriod2: ", context['timePeriod2']) # half, full
+            print("timePeriod3: ", context['timePeriod3']) # half, full
 
-            context['time2'] = request.POST.get('time2')
-            print("time2: ",context['time2'])
-            time2 = request.POST.get('time2')
 
-            context['time3'] = request.POST.get('instruments3')
-            print("time3: ",context['time3'])
-            time3 = request.POST.get('instruments3')
 
+
+    # if request.method == "POST":
+    #     first_name = request.user.first_name
+    #     context['FirstName'] = first_name
+    #     last_name = request.user.last_name
+    #     context['LastName'] = last_name
+    #     print(first_name, last_name)
+    #
+    #     context['selected_instrument'] = request.POST.get('selected_instrument')
+    #     print(context['selected_instrument'] )
+    #     context['contract_period'] = request.POST.get('contract_period')
+    #     print("CONTREACT PERIOD: ", context['contract_period'] )
+    #
+    #     context['instruments3'] = request.POST.get('time3')
+    #     time3 = request.POST.get('time3')
+    #     print(context['instruments3'])
+    #
+    #     if context['newStudent']:
+    #         # get lesson time
+    #         time = '00:00:00'
+    #         context['time'] = request.POST.get('instruments')
+    #         time = context['time']
+    #         context['day'] = request.POST.get('days')
+    #         print("DAY: ", context['day'])
+    #         print("time: ", context['time'])
+    #     else:
+    #         context['day1'] = request.POST.get('day1')
+    #         context['day2'] = request.POST.get('day2')
+    #         context['day3'] = request.POST.get('day3')
+    #         print("DAY1: ", context['day1'])
+    #         print("DAY2: ", context['day2'])
+    #         print("DAY3: ", context['day3'])
+    #         time1 = '00:00:00'
+    #         context['time1'] = request.POST.get('time1')
+    #         time1 = request.POST.get('time1')
+    #         print("time1: ", context['time1'])
+    #
+    #         context['time2'] = request.POST.get('time2')
+    #         print("time2: ",context['time2'])
+    #         time2 = request.POST.get('time2')
+    #
+    #         context['time3'] = request.POST.get('instruments3')
+    #         print("time3: ",context['time3'])
+    #         time3 = request.POST.get('instruments3')
+    #
 
 
 

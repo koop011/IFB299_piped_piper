@@ -5,7 +5,9 @@
         <div style=" max-width: 40%; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden;">
 
             <form method="post" action="/browse/bookingConfirm/">
+                <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
 
+                <p hidden><input type="text" name="selected_instrument" value="{{selected_instrument}}"></input></p>
                 {% csrf_token %}
 
                 <label>Name:</label>
@@ -16,12 +18,21 @@
                 <br>
                 <label>Lesson Time:</label>
                 {% if newStudent %}
-                    <p hidden><input type="text" name="day" value={{day}}></input></p>
+                <p hidden><input type="text" name="timePeriod" value="{{timePeriod}}"></input></p>
+                <p hidden><input type="text" name="day" value={{day}}></input></p>
+                <p hidden><input type="text" name="time" value={{time}}></input></p>
                     {{ time }}
                 {% else %}
+                    <p hidden><input type="text" name="timePeriod1" value="{{timePeriod1}}"></input></p>
+                    <p hidden><input type="text" name="timePeriod2" value="{{timePeriod2}}"></input></p>
+                    <p hidden><input type="text" name="timePeriod3" value="{{timePeriod3}}"></input></p>
                     <p hidden><input type="text" name="day1" value={{day1}}></input></p>
                     <p hidden><input type="text" name="day2" value={{day2}}></input></p>
                     <p hidden><input type="text" name="day3" value={{day3}}></input></p>
+                    <p hidden><input type="text" name="time1" value={{time1}}></input></p>
+                    <p hidden><input type="text" name="time2" value={{time2}}></input></p>
+                    <p hidden><input type="text" name="time3" value={{time3}}></input></p>
+
                     {{ time1 }},{{ time2 }},{{ time3 }}
                 {% endif %}
                 <br>
