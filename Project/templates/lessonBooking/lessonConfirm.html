@@ -16,12 +16,20 @@
                 <label>Instrument:</label>
                 {{instrument}}
                 <br>
-                <label>Lesson Time:</label>
+                <label>Contract length:</label>
+                {{contract_period}}
+                {% if contract_period == '1' %}
+                month
+                {% else %}
+                months
+                {% endif %}
+                <br>
+                <label>Lesson Times:</label>
                 {% if newStudent %}
                 <p hidden><input type="text" name="timePeriod" value="{{timePeriod}}"></input></p>
                 <p hidden><input type="text" name="day" value={{day}}></input></p>
                 <p hidden><input type="text" name="time" value={{time}}></input></p>
-                    {{ time }}
+                    {{ time }}{{ timePeriod }}{{ day }}
                 {% else %}
                     <p hidden><input type="text" name="timePeriod1" value="{{timePeriod1}}"></input></p>
                     <p hidden><input type="text" name="timePeriod2" value="{{timePeriod2}}"></input></p>
@@ -33,8 +41,33 @@
                     <p hidden><input type="text" name="time2" value={{time2}}></input></p>
                     <p hidden><input type="text" name="time3" value={{time3}}></input></p>
 
-                    {{ time1 }},{{ time2 }},{{ time3 }}
+
+                    <div style="background-color: #90a8af; padding: 3px;">{{ day1 }},{{ ft1 }},
+                        {% if timePeriod1 == 'full' %}
+                            1 Hour
+                        {% else %}
+                            30 minutes
+                        {% endif %}
+                    </div>
+                    <div style=" padding: 3px;";></div>
+                    <div style="background-color: #90a8af; padding: 3px;">{{ day2 }},{{ ft2 }},
+                        {% if timePeriod2 == 'full' %}
+                            1 Hour
+                        {% else %}
+                            30 minutes
+                        {% endif %}
+                    </div>
+                    <div style=" padding: 3px;";></div>
+                    <div style="background-color: #90a8af; padding: 3px;">{{ day3 }},{{ ft3 }},
+                        {% if timePeriod3 == 'full' %}
+                            1 Hour
+                        {% else %}
+                            30 minutes
+                        {% endif %}
+                    </div>
+
                 {% endif %}
+
                 <br>
                 <br>
 

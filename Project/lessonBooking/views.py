@@ -3,6 +3,7 @@ from datetime import timedelta
 from django.utils import timezone
 from django.apps import apps
 from .models import *
+from datetime import datetime
 from collections import defaultdict
 
 
@@ -204,18 +205,30 @@ def lessonConfirm(request):
 
         else:
 
-            time1 = '00:00:00'
             context['time1'] = request.POST.get('instruments1')
-            time1 = request.POST.get('instruments1')
+            d1 = datetime.strptime(context['time1'], "%H:%M:%S")
+            t1 = d1.time()
+            ft1 = t1.strftime("%I:%M %p")
+            print(ft1)
+            context['ft1'] = ft1
             print(context['time1'])
 
             context['time2'] = request.POST.get('instruments2')
+            d2 = datetime.strptime(context['time2'], "%H:%M:%S")
+            t2 = d2.time()
+            ft2 = t2.strftime("%I:%M %p")
+            print(ft2)
+            context['ft2'] = ft2
             print(context['time2'])
-            time2 = request.POST.get('instruments2')
 
             context['time3'] = request.POST.get('instruments3')
+            d3 = datetime.strptime(context['time3'], "%H:%M:%S")
+            t3 = d3.time()
+            ft3 = t3.strftime("%I:%M %p")
+            print(ft3)
+            context['ft3'] = ft3
             print(context['time3'])
-            time3 = request.POST.get('instruments3')
+
 
 
 
@@ -266,7 +279,7 @@ def bookingConfirm(request):
         context['contract_period'] = request.POST.get('contract_period')
         context['timePeriod']= request.POST.get('timePeriod')
         print("Instrument: ", context['selected_instrument'])
-        print("COntract Period: ", context['contract_period'])
+        print("Contract Period: ", context['contract_period'])
 
         if context['newStudent']:
             context['time'] = request.POST.get('time')
@@ -277,8 +290,20 @@ def bookingConfirm(request):
             print("timePeriod: ", context['timePeriod']) # half, full
         else:
             context['time1'] = request.POST.get('time1')
+
+
             context['time2'] = request.POST.get('time2')
+            # d1 = datetime.strptime(request.POST.get('time1'), "%H:%M:%S")
+            # t1 = d1.time()
+            # ft1 = t1.strftime("%H:%M %p")
+            # print(ft1)
+
             context['time3'] = request.POST.get('time3')
+            # d1 = datetime.strptime(request.POST.get('time1'), "%H:%M:%S")
+            # t1 = d1.time()
+            # ft1 = t1.strftime("%H:%M %p")
+            # print(ft1)
+
             context['day1'] = request.POST.get('day1')
             context['day2'] = request.POST.get('day2')
             context['day3'] = request.POST.get('day3')
@@ -296,66 +321,22 @@ def bookingConfirm(request):
             print("timePeriod3: ", context['timePeriod3']) # half, full
 
 
-
-
-    # if request.method == "POST":
-    #     first_name = request.user.first_name
-    #     context['FirstName'] = first_name
-    #     last_name = request.user.last_name
-    #     context['LastName'] = last_name
-    #     print(first_name, last_name)
-    #
-    #     context['selected_instrument'] = request.POST.get('selected_instrument')
-    #     print(context['selected_instrument'] )
-    #     context['contract_period'] = request.POST.get('contract_period')
-    #     print("CONTREACT PERIOD: ", context['contract_period'] )
-    #
-    #     context['instruments3'] = request.POST.get('time3')
-    #     time3 = request.POST.get('time3')
-    #     print(context['instruments3'])
-    #
-    #     if context['newStudent']:
-    #         # get lesson time
-    #         time = '00:00:00'
-    #         context['time'] = request.POST.get('instruments')
-    #         time = context['time']
-    #         context['day'] = request.POST.get('days')
-    #         print("DAY: ", context['day'])
-    #         print("time: ", context['time'])
-    #     else:
-    #         context['day1'] = request.POST.get('day1')
-    #         context['day2'] = request.POST.get('day2')
-    #         context['day3'] = request.POST.get('day3')
-    #         print("DAY1: ", context['day1'])
-    #         print("DAY2: ", context['day2'])
-    #         print("DAY3: ", context['day3'])
-    #         time1 = '00:00:00'
-    #         context['time1'] = request.POST.get('time1')
-    #         time1 = request.POST.get('time1')
-    #         print("time1: ", context['time1'])
-    #
-    #         context['time2'] = request.POST.get('time2')
-    #         print("time2: ",context['time2'])
-    #         time2 = request.POST.get('time2')
-    #
-    #         context['time3'] = request.POST.get('instruments3')
-    #         print("time3: ",context['time3'])
-    #         time3 = request.POST.get('instruments3')
-    #
-
-
-
-
-        # if context['newStudent']:
-        #     pending_contract_new = pendingLessonContracts_new(first_name=request.user.first_name, last_name=request.user.last_name,
-        #                                                       instrument=instrument,
-        #                                                       time=time)
-        #     pending_contract_new.save()
-        # else:
-        #     pending_contract_old = pendingLessonContracts_old(first_name=request.user.first_name, last_name=request.user.last_name,
-        #                                                       instrument=instrument,
-        #                                                       time1='working', time2='', time3=time3)
-        #     pending_contract_old.save()
+        if context['newStudent']:
+            pending_contract_new = pendingLessonContracts_new(first_name=request.user.first_name, last_name=request.user.last_name,
+                                                              contract_period=request.POST.get('contract_period'),
+                                                              instrument=request.POST.get('selected_instrument'),
+                                                              time=request.POST.get('time'),
+                                                              day=request.POST.get('day'),
+                                                              timePeriod=request.POST.get('timePeriod'))
+            pending_contract_new.save()
+        else:
+            pending_contract_old = pendingLessonContracts_old(first_name=request.user.first_name, last_name=request.user.last_name,
+                                                              contract_period=request.POST.get('contract_period'),
+                                                              instrument=request.POST.get('selected_instrument'),
+                                                              time1=request.POST.get('time1'), time2=request.POST.get('time2'), time3=request.POST.get('time3'),
+                                                              day1=request.POST.get('day1'), day2=request.POST.get('day2'), day3=request.POST.get('day3'),
+                                                              timePeriod1=request.POST.get('timePeriod1'), timePeriod2=request.POST.get('timePeriod2'), timePeriod3=request.POST.get('timePeriod3'))
+            pending_contract_old.save()
 
     return render(request, 'lessonBooking/bookingConfirm.html', context)
 

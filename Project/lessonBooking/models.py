@@ -104,23 +104,37 @@ class clarinet_half_hour(models.Model):
     def __str__(self):
         return str(self.start_at)
 
-# class pendingLessonContracts_new(models.Model):
-#     first_name = models.CharField(max_length=200, default='none')
-#     last_name = models.CharField(max_length=200, default='none')
-#     instrument = models.CharField(max_length=200, default='none')
-#     time = models.CharField(default='none', max_length=20)
-# 
-# class pendingLessonContracts_old(models.Model):
-#     first_name = models.CharField(max_length=200, default='none')
-#     last_name = models.CharField(max_length=200, default='none')
-#     instrument = models.CharField(max_length=200, default='none')
-#     time1 = models.CharField(default='none', max_length=20)
-#     time2 = models.CharField(default='none', max_length=20)
-#     time3 = models.CharField(default='none', max_length=20)
-
+class pendingLessonContracts_new(models.Model):
+    first_name = models.CharField(max_length=200, default='none')
+    last_name = models.CharField(max_length=200, default='none')
+    contract_period = models.CharField(max_length=10, default='none')
+    instrument = models.CharField(max_length=200, default='none')
+    time = models.CharField(default='none', max_length=20)
+    day = models.CharField(default='none', max_length=20)
+    timePeriod = models.CharField(default='none', max_length=20)
 
     def __str__(self):
-        return str(self.start_at)
+        return self.first_name
+
+class pendingLessonContracts_old(models.Model):
+    first_name = models.CharField(max_length=200, default='none')
+    last_name = models.CharField(max_length=200, default='none')
+    contract_period = models.CharField(max_length=10, default='none')
+    instrument = models.CharField(max_length=200, default='none')
+    time1 = models.CharField(default='none', max_length=20)
+    time2 = models.CharField(default='none', max_length=20)
+    time3 = models.CharField(default='none', max_length=20)
+    day1 = models.CharField(default='none', max_length=20)
+    day2 = models.CharField(default='none', max_length=20)
+    day3 = models.CharField(default='none', max_length=20)
+    timePeriod1 = models.CharField(default='none', max_length=20)
+    timePeriod2 = models.CharField(default='none', max_length=20)
+    timePeriod3 = models.CharField(default='none', max_length=20)
+
+    def __str__(self):
+        return self.first_name
+
+
 
 class days(models.Model):
     day = models.CharField(max_length=10, default='none')
