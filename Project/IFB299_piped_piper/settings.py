@@ -85,7 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'chris',
+        'USER': 'root',
         'PASSWORD': 'password',
         'HOST': '',
         'PORT': '',
