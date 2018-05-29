@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Sprint 1 Test Suite</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Navbar hyperlink test</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://127.0.0.1:8000/<datalist><option>http://127.0.0.1:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=About us<datalist><option>link=About us</option><option>//a[contains(text(),'About us')]</option><option>//div[@id='navbarNav']/ul/li[2]/a</option><option>//a[contains(@href, '/about/')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Contact us<datalist><option>link=Contact us</option><option>//a[contains(text(),'Contact us')]</option><option>//div[@id='navbarNav']/ul/li[3]/a</option><option>//a[contains(@href, '/contact/')]</option><option>//li[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Browse classes<datalist><option>link=Browse classes</option><option>//a[contains(text(),'Browse classes')]</option><option>//div[@id='navbarNav']/ul/li[4]/a</option><option>//a[contains(@href, '/browse/')]</option><option>//li[4]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Careers<datalist><option>link=Careers</option><option>//a[contains(text(),'Careers')]</option><option>//div[@id='navbarNav']/ul/li[5]/a</option><option>//a[contains(@href, '/careers/')]</option><option>//li[5]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Create Student Account<datalist><option>link=Create Student Account</option><option>//a[contains(text(),'Create Student Account')]</option><option>//div[@id='navbarNav']/ul/li[6]/a</option><option>//a[contains(@href, '/create_account/')]</option><option>//li[6]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/login/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Admin<datalist><option>link=Admin</option><option>//a[contains(text(),'Admin')]</option><option>//div[@id='navbarNav']/ul/li[6]/a</option><option>//a[contains(@href, '/admin/')]</option><option>//li[6]/a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Log in and Log out Test</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/login/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td>test</td>
+</tr>
+<tr><td>type</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td>userpassword</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=ManageBookings<datalist><option>link=ManageBookings</option><option>//a[contains(text(),'ManageBookings')]</option><option>//a[contains(@href, '/account/Manage_Bookings/')]</option><option>//div/a</option><option>css=a.link</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Book a lesson<datalist><option>link=Book a lesson</option><option>//a[contains(text(),'Book a lesson')]</option><option>//a[contains(@href, '/account/BookLesson/')]</option><option>//a[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Manage Contracts<datalist><option>link=Manage Contracts</option><option>//a[contains(text(),'Manage Contracts')]</option><option>//a[contains(@href, '/account/ManageContract/')]</option><option>//a[3]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Hire Instruments<datalist><option>link=Hire Instruments</option><option>//a[contains(text(),'Hire Instruments')]</option><option>//a[contains(@href, '/account/HireIntstrument/')]</option><option>//a[4]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Confirm Contracts<datalist><option>link=Confirm Contracts</option><option>//a[contains(text(),'Confirm Contracts')]</option><option>//a[contains(@href, '/account/ConfirmContract/')]</option><option>//a[5]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Give Feedback<datalist><option>link=Give Feedback</option><option>//a[contains(text(),'Give Feedback')]</option><option>//a[contains(@href, '/account/Feedback/')]</option><option>//a[6]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Account<datalist><option>link=Account</option><option>//a[contains(text(),'Account')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/account/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Log Out<datalist><option>link=Log Out</option><option>//a[contains(text(),'Log Out')]</option><option>//div[@id='navbarNav']/ul/li[8]/a</option><option>//a[contains(@href, '/login/loggedOut/')]</option><option>//li[8]/a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Create Student Account test</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Create Student Account<datalist><option>link=Create Student Account</option><option>//a[contains(text(),'Create Student Account')]</option><option>//div[@id='navbarNav']/ul/li[6]/a</option><option>//a[contains(@href, '/create_account/')]</option><option>//li[6]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//form<datalist><option>//form</option><option>css=form.md-form</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=FirstName<datalist><option>id=FirstName</option><option>name=FirstName</option><option>//input[@id='FirstName']</option><option>//div/input</option><option>css=#FirstName</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=FirstName<datalist><option>id=FirstName</option><option>name=FirstName</option><option>//input[@id='FirstName']</option><option>//div/input</option><option>css=#FirstName</option></datalist></td><td>Christopher</td>
+</tr>
+<tr><td>type</td><td>id=LastName<datalist><option>id=LastName</option><option>name=LastName</option><option>//input[@id='LastName']</option><option>//div[2]/input</option><option>css=#LastName</option></datalist></td><td>Haywood</td>
+</tr>
+<tr><td>type</td><td>id=UserName<datalist><option>id=UserName</option><option>name=UserName</option><option>//input[@id='UserName']</option><option>//div[2]/div/input</option><option>css=#UserName</option></datalist></td><td>ChrisTheTester</td>
+</tr>
+<tr><td>click</td><td>id=password<datalist><option>id=password</option><option>name=password</option><option>//input[@id='password']</option><option>//div[2]/div[2]/input</option><option>css=#password</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=password<datalist><option>id=password</option><option>name=password</option><option>//input[@id='password']</option><option>//div[2]/div[2]/input</option><option>css=#password</option></datalist></td><td>TesterPassword</td>
+</tr>
+<tr><td>type</td><td>id=DoB<datalist><option>id=DoB</option><option>name=DoB</option><option>//input[@id='DoB']</option><option>//div[3]/input</option><option>css=#DoB</option></datalist></td><td>0001-04-30</td>
+</tr>
+<tr><td>type</td><td>id=DoB<datalist><option>id=DoB</option><option>name=DoB</option><option>//input[@id='DoB']</option><option>//div[3]/input</option><option>css=#DoB</option></datalist></td><td>0019-04-30</td>
+</tr>
+<tr><td>type</td><td>id=DoB<datalist><option>id=DoB</option><option>name=DoB</option><option>//input[@id='DoB']</option><option>//div[3]/input</option><option>css=#DoB</option></datalist></td><td>0199-04-30</td>
+</tr>
+<tr><td>type</td><td>id=DoB<datalist><option>id=DoB</option><option>name=DoB</option><option>//input[@id='DoB']</option><option>//div[3]/input</option><option>css=#DoB</option></datalist></td><td>1991-04-30</td>
+</tr>
+<tr><td>click</td><td>//div[4]/label<datalist><option>//div[4]/label</option><option>css=label.form-check-label</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=HomeAddress<datalist><option>id=HomeAddress</option><option>name=HomeAddress</option><option>//input[@id='HomeAddress']</option><option>//div[7]/input</option><option>css=#HomeAddress</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=HomeAddress<datalist><option>id=HomeAddress</option><option>name=HomeAddress</option><option>//input[@id='HomeAddress']</option><option>//div[7]/input</option><option>css=#HomeAddress</option></datalist></td><td>29 Dulendella St</td>
+</tr>
+<tr><td>type</td><td>id=email<datalist><option>id=email</option><option>name=email</option><option>//input[@id='email']</option><option>//div[8]/input</option><option>css=#email</option></datalist></td><td>christopher.haywood91@gmail.com</td>
+</tr>
+<tr><td>click</td><td>id=pNumber<datalist><option>id=pNumber</option><option>name=pNumber</option><option>//input[@id='pNumber']</option><option>//div[9]/input</option><option>css=#pNumber</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=pNumber<datalist><option>id=pNumber</option><option>name=pNumber</option><option>//input[@id='pNumber']</option><option>//div[9]/input</option><option>css=#pNumber</option></datalist></td><td>0404221978</td>
+</tr>
+<tr><td>click</td><td>id=subjects<datalist><option>id=subjects</option><option>name=subjects</option><option>//textarea[@id='subjects']</option><option>//textarea</option><option>css=#subjects</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=subjects<datalist><option>id=subjects</option><option>name=subjects</option><option>//textarea[@id='subjects']</option><option>//textarea</option><option>css=#subjects</option></datalist></td><td>Piano Violin Drums Trumpets</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//div[11]/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>//a[contains(@href, '/login/')]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td>ChrisTheTester</td>
+</tr>
+<tr><td>click</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td>TesterPassword</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Teacher job application test</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Careers<datalist><option>link=Careers</option><option>//a[contains(text(),'Careers')]</option><option>//div[@id='navbarNav']/ul/li[5]/a</option><option>//a[contains(@href, '/careers/')]</option><option>//li[5]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=fname<datalist><option>name=fname</option><option>//input[@name='fname']</option><option>//input[2]</option><option>css=input[name="fname"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fname<datalist><option>name=fname</option><option>//input[@name='fname']</option><option>//input[2]</option><option>css=input[name="fname"]</option></datalist></td><td>Chris</td>
+</tr>
+<tr><td>click</td><td>name=lname<datalist><option>name=lname</option><option>//input[@name='lname']</option><option>//input[3]</option><option>css=input[name="lname"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=lname<datalist><option>name=lname</option><option>//input[@name='lname']</option><option>//input[3]</option><option>css=input[name="lname"]</option></datalist></td><td>Teacherson</td>
+</tr>
+<tr><td>click</td><td>name=DoB<datalist><option>name=DoB</option><option>//input[@name='DoB']</option><option>//input[4]</option><option>css=input[name="DoB"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=DoB<datalist><option>name=DoB</option><option>//input[@name='DoB']</option><option>//input[4]</option><option>css=input[name="DoB"]</option></datalist></td><td>0001-04-30</td>
+</tr>
+<tr><td>type</td><td>name=DoB<datalist><option>name=DoB</option><option>//input[@name='DoB']</option><option>//input[4]</option><option>css=input[name="DoB"]</option></datalist></td><td>0019-04-30</td>
+</tr>
+<tr><td>type</td><td>name=DoB<datalist><option>name=DoB</option><option>//input[@name='DoB']</option><option>//input[4]</option><option>css=input[name="DoB"]</option></datalist></td><td>0199-04-30</td>
+</tr>
+<tr><td>type</td><td>name=DoB<datalist><option>name=DoB</option><option>//input[@name='DoB']</option><option>//input[4]</option><option>css=input[name="DoB"]</option></datalist></td><td>1991-04-30</td>
+</tr>
+<tr><td>click</td><td>name=HomeAddress<datalist><option>name=HomeAddress</option><option>//input[@name='HomeAddress']</option><option>//input[5]</option><option>css=input[name="HomeAddress"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=HomeAddress<datalist><option>name=HomeAddress</option><option>//input[@name='HomeAddress']</option><option>//input[5]</option><option>css=input[name="HomeAddress"]</option></datalist></td><td></td>
+</tr>
+<tr><td>doubleClick</td><td>name=HomeAddress<datalist><option>name=HomeAddress</option><option>//input[@name='HomeAddress']</option><option>//input[5]</option><option>css=input[name="HomeAddress"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=HomeAddress<datalist><option>name=HomeAddress</option><option>//input[@name='HomeAddress']</option><option>//input[5]</option><option>css=input[name="HomeAddress"]</option></datalist></td><td>29 Dulendella St</td>
+</tr>
+<tr><td>type</td><td>name=email<datalist><option>name=email</option><option>//input[@name='email']</option><option>//input[6]</option><option>css=input[name="email"]</option></datalist></td><td>christopher.haywood91@gmail.com</td>
+</tr>
+<tr><td>click</td><td>name=pNumber<datalist><option>name=pNumber</option><option>//input[@name='pNumber']</option><option>//input[7]</option><option>css=input[name="pNumber"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=pNumber<datalist><option>name=pNumber</option><option>//input[@name='pNumber']</option><option>//input[7]</option><option>css=input[name="pNumber"]</option></datalist></td><td>0421562353</td>
+</tr>
+<tr><td>click</td><td>name=certificates<datalist><option>name=certificates</option><option>//textarea[@name='certificates']</option><option>//textarea</option><option>css=textarea[name="certificates"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=certificates<datalist><option>name=certificates</option><option>//textarea[@name='certificates']</option><option>//textarea</option><option>css=textarea[name="certificates"]</option></datalist></td><td>Bachelor Of music from the brisbane school of music</td>
+</tr>
+<tr><td>click</td><td>name=subjects<datalist><option>name=subjects</option><option>//textarea[@name='subjects']</option><option>//textarea[2]</option><option>css=textarea[name="subjects"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=subjects<datalist><option>name=subjects</option><option>//textarea[@name='subjects']</option><option>//textarea[2]</option><option>css=textarea[name="subjects"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=subjects<datalist><option>name=subjects</option><option>//textarea[@name='subjects']</option><option>//textarea[2]</option><option>css=textarea[name="subjects"]</option></datalist></td><td>Piano, drums and Trumpet</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Admin Page Test</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Admin<datalist><option>link=Admin</option><option>//a[contains(text(),'Admin')]</option><option>//div[@id='navbarNav']/ul/li[6]/a</option><option>//a[contains(@href, '/admin/')]</option><option>//li[6]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=id_username<datalist><option>id=id_username</option><option>name=username</option><option>//input[@id='id_username']</option><option>//form[@id='login-form']/div/input</option><option>//div/input</option><option>css=#id_username</option></datalist></td><td>Admin</td>
+</tr>
+<tr><td>type</td><td>id=id_password<datalist><option>id=id_password</option><option>name=password</option><option>//input[@id='id_password']</option><option>//form[@id='login-form']/div[2]/input</option><option>//div[2]/input</option><option>css=#id_password</option></datalist></td><td>adminpassword</td>
+</tr>
+<tr><td>click</td><td>//input[@value='Log in']<datalist><option>//input[@value='Log in']</option><option>//form[@id='login-form']/div[3]/input</option><option>//div[3]/input</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Student datas<datalist><option>link=Student datas</option><option>//a[contains(text(),'Student datas')]</option><option>//div[@id='content-main']/div[4]/table/tbody/tr/th/a</option><option>//a[contains(@href, '/admin/student_account/studentdata/')]</option><option>//div[4]/table/tbody/tr/th/a</option><option>css=tr.model-studentdata &gt; th &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//html<datalist><option>//html</option><option>css=html.gr__localhost</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Django administration<datalist><option>link=Django administration</option><option>//a[contains(text(),'Django administration')]</option><option>//h1[@id='site-name']/a</option><option>//a[contains(@href, '/admin/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Accounts<datalist><option>link=Accounts</option><option>//a[contains(text(),'Accounts')]</option><option>//div[@id='content-main']/div[3]/table/tbody/tr/th/a</option><option>//a[contains(@href, '/admin/loginPage/account/')]</option><option>//div[3]/table/tbody/tr/th/a</option><option>css=tr.model-account &gt; th &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Django administration<datalist><option>link=Django administration</option><option>//a[contains(text(),'Django administration')]</option><option>//h1[@id='site-name']/a</option><option>//a[contains(@href, '/admin/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//html<datalist><option>//html</option><option>css=html.gr__localhost</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Users<datalist><option>link=Users</option><option>//a[contains(text(),'Users')]</option><option>//div[@id='content-main']/div/table/tbody/tr[2]/th/a</option><option>//a[contains(@href, '/admin/auth/user/')]</option><option>//tr[2]/th/a</option><option>css=tr.model-user &gt; th &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Django administration<datalist><option>link=Django administration</option><option>//a[contains(text(),'Django administration')]</option><option>//h1[@id='site-name']/a</option><option>//a[contains(@href, '/admin/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Groups<datalist><option>link=Groups</option><option>//a[contains(text(),'Groups')]</option><option>//div[@id='content-main']/div/table/tbody/tr/th/a</option><option>//a[contains(@href, '/admin/auth/group/')]</option><option>//th/a</option><option>css=th &gt; a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Django administration<datalist><option>link=Django administration</option><option>//a[contains(text(),'Django administration')]</option><option>//h1[@id='site-name']/a</option><option>//a[contains(@href, '/admin/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Teacher datas<datalist><option>link=Teacher datas</option><option>//a[contains(text(),'Teacher datas')]</option><option>//div[@id='content-main']/div[2]/table/tbody/tr/th/a</option><option>//a[contains(@href, '/admin/contact_page/teacherdata/')]</option><option>//div[2]/table/tbody/tr/th/a</option><option>css=tr.model-teacherdata &gt; th &gt; a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
