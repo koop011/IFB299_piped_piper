@@ -29,14 +29,18 @@ class test_login_page(TestCase):
     def test_login_url(self):
         path = reverse('loginIndex')
         assert resolve(path).view_name == 'loginIndex'
-
-    def test_urls(self):
         response = self.client.get('/login/')
         self.assertEquals(response.status_code, self.expected_response_200)
+
+    def test_urls(self):
         response = self.client.get('/login/loggedOut')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+    def test_urls(self):
         response = self.client.get('/login/loggedIn')
         self.assertEquals(response.status_code, self.expected_response_301)
+
+    def test_urls(self):
         response = self.client.get('/login/invalid')
         self.assertEquals(response.status_code, self.expected_response_301)
 
