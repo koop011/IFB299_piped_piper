@@ -15,7 +15,7 @@ def student_account(request):
         HomeAddress = request.POST.get("HomeAddress")
         Email = request.POST.get("email")
         pNumber = request.POST.get("pNumber")
-        subjects = request.POST.get("subjects")
+        preferredSubjects = request.POST.get("subjects")
         pFirstName = request.POST.get("pFirstName")
         pLastName = request.POST.get("pLastName")
         parentsNumber = request.POST.get("parentsNumber")
@@ -23,7 +23,7 @@ def student_account(request):
 
         student_data = StudentData(FirstName=FirstName, LastName=LastName, Gender=Gender,
                                    UserName=UserName, password=password, DoB=DoB, HomeAddress=HomeAddress, Email=Email,
-                                   pNumber=pNumber, subjects=subjects, pFirstName=pFirstName, pLastName=pLastName,
+                                   pNumber=pNumber, preferredSubjects=preferredSubjects, pFirstName=pFirstName, pLastName=pLastName,
                                    parentsNumber = parentsNumber, pEmail = pEmail)
         student_data.save()
         user = User.objects.create_user(username=UserName, password=password, email=Email, first_name=FirstName,
@@ -33,6 +33,6 @@ def student_account(request):
 
     return render(request, 'student_account/student_account.html')
 
-
 def submitForm(request):
     return render(request, 'contact_page/form_submitted.html')
+
