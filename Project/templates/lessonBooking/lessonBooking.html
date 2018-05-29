@@ -4,6 +4,15 @@
 <div class="container">
     <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/timeBooking/" name="bookLessons">
         {% csrf_token %}
+        <label>Select the period of contract:</label>
+        <br>
+        <select id="id_months" name="months">
+            {% for i in timeSheet.months %}
+            <option value={{ i }}>{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
         <label>Pick an Instrument:</label>
         <br>
         <select id="id_instruments" onchange="descFunction()" name="instruments">
@@ -39,24 +48,24 @@
                         <div class="col-sm">
                             <br>
                             <b>1st Class</b><br>
-                            <input type="radio" name="timeChoice1" id="half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice1" id="full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice1" id="id_half" value="half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice1" id="id_full" value="full"> 1 Hour<br>
 
                             <br>
                         </div>
                         <div class="col-sm">
                             <br>
                             <b>2nd Class</b><br>
-                            <input type="radio" name="timeChoice2" id="half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice2" id="full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice2" id="id_half" value="half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice2" id="id_full" value="full"> 1 Hour<br>
 
                             <br>
                         </div>
                         <div class="col-sm">
                             <br>
                             <b>3rd Class</b><br>
-                            <input type="radio" name="timeChoice3" id="half"> 30 Minutes<br>
-                            <input type="radio" name="timeChoice3" id="full"> 1 Hour<br>
+                            <input type="radio" name="timeChoice3" id="id_half" value="half"> 30 Minutes<br>
+                            <input type="radio" name="timeChoice3" id="id_full" value="full"> 1 Hour<br>
 
                             <br>
                         </div>
