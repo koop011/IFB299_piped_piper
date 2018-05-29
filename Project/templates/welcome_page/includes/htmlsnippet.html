@@ -1,4 +1,91 @@
 {% block content %}
-<p>Included snippet </p>
+    <div class="container" style="max-width: 1000px; padding: 20px; background-color: #d6d8d9; margin: 0 auto; min-height: 100%; overflow: hidden">
+        <style>
+            .column{
+                background-color: ;
+                width: 50%;
+                height: 100%;
+
+            }
+
+            .outerl{
+                height: 100px;
+                width: 98%;
+                background-color: green;
+                float: left;
+                margin-top:10px;
+            }
+
+            .outerr{
+                height: 100px;
+                width: 98%;
+                background-color: green;
+                float: right;
+                margin-top:10px;
+            }
+        </style>
+        <div class="row">
+            <div class="column">
+                <div class="outerl">
+                    <a class="nav-link" href='/'>Home</a> <span class="sr-only">(current)</span></a>
+                </div>
+                <div class="outerl">
+                    <a class="nav-link" href='/about/'>About us</a>
+                </div>
+                <div class="outerl">
+                    <a class="nav-link" href='/contactus/'>Contact us</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="outerl">
+                        <a class="nav-link" href='/browse/'>Browse classes</a>
+                    </div>
+                {% endif %}
+                {% if not request.user.is_authenticated %}
+                    <div class="outerl">
+                        <a class="nav-link" href='/login/'>Browse classes</a>
+                    </div>
+                {% endif %}
+
+            </div>
+            <div class="column">
+                    <div class="outerr">
+                        <a class="nav-link" href='/careers/'>Careers</a>
+                    </div>
+                    {% if request.user.is_staff %}
+                        <div class="outerr">
+                            <a class="nav-link" href='/admin/'>Administration</a>
+                        </div>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_staff %}
+                            <div class="outerr">
+                                <a class="nav-link" href='/staffManagement/'>Account</a>
+                            </div>
+                        {% endif %}
+                        {% if not request.user.is_staff %}
+                            <div class="outerr">
+                                <a class="nav-link" href='/account/'>Account</a>
+                            </div>
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if not request.user.is_authenticated %}
+                        <div class="outerr">
+                            <a class="nav-link" href='/create_account/'>Create Student Account</a>
+                        </div>
+                        <div class="outerr">
+                            <a class="nav-link" href='/login/'>Login</a>
+                        </div>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <div class="outerr">
+                            <a class="nav-link" href='/login/loggedOut/'>Log Out</a>
+                        </div>
+                    {% endif %}
+            </div>
+        </div>
+
+    </div>
 	   
 {% endblock %}	

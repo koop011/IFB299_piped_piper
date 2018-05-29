@@ -29,25 +29,85 @@ def timeBooking(request):
         'timeSheet': {
             'days': {},
             'electric_guitar_half_hour': {},
+            'electric_guitar_half_hour1': {},
+            'electric_guitar_half_hour2': {},
+            'electric_guitar_half_hour3': {},
             'electric_guitar_hour': {},
+            'electric_guitar_hour1': {},
+            'electric_guitar_hour2': {},
+            'electric_guitar_hour3': {},
             'keyboard_half_hour': {},
+            'keyboard_half_hour1': {},
+            'keyboard_half_hour2': {},
+            'keyboard_half_hour3': {},
             'keyboard_hour': {},
+            'keyboard_hour1': {},
+            'keyboard_hour2': {},
+            'keyboard_hour3': {},
             'piano_half_hour': {},
+            'piano_half_hour1': {},
+            'piano_half_hour2': {},
+            'piano_half_hour3': {},
             'piano_hour': {},
-            'guitar_half_hour': {},
+            'piano_hour1': {},
+            'piano_hour2': {},
+            'piano_hour3': {},
+            'guitar_half_hour1': {},
+            'guitar_half_hour2': {},
+            'guitar_half_hour3': {},
+            'guitar_half_hour4': {},
             'guitar_hour': {},
+            'guitar_hour1': {},
+            'guitar_hour2': {},
+            'guitar_hour3': {},
             'drums_half_hour': {},
+            'drums_half_hour1': {},
+            'drums_half_hour2': {},
+            'drums_half_hour3': {},
             'drums_hour': {},
+            'drums_hour1': {},
+            'drums_hour2': {},
+            'drums_hour3': {},
             'violin_half_hour': {},
+            'violin_half_hour1': {},
+            'violin_half_hour2': {},
+            'violin_half_hour3': {},
             'violin_hour': {},
+            'violin_hour1': {},
+            'violin_hour2': {},
+            'violin_hour3': {},
             'saxophone_half_hour': {},
+            'saxophone_half_hour1': {},
+            'saxophone_half_hour2': {},
+            'saxophone_half_hour3': {},
             'saxophone_hour': {},
+            'saxophone_hour1': {},
+            'saxophone_hour2': {},
+            'saxophone_hour3': {},
             'flute_half_hour': {},
+            'flute_half_hour1': {},
+            'flute_half_hour2': {},
+            'flute_half_hour3': {},
             'flute_hour': {},
+            'flute_hour1': {},
+            'flute_hour2': {},
+            'flute_hour3': {},
             'cello_half_hour': {},
+            'cello_half_hour1': {},
+            'cello_half_hour2': {},
+            'cello_half_hour3': {},
             'cello_hour': {},
+            'cello_hour1': {},
+            'cello_hour2': {},
+            'cello_hour3': {},
             'clarinet_half_hour': {},
+            'clarinet_half_hour1': {},
+            'clarinet_half_hour2': {},
+            'clarinet_half_hour3': {},
             'clarinet_hour': {},
+            'clarinet_hour1': {},
+            'clarinet_hour2': {},
+            'clarinet_hour3': {},
         },
         'objects': {
             'days': days.objects.all(),
@@ -115,14 +175,14 @@ def timeBooking(request):
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
-                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        context['timeSheet'][context['instrument_time_half']+"1"][i] = i.start_at
 
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
-                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        context['timeSheet'][context['instrument_time_full']+"1"][i] = i.start_at
 
             # timePeriod2
             if context['timePeriod2'] == 'half':
@@ -130,28 +190,27 @@ def timeBooking(request):
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
-                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
-
+                        context['timeSheet'][context['instrument_time_half']+"2"][i] = i.start_at
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
-                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        context['timeSheet'][context['instrument_time_full']+"2"][i] = i.start_at
             # timePeriod3
             if context['timePeriod3'] == 'half':
                 context['instrument_time_half'] = context['instrument'] + '_' + context['timePeriod3'] + '_' + 'hour'
                 #half_class = context['instrument_time_half']
                 if context['instrument_time_half'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_half']]:
-                        context['timeSheet'][context['instrument_time_half']][i] = i.start_at
+                        context['timeSheet'][context['instrument_time_half']+"3"][i] = i.start_at
 
             else:
                 context['instrument_time_full'] = context['instrument'] + '_' + 'hour'
                 #full_class = context['instrument_time_full']
                 if context['instrument_time_full'] in context['timeSheet']:
                     for i in context['objects'][context['instrument_time_full']]:
-                        context['timeSheet'][context['instrument_time_full']][i] = i.start_at
+                        context['timeSheet'][context['instrument_time_full']+"3"][i] = i.start_at
 
 
 
@@ -200,12 +259,8 @@ def lessonConfirm(request):
             # get lesson time
             time = '00:00:00'
             context['time'] = request.POST.get('instruments')
-            d = datetime.strptime(context['time'], "%H:%M:%S")
-            t = d.time()
-            ft = t.strftime("%I:%M %p")
-            print(ft)
-            context['ft1'] = ft
-
+            time = context['time']
+            print("new student  Time : ", context['time'])
 
         else:
 

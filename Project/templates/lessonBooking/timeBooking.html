@@ -1,976 +1,979 @@
 {% extends "header.html" %}
 {% block content %}
-<div class="container">
-    <center>
-        <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
-            {% csrf_token %}
-        <label><b>Choose your lesson time for {{instrument}}:</b></label>
-        <br>
-            <p hidden><input type="text" name="selected_instrument" value="{{instrument}}"></input></p>
-            <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
-            <p hidden><input type="text" name="time_period" value="{{contract_period}}"></input></p>
+    <div class="container">
+        <center>
+            <form id="id_bookLessons" name="bookLessons" method="post" action="/browse/lessonConfirm/" name="bookLessons">
+                {% csrf_token %}
+                <label><b>Choose your lesson time for {{instrument}}:</b></label>
+                <br>
+                <p hidden><input type="text" name="selected_instrument" value="{{instrument}}"></input></p>
+                <p hidden><input type="text" name="contract_period" value="{{contract_period}}"></input></p>
+                <p hidden><input type="text" name="time_period" value="{{contract_period}}"></input></p>
 
-        {% if newStudent %}
-            <p hidden><input type="text" name="timePeriod" value="{{timePeriod}}"></input></p>
-            <select id="id_days" name="days">
-                {% for i in timeSheet.days%}
-                <option value={{ i }}>{{i}}</option>
-                {% endfor %}
-            </select>
-            <br>
-            {% if instrument == 'electric_guitar' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.electric_guitar_half_hour %}
+                {% if newStudent %}
+                    <p hidden><input type="text" name="timePeriod" value="{{timePeriod}}"></input></p>
+                    <select id="id_days" name="days">
+                        {% for i in timeSheet.days%}
                             <option value={{ i }}>{{i}}</option>
                         {% endfor %}
-
                     </select>
-                {% else %}
                     <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.electric_guitar_hour %}
-                        <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'keyboard' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.keyboard_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.keyboard_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'piano' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.piano_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.piano_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'guitar' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.guitar_half_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.guitar_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'drums' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.drums_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.drums_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'violin' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.violin_half_hour %}
-                            <option value={{i}}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.violin_hour %}
-                            <option value="{{i}}">{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'saxophone' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.saxophone_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.saxophone_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'flute' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.flute_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.flute_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'cello' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.cello_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.cello_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-            {% if instrument == 'clarinet' %}
-                {% if timePeriod == 'half' %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.clarinet_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-                {% else %}
-                    <br>
-                    <select id="id_instruments" name="instruments">
-                        {% for i in timeSheet.clarinet_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                        {% endfor %}
-
-                    </select>
-
-                {% endif %}
-
-            {% endif %}
-
-
-
-
-
-        <!--<div class="col-sm">-->
-            <!--{% if timePeriod == 'half' %}-->
-                <!--{% for key, value in timeSheet.items %}-->
-                    <!--{% if key == instrument_time_half %}-->
-                        <!--<li>{{key}}-:-{{value}}</li>-->
-                        <!--{% for k, v in key.items %}-->
-                            <!--<li>{{k}}=:={{v}}</li>-->
-                        <!--{% endfor %}-->
-                    <!--{% endif %}-->
-
-                <!--{% endfor %}-->
-
-            <!--{% else %}-->
-                <!--{% for key, value in timeSheet.items %}-->
-                    <!--{% if key == instrument_time_full %}-->
-                        <!--<li>{{key}}-:-{{value}}</li>-->
-                        <!--{% for k, v in key.items %}-->
-                            <!--<li>{{k}}=:={{v}}</li>-->
-                        <!--{% endfor %}-->
-                    <!--{% endif %}-->
-
-                <!--{% endfor %}-->
-            <!--{% endif %}-->
-
-        {% else %}
-            <p hidden><input type="text" name="timePeriod1" value="{{timePeriod1}}"></input></p>
-            <p hidden><input type="text" name="timePeriod2" value="{{timePeriod2}}"></input></p>
-            <p hidden><input type="text" name="timePeriod3" value="{{timePeriod3}}"></input></p>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-
-                        <br>
-                        <b>1st Class</b><br>
-                        <select id="id_days1" name="days1">
-                            {% for i in timeSheet.days%}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-                        </select>
-                        <br>
-                        {% if instrument == 'electric_guitar' %}
-                            {% if timePeriod11 == 'half' %}
+                    {% if instrument == 'electric_guitar' %}
+                        {% if timePeriod == 'half' %}
                             <br>
-                                <select id="id_instruments" name="instruments1">
-                                    {% for i in timeSheet.electric_guitar_half_hour %}
-                                        <option value={{ i }}>{{i}}</option>
-                                    {% endfor %}
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.electric_guitar_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
 
-                                </select>
-                            {% else %}
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.electric_guitar_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'keyboard' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.keyboard_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.keyboard_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'piano' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.piano_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.piano_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'guitar' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.guitar_half_hour %}
+                                    <option value="{{ i }}">{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.guitar_hour %}
+                                    <option value="{{ i }}">{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'drums' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.drums_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.drums_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'violin' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.violin_half_hour %}
+                                    <option value={{i}}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.violin_hour %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'saxophone' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.saxophone_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.saxophone_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'flute' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.flute_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.flute_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'cello' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.cello_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.cello_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+                    {% if instrument == 'clarinet' %}
+                        {% if timePeriod == 'half' %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.clarinet_half_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+                        {% else %}
+                            <br>
+                            <select id="id_instruments" name="instruments">
+                                {% for i in timeSheet.clarinet_hour %}
+                                    <option value={{ i }}>{{i}}</option>
+                                {% endfor %}
+
+                            </select>
+
+                        {% endif %}
+
+                    {% endif %}
+
+
+
+
+
+                    <!--<div class="col-sm">-->
+                    <!--{% if timePeriod == 'half' %}-->
+                        <!--{% for key, value in timeSheet.items %}-->
+                            <!--{% if key == instrument_time_half %}-->
+                                <!--<li>{{key}}-:-{{value}}</li>-->
+                                <!--{% for k, v in key.items %}-->
+                                    <!--<li>{{k}}=:={{v}}</li>-->
+                                    <!--{% endfor %}-->
+                                <!--{% endif %}-->
+
+                            <!--{% endfor %}-->
+
+                        <!--{% else %}-->
+                        <!--{% for key, value in timeSheet.items %}-->
+                            <!--{% if key == instrument_time_full %}-->
+                                <!--<li>{{key}}-:-{{value}}</li>-->
+                                <!--{% for k, v in key.items %}-->
+                                    <!--<li>{{k}}=:={{v}}</li>-->
+                                    <!--{% endfor %}-->
+                                <!--{% endif %}-->
+
+                            <!--{% endfor %}-->
+                        <!--{% endif %}-->
+
+
+
+
+                {% else %}
+                    <p hidden><input type="text" name="timePeriod1" value="{{timePeriod1}}"></input></p>
+                    <p hidden><input type="text" name="timePeriod2" value="{{timePeriod2}}"></input></p>
+                    <p hidden><input type="text" name="timePeriod3" value="{{timePeriod3}}"></input></p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+
                                 <br>
-                                <select id="id_instruments" name="instruments1">
-                                    {% for i in timeSheet.electric_guitar_hour %}
+                                <b>1st Class</b><br>
+                                <select id="id_days1" name="days1">
+                                    {% for i in timeSheet.days%}
                                         <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
-
                                 </select>
-
-                            {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'keyboard' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.keyboard_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.keyboard_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'piano' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.piano_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.piano_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'guitar' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.guitar_half_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.guitar_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'drums' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.drums_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.drums_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'violin' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.violin_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.violin_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'saxophone' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.saxophone_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.saxophone_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'flute' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.flute_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.flute_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'cello' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.cello_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.cello_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'clarinet' %}
-                        {% if timePeriod1 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.clarinet_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments1">
-                            {% for i in timeSheet.clarinet_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                    </div>
-                    <div class="col-sm">
-
-                        <br>
-                        <b>2nd Class</b><br>
-                        <select id="id_days2" name="days2">
-                            {% for i in timeSheet.days%}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-                        </select>
-                        <br>
-                        {% if instrument == 'electric_guitar' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.electric_guitar_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.electric_guitar_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'keyboard' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.keyboard_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.keyboard_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'piano' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.piano_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.piano_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'guitar' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.guitar_half_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.guitar_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'drums' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.drums_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.drums_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'violin' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.violin_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.violin_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'saxophone' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.saxophone_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.saxophone_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'flute' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.flute_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.flute_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'cello' %}
-                        {% if timePeriod2timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.cello_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.cello_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'clarinet' %}
-                        {% if timePeriod2 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.clarinet_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments2">
-                            {% for i in timeSheet.clarinet_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                    </div>
-                    <div class="col-sm">
-                        <br>
-                        <b>3rd Class</b><br>
-                        <select id="id_days3" name="days3">
-                            {% for i in timeSheet.days%}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-                        </select>
-                        <br>
-                        {% if instrument == 'electric_guitar' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.electric_guitar_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.electric_guitar_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'keyboard' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.keyboard_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.keyboard_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'piano' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.piano_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.piano_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'guitar' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.guitar_half_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.guitar_hour %}
-                            <option value="{{ i }}">{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'drums' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.drums_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.drums_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'violin' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.violin_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.violin_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'saxophone' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.saxophone_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.saxophone_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'flute' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.flute_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.flute_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'cello' %}
-                        {% if timePeriod3 == 'half' %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.cello_half_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-                        {% else %}
-                        <br>
-                        <select id="id_instruments" name="instruments3">
-                            {% for i in timeSheet.cello_hour %}
-                            <option value={{ i }}>{{i}}</option>
-                            {% endfor %}
-
-                        </select>
-
-                        {% endif %}
-
-                        {% endif %}
-
-                        {% if instrument == 'clarinet' %}
-                            {% if timePeriod3 == 'half' %}
                                 <br>
-                                <select id="id_instruments" name="instruments3">
-                                    {% for i in timeSheet.clarinet_half_hour %}
-                                        <option value={{ i }}>{{i}}</option>
-                                    {% endfor %}
+                                {% if instrument == 'electric_guitar' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.electric_guitar_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
 
-                                </select>
-                            {% else %}
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.electric_guitar_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'keyboard' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.keyboard_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.keyboard_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'piano' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.piano_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.piano_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'guitar' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.guitar_half_hour1 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.guitar_hour1 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'drums' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.drums_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.drums_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'violin' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.violin_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.violin_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'saxophone' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.saxophone_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.saxophone_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'flute' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.flute_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.flute_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'cello' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.cello_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.cello_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'clarinet' %}
+                                    {% if timePeriod1 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.clarinet_half_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments1">
+                                            {% for i in timeSheet.clarinet_hour1 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                            </div>
+                            <div class="col-sm">
+
                                 <br>
-                                <select id="id_instruments" name="instruments3">
-                                    {% for i in timeSheet.clarinet_hour %}
+                                <b>2nd Class</b><br>
+                                <select id="id_days2" name="days2">
+                                    {% for i in timeSheet.days%}
                                         <option value={{ i }}>{{i}}</option>
                                     {% endfor %}
-
                                 </select>
+                                <br>
+                                {% if instrument == 'electric_guitar' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.electric_guitar_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
 
-                            {% endif %}
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.electric_guitar_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
 
-                        {% endif %}
+                                        </select>
 
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'keyboard' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.keyboard_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.keyboard_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'piano' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.piano_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.piano_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'guitar' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.guitar_half_hour2 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.guitar_hour2 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'drums' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.drums_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.drums_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'violin' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.violin_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.violin_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'saxophone' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.saxophone_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.saxophone_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'flute' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.flute_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.flute_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'cello' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.cello_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.cello_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'clarinet' %}
+                                    {% if timePeriod2 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.clarinet_half_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments2">
+                                            {% for i in timeSheet.clarinet_hour2 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                            </div>
+                            <div class="col-sm">
+                                <br>
+                                <b>3rd Class</b><br>
+                                <select id="id_days3" name="days3">
+                                    {% for i in timeSheet.days%}
+                                        <option value={{ i }}>{{i}}</option>
+                                    {% endfor %}
+                                </select>
+                                <br>
+                                {% if instrument == 'electric_guitar' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.electric_guitar_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.electric_guitar_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'keyboard' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.keyboard_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.keyboard_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'piano' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.piano_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.piano_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'guitar' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.guitar_half_hour3 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.guitar_hour3 %}
+                                                <option value="{{ i }}">{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'drums' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.drums_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.drums_hour %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'violin' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.violin_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.violin_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'saxophone' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.saxophone_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.saxophone_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'flute' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.flute_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.flute_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'cello' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.cello_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.cello_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                                {% if instrument == 'clarinet' %}
+                                    {% if timePeriod3 == 'half' %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.clarinet_half_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    {% else %}
+                                        <br>
+                                        <select id="id_instruments" name="instruments3">
+                                            {% for i in timeSheet.clarinet_hour3 %}
+                                                <option value={{ i }}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        {% endif %}
-            <br><br>
-            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                {% endif %}
+                <br><br>
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
 
-        </form>
-    </center>
-</div>
+            </form>
+        </center>
+    </div>
 {% endblock %}
