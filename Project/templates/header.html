@@ -45,19 +45,41 @@
         <a class="nav-link" href='/aboutus/'>About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href='/contact/'>Contact us</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href='/browse/'>Browse classes</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href='/careers/'>Careers</a>
+        <a class="nav-link" href='/contactus/'>Contact us</a>
       </li>
         {% if request.user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href='/account/'>Account</a>
+                <a class="nav-link" href='/browse/'>Browse classes</a>
             </li>
         {% endif %}
+        {% if not request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href='/login/'>Browse classes</a>
+            </li>
+        {% endif %}
+
+      <li class="nav-item">
+         <a class="nav-link" href='/careers/'>Careers</a>
+      </li>
+            {% if request.user.is_staff %}
+        <li class="nav-item">
+                <a class="nav-link" href='/admin/'>Administration</a>
+            </li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link" href='/staffManagement/'>Account</a>
+                </li>
+            {% endif %}
+            {% if not request.user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link" href='/account/'>Account</a>
+                </li>
+            {% endif %}
+
+        {% endif %}
+
         {% if not request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href='/create_account/'>Create Student Account</a>
@@ -71,16 +93,12 @@
                 <a class="nav-link" href='/login/loggedOut/'>Log Out</a>
             </li>
         {% endif %}
-{##}
-{#      <li class="nav-item">#}
-{#          <a class="nav-link" href='/retrieve/'>Retrieve account</a>#}
-{#      </li>#}
+
 
 
     </ul>
   </div>
 </nav>
-
 
 
     <div class='container-fluid'>
@@ -96,7 +114,10 @@
 	
 </body>
 
-{#{% load static %}#}
-{#<script src="/static/js/bootstrap.js/bootstrap.min.js"></script>#}
+{% load static %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </html>

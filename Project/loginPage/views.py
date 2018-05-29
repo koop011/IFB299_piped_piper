@@ -11,6 +11,9 @@ def loginIndex (request):
         # uses django authentication module to check users
         user = auth.authenticate(username=request.POST.get('Username'), password=request.POST.get('Password'))
         if user is not None:
+            # if user.is_staff:
+            #     return HttpResponseRedirect('/admin')
+
             auth.login(request, user)
             return HttpResponseRedirect(reverse('loggedIn'))
 
@@ -32,7 +35,22 @@ def loggedOut(request):
 
 
 def invalid(request):
-    context={}
+    context = {}
+
+    if request.method == 'POST':
+        print('CHECK: ', request.POST.get('Username'), " ", request.POST.get('Password'))
+        # uses django authentication module to check users
+        user = auth.authenticate(username=request.POST.get('Username'), password=request.POST.get('Password'))
+        if user is not None:
+            # if user.is_staff:
+            #     return HttpResponseRedirect('/admin')
+
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse('loggedIn'))
+
+        else:
+            return HttpResponseRedirect(reverse('invalid'))
+
     return render(request, 'loginPage/invalid.html', context)
 
 def retrieveAccount(request):

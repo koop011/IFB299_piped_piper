@@ -2,13 +2,12 @@ from importlib import import_module
 
 from django.core.handlers.wsgi import WSGIRequest
 
-from Project.loginPage.views import *
+from .views import *
 from django.contrib.auth.models import User
 from django.test import TestCase, RequestFactory, Client
 from django.urls import reverse, resolve
-from Project import IFB299_piped_piper
 import base64
-from mock import MagicMock, patch
+# from mock import MagicMock, patch
 from requests import Response
 
 '''
