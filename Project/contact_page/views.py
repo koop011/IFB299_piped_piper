@@ -14,7 +14,7 @@ def submit_contact_form(request):
         DoB = request.POST.get("DoB")
         HomeAddress = request.POST.get("HomeAddress")
         email = request.POST.get("email")
-        pNumber = request.POST.get("DoB")
+        pNumber = request.POST.get("pNumber")
         experience = request.POST.get("experience")
         certificates = request.POST.get("certificates")
         reference = request.POST.get("reference")
