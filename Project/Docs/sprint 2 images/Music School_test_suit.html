@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Music School</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Staff login</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>xpath=(//a[contains(@href, '/login/')])[2]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td>leo</td>
+</tr>
+<tr><td>click</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td>userpassword</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Administration<datalist><option>link=Administration</option><option>//a[contains(text(),'Administration')]</option><option>//div[@id='navbarNav']/ul/li[6]/a</option><option>//a[contains(@href, '/admin/')]</option><option>//li[6]/a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User login</td></tr>
+</thead>
+<tbody>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Browse classes old student</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>xpath=(//a[contains(@href, '/login/')])[2]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td>leo</td>
+</tr>
+<tr><td>click</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td>userpassword</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Browse classes<datalist><option>link=Browse classes</option><option>//a[contains(text(),'Browse classes')]</option><option>//div[@id='navbarNav']/ul/li[4]/a</option><option>//a[contains(@href, '/browse/')]</option><option>//li[4]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td>label=Flute</td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=half<datalist><option>id=half</option><option>name=timeChoice1</option><option>//input[@id='half']</option><option>//div[@id='hidden_opt']/div/div/div/input</option><option>//div/input</option><option>css=#half</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//input[@id='full'])[2]<datalist><option>xpath=(//input[@id='full'])[2]</option><option>//div[@id='hidden_opt']/div/div/div[2]/input[2]</option><option>//div[2]/input[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=timeChoice3<datalist><option>name=timeChoice3</option><option>xpath=(//input[@id='half'])[3]</option><option>//div[@id='hidden_opt']/div/div/div[3]/input</option><option>//div[3]/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//div[@id='hidden_opt']/button</option><option>//div/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/div/div/div/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/div/div/div/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td>label=09:00:00</td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/div/div/div/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//select[@id='id_instruments'])[2]<datalist><option>xpath=(//select[@id='id_instruments'])[2]</option><option>//form[@id='id_bookLessons']/div/div/div[2]/select</option><option>//div[2]/select</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>xpath=(//select[@id='id_instruments'])[2]<datalist><option>xpath=(//select[@id='id_instruments'])[2]</option><option>//form[@id='id_bookLessons']/div/div/div[2]/select</option><option>//div[2]/select</option></datalist></td><td>label=10:00:00</td>
+</tr>
+<tr><td>click</td><td>xpath=(//select[@id='id_instruments'])[2]<datalist><option>xpath=(//select[@id='id_instruments'])[2]</option><option>//form[@id='id_bookLessons']/div/div/div[2]/select</option><option>//div[2]/select</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//select[@id='id_instruments'])[3]<datalist><option>xpath=(//select[@id='id_instruments'])[3]</option><option>//form[@id='id_bookLessons']/div/div/div[3]/select</option><option>//div[3]/select</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>xpath=(//select[@id='id_instruments'])[3]<datalist><option>xpath=(//select[@id='id_instruments'])[3]</option><option>//form[@id='id_bookLessons']/div/div/div[3]/select</option><option>//div[3]/select</option></datalist></td><td>label=11:00:00</td>
+</tr>
+<tr><td>click</td><td>xpath=(//select[@id='id_instruments'])[3]<datalist><option>xpath=(//select[@id='id_instruments'])[3]</option><option>//form[@id='id_bookLessons']/div/div/div[3]/select</option><option>//div[3]/select</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form[@id='id_bookLessons']/button</option><option>//form/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Browse classes new student</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8000/<datalist><option>http://localhost:8000/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Login<datalist><option>link=Login</option><option>//a[contains(text(),'Login')]</option><option>//div[@id='navbarNav']/ul/li[7]/a</option><option>xpath=(//a[contains(@href, '/login/')])[2]</option><option>//li[7]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Username<datalist><option>name=Username</option><option>//input[@name='Username']</option><option>//input[2]</option><option>css=input[name="Username"]</option></datalist></td><td>nana</td>
+</tr>
+<tr><td>click</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=Password<datalist><option>name=Password</option><option>//input[@name='Password']</option><option>//input[3]</option><option>css=input[name="Password"]</option></datalist></td><td>userpassword</td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form/button</option><option>css=button[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Browse classes<datalist><option>link=Browse classes</option><option>//a[contains(text(),'Browse classes')]</option><option>//div[@id='navbarNav']/ul/li[4]/a</option><option>//a[contains(@href, '/browse/')]</option><option>//li[4]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td>label=Keyboard</td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=id_half<datalist><option>id=id_half</option><option>name=timeChoice</option><option>//input[@id='id_half']</option><option>//div[@id='hidden_opt']/input</option><option>//div/input</option><option>css=#id_half</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//div[@id='hidden_opt']/button</option><option>//div/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td>label=14:30:00</td>
+</tr>
+<tr><td>click</td><td>id=id_instruments<datalist><option>id=id_instruments</option><option>name=instruments</option><option>//select[@id='id_instruments']</option><option>//form[@id='id_bookLessons']/select</option><option>//select</option><option>css=#id_instruments</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//button[@type='submit']<datalist><option>//button[@type='submit']</option><option>//form[@id='id_bookLessons']/button</option><option>//form/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
