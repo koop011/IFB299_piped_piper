@@ -8,7 +8,7 @@ GENDER_CHOICES = [
     ('Other', 'Other'),
 ]
 
-
+# added in sprint 2
 class StudentData(models.Model):
     class Meta:
         app_label = 'student_account'
@@ -30,6 +30,8 @@ class StudentData(models.Model):
     parentsNumber = models.CharField(max_length=13, default='none')
     pEmail = models.CharField(max_length=200, default='none')
 
+
+    # added in sprint 2
     def year_born_in(self):
         return self.DoB.strftime('%Y')[:4]
     year_born_in.short_description = 'Birth Year'
