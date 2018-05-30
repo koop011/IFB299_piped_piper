@@ -40,11 +40,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'welcome_page',
-    'loginPage',
+    'welcome_page.apps.WelcomePageConfig',
+    'loginPage.apps.LoginPageConfig',
     'contact_page.apps.TeachContactConfig',
-    'student_account',
-    'lessonBooking',
+    'student_account.apps.StudentAccountConfig',
+    'lessonBooking.apps.LessonbookingConfig',
 )
 
 MIDDLEWARE = [
@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'music_school',
-        'USER': 'root',
-        'PASSWORD': 'semaphoredb',
+        'USER': 'chris',
+        'PASSWORD': 'password',
         'HOST': '',
         'PORT': '',
     }

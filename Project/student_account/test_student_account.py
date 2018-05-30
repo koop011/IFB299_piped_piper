@@ -27,6 +27,8 @@ class student_account_Tests(SimpleTestCase):
             response, 'Hi there! I should not be on the page.')
 
 
+
+# added in sprint 2
 class StudentModelTest(TestCase):
 
     @classmethod
@@ -58,6 +60,31 @@ class StudentModelTest(TestCase):
         Student=StudentData.objects.get(id=1)
         field_label = Student._meta.get_field('Gender').verbose_name
         self.assertEquals(field_label,'Gender')
+
+    def test_DoB_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('DoB').verbose_name
+        self.assertEquals(field_label,'DoB')
+
+    def test_Email_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('Email').verbose_name
+        self.assertEquals(field_label,'Email')
+
+    def test_pNumber_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('pNumber').verbose_name
+        self.assertEquals(field_label,'pNumber')
+
+    def test_instrument_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('instrument').verbose_name
+        self.assertEquals(field_label,'instrument')
+
+    def test_preferredSubjects_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('preferredSubjects').verbose_name
+        self.assertEquals(field_label,'preferredSubjects')
 
     def test_first_name_max_length(self):
         Student=StudentData.objects.get(id=1)

@@ -4,8 +4,12 @@ from django.urls import reverse
 
 
 class TeacherData(models.Model):
+
+    # added in sprint 2
     class Meta:
         app_label = 'contact_page'
+
+
     fname = models.CharField(max_length=200, default='none')
     lname = models.CharField(max_length=200, default='none')
     DoB = models.CharField(max_length=20, default='none')
