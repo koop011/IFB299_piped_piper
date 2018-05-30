@@ -86,6 +86,26 @@ class StudentModelTest(TestCase):
         field_label = Student._meta.get_field('preferredSubjects').verbose_name
         self.assertEquals(field_label,'preferredSubjects')
 
+    def test_pFirstName_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('pFirstName').verbose_name
+        self.assertEquals(field_label,'pFirstName')
+
+    def test_pLastName_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('pLastName').verbose_name
+        self.assertEquals(field_label,'pLastName')
+
+    def test_parentsNumber_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('parentsNumber').verbose_name
+        self.assertEquals(field_label,'parentsNumber')
+
+    def test_pEmail_label(self):
+        Student=StudentData.objects.get(id=1)
+        field_label = Student._meta.get_field('pEmail').verbose_name
+        self.assertEquals(field_label,'pEmail')
+
     def test_first_name_max_length(self):
         Student=StudentData.objects.get(id=1)
         max_length = Student._meta.get_field('FirstName').max_length
