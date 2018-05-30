@@ -52,10 +52,10 @@ def timeBooking(request):
             'piano_hour1': {},
             'piano_hour2': {},
             'piano_hour3': {},
+            'guitar_half_hour': {},
             'guitar_half_hour1': {},
             'guitar_half_hour2': {},
             'guitar_half_hour3': {},
-            'guitar_half_hour4': {},
             'guitar_hour': {},
             'guitar_hour1': {},
             'guitar_hour2': {},
@@ -253,7 +253,30 @@ def lessonConfirm(request):
         #print(contract_period)
         context['contract_period'] = request.POST.get('contract_period')
 
+
+
         context['selected_instrument'] = request.POST.get('selected_instrument')
+        context['instrument'] = request.POST.get('selected_instrument')
+        if request.POST.get('selected_instrument') == "cello":
+            context['instrument'] = 'Cello'
+        if request.POST.get('selected_instrument') == "clarinet":
+            context['instrument'] = 'Clarinet'
+        if request.POST.get('selected_instrument') == "drums":
+            context['instrument'] = 'Drums'
+        if request.POST.get('selected_instrument') == "electric_guitar":
+            context['instrument'] = 'Electric Guitar'
+        if request.POST.get('selected_instrument') == "flute":
+            context['instrument'] = 'Flute'
+        if request.POST.get('selected_instrument') == "guitar":
+            context['instrument'] = 'Guitar'
+        if request.POST.get('selected_instrument') == "keyboard":
+            context['instrument'] = 'Keyboard'
+        if request.POST.get('selected_instrument') == "piano":
+            context['instrument'] = 'Piano'
+        if request.POST.get('selected_instrument') == "saxophone":
+            context['instrument'] = 'Saxophone'
+        if request.POST.get('selected_instrument') == "violin":
+            context['instrument'] = 'Violin'
 
         if context['newStudent']:
             # get lesson time
@@ -299,37 +322,9 @@ def lessonConfirm(request):
 
 
             # get instrument
-            instrument = 'none'
-            if request.POST.get('selected_instrument') == "cello":
-                context['instrument'] = 'Cello'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "clarinet":
-                context['instrument'] = 'Clarinet'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "drums":
-                context['instrument'] = 'Drums'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "electric_guitar":
-                context['instrument'] = 'Electric Guitar'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "flute":
-                context['instrument'] = 'Flute'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "guitar":
-                context['instrument'] = 'Guitar'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "keyboard":
-                context['instrument'] = 'Keyboard'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "piano":
-                context['instrument'] = 'Piano'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "saxophone":
-                context['instrument'] = 'Saxophone'
-                instrument = context['instrument']
-            if request.POST.get('selected_instrument') == "violin":
-                context['instrument'] = 'Violin'
-                instrument = context['instrument']
+
+
+
 
         return render(request, 'lessonBooking/lessonConfirm.html', context)
 
