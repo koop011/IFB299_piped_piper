@@ -70,8 +70,6 @@ class TeacherModelTest(TestCase):
         field_label = Teacher._meta.get_field('reference').verbose_name
         self.assertEquals(field_label,'reference')
 
-
-
     def test_fname_max_length(self):
         Teacher=TeacherData.objects.get(id=1)
         max_length = Teacher._meta.get_field('fname').max_length

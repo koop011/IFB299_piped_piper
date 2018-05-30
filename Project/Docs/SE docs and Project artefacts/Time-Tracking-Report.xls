@@ -1,0 +1,1853 @@
+
+
+
+
+<html>
+<head>
+    <title>Time Tracking Report</title>
+    <meta name="decorator" content="none" />
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8" />
+</head>
+<body>
+
+<table id="time_tracking_report_table" border="1">
+<tr>
+    <td bgcolor="#205081" colspan="15" height=30>
+        <img src="/jira/images/icon-jira-logo.png" width="57" height="30" border="0" alt="SEF Jira">
+    </td>
+</tr>
+<tr>
+    <td bgcolor=#ffffff colspan="15">
+        <a href="/jira"><span class="bluetext">SEF Jira</span></a>
+    </td>
+</tr>
+<tr>
+    <th bgcolor="#dddddd">Issue Type</th>
+    <th bgcolor="#dddddd"><b>Key</b></th>
+    <th bgcolor="#dddddd"><b>Status</b></th>
+    <th bgcolor="#dddddd"><b>Priority</b></th>
+    <th bgcolor="#dddddd"><b>Summary</b></th>
+    <th bgcolor="#dddddd"><b>Original Time Estimated (min)</b></th>
+            <th bgcolor="#dddddd">&Sigma;</th>
+        <th bgcolor="#dddddd"><b>Estimated Time Remaining (min)</b></th>
+            <th bgcolor="#dddddd">&Sigma;</th>
+        <th bgcolor="#dddddd"><b>Total Time Spent (min)</b></th>
+            <th bgcolor="#dddddd">&Sigma;</th>
+        <th bgcolor="#dddddd"><b>Accuracy</b></th>
+            <th bgcolor="#dddddd">&Sigma;</th>
+        <th bgcolor="#dddddd"><b>Accuracy (%)</b></th>
+            <th bgcolor="#dddddd">&Sigma;</th>
+    </tr>
+
+    <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-40">FIVE-40</a></td>
+    <td>Open</td>
+    <td>Must Have</td>
+    <td>
+                Owner Contract Approval
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-39">FIVE-39</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Book a Lesson
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-14">FIVE-14</a></td>
+    <td>Closed</td>
+    <td>Minor</td>
+    <td>
+                Staff - Account Session handling
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-12">FIVE-12</a></td>
+    <td>Closed</td>
+    <td>Minor</td>
+    <td>
+                Staff Login - Account validation function
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-10">FIVE-10</a></td>
+    <td>Closed</td>
+    <td>Trivial</td>
+    <td>
+                Staff Login - HTML page interface display 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-7">FIVE-7</a></td>
+    <td>Closed</td>
+    <td>Must Have</td>
+    <td>
+                Staff Login
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Epic</td>
+    <td><a href="/jira/browse/FIVE-1">FIVE-1</a></td>
+    <td>Open</td>
+    <td>Must Have</td>
+    <td>
+                Music_School_Website
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-2">FIVE-2</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Welcome Page
+    </td>
+    <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td>570</td>
+            <td>
+                            570
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    -18
+            </td>
+            <td>
+                            -18
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-49">FIVE-49</a></td>
+    <td>Open</td>
+    <td>Minor</td>
+    <td>
+                Owner Contract Approval - Validation
+    </td>
+    <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-41">FIVE-41</a></td>
+    <td>Open</td>
+    <td>Minor</td>
+    <td>
+                Owner Contract Approval - HTML page interface display - including backend
+    </td>
+    <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-37">FIVE-37</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Account Creation - Save data to database
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>420</td>
+            <td>
+                            420
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    -40
+            </td>
+            <td>
+                            -40
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-47">FIVE-47</a></td>
+    <td>Open</td>
+    <td>Minor</td>
+    <td>
+                Owner Contract Approval - format data to a downloadable pdf
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-46">FIVE-46</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Book a Lesson - Validation
+    </td>
+    <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-51">FIVE-51</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Potential Employee Contact
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-48">FIVE-48</a></td>
+    <td>Open</td>
+    <td>Minor</td>
+    <td>
+                Owner Contract Approval - available time DB management
+    </td>
+    <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td></td>
+            <td>
+                            
+                    </td>
+        <td>
+                    
+            </td>
+            <td>
+                            
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-27">FIVE-27</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Staff Management - HTML page interface display
+    </td>
+    <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>150</td>
+            <td>
+                            150
+                    </td>
+        <td>90</td>
+            <td>
+                            90
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-43">FIVE-43</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Book a Lesson - Search user database to check new or old student
+    </td>
+    <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-32">FIVE-32</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student account management - validation
+    </td>
+    <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-58">FIVE-58</a></td>
+    <td>Resolved</td>
+    <td>Trivial</td>
+    <td>
+                Potential employee contact - create instrument checkboxes
+    </td>
+    <td>30</td>
+            <td>
+                            30
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>
+                    -150
+            </td>
+            <td>
+                            -150
+                    </td>
+        <td>
+                    -500
+            </td>
+            <td>
+                            -500
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-57">FIVE-57</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Contact us - validation
+    </td>
+    <td>30</td>
+            <td>
+                            30
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+                    -30
+            </td>
+            <td>
+                            -30
+                    </td>
+        <td>
+                    -100
+            </td>
+            <td>
+                            -100
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-56">FIVE-56</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Contact us - HTML
+    </td>
+    <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+                    -60
+            </td>
+            <td>
+                            -60
+                    </td>
+        <td>
+                    -100
+            </td>
+            <td>
+                            -100
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-55">FIVE-55</a></td>
+    <td>Resolved</td>
+    <td>Could Have</td>
+    <td>
+                Contact Us 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-54">FIVE-54</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                about us - validation
+    </td>
+    <td>30</td>
+            <td>
+                            30
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>30</td>
+            <td>
+                            30
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-53">FIVE-53</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                About us - HTML 
+    </td>
+    <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-52">FIVE-52</a></td>
+    <td>Resolved</td>
+    <td>Could Have</td>
+    <td>
+                About us
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>90</td>
+            <td>
+                            90
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-50">FIVE-50</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student  Account Creation - Create an age check functionality
+    </td>
+    <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>480</td>
+            <td>
+                            480
+                    </td>
+        <td>
+                    -300
+            </td>
+            <td>
+                            -300
+                    </td>
+        <td>
+                    -166
+            </td>
+            <td>
+                            -166
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-45">FIVE-45</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Book a Lesson - Lesson confirm and Send data to owner via database
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>540</td>
+            <td>
+                            540
+                    </td>
+        <td>
+                    -240
+            </td>
+            <td>
+                            -240
+                    </td>
+        <td>
+                    -80
+            </td>
+            <td>
+                            -80
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-44">FIVE-44</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Book a Lesson - Design time schedule for classes
+    </td>
+    <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>
+                    -60
+            </td>
+            <td>
+                            -60
+                    </td>
+        <td>
+                    -33
+            </td>
+            <td>
+                            -33
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-42">FIVE-42</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Book a lesson - Front end
+    </td>
+    <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>360</td>
+            <td>
+                            360
+                    </td>
+        <td>
+                    -120
+            </td>
+            <td>
+                            -120
+                    </td>
+        <td>
+                    -50
+            </td>
+            <td>
+                            -50
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-38">FIVE-38</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Account Creation - verify story is complete
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-36">FIVE-36</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Account Creation - Html Interface
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-35">FIVE-35</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Account Creation
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>1500</td>
+            <td>
+                            1500
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-34">FIVE-34</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                welcome page - navigation bar fix
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>30</td>
+            <td>
+                            30
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-33">FIVE-33</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student Login - validation
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>360</td>
+            <td>
+                            360
+                    </td>
+        <td>
+                    -60
+            </td>
+            <td>
+                            -60
+                    </td>
+        <td>
+                    -20
+            </td>
+            <td>
+                            -20
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-31">FIVE-31</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Staff Management Page - Validation
+    </td>
+    <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>360</td>
+            <td>
+                            360
+                    </td>
+        <td>
+                    -180
+            </td>
+            <td>
+                            -180
+                    </td>
+        <td>
+                    -100
+            </td>
+            <td>
+                            -100
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-30">FIVE-30</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Welcome page - unit test
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-29">FIVE-29</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student-login - pass-data-to-back-end
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>61</td>
+            <td>
+                            61
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-26">FIVE-26</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Potential employee contacts - Verify story is complete
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+        <td>
+                    0
+            </td>
+            <td>
+                            0
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-25">FIVE-25</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Potential employee contact - Teacher data to database
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>1200</td>
+            <td>
+                            1200
+                    </td>
+        <td>
+                    -900
+            </td>
+            <td>
+                            -900
+                    </td>
+        <td>
+                    -300
+            </td>
+            <td>
+                            -300
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-24">FIVE-24</a></td>
+    <td>Closed</td>
+    <td>Minor</td>
+    <td>
+                Potntial employee contact - File upload
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-23">FIVE-23</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Editing the Databases - Validation 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-22">FIVE-22</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Editing the Databases - Search filter 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-21">FIVE-21</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Editing the Databases - Delete database function
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-20">FIVE-20</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Editing the Databases - Edit database function
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>60</td>
+            <td>
+                            60
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-19">FIVE-19</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Editing the Databases - HTML page interface display
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>120</td>
+            <td>
+                            120
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-18">FIVE-18</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Editing the databases 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>540</td>
+            <td>
+                            540
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-17">FIVE-17</a></td>
+    <td>Resolved</td>
+    <td>Trivial</td>
+    <td>
+                Potential employee contact - HTML interface
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>5</td>
+            <td>
+                            5
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-16">FIVE-16</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Potential Employee Contact
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>19</td>
+            <td>
+                            19
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-15">FIVE-15</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Welcome page - validation function
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>1</td>
+            <td>
+                            1
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-13">FIVE-13</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student login - Account Session handling
+    </td>
+    <td>300</td>
+            <td>
+                            300
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>183</td>
+            <td>
+                            183
+                    </td>
+        <td>
+                    117
+            </td>
+            <td>
+                            117
+                    </td>
+        <td>
+                    39
+            </td>
+            <td>
+                            39
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-11">FIVE-11</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student Login - Account validation function
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>3</td>
+            <td>
+                            3
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-9">FIVE-9</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student Account Management - HTML page interface display
+    </td>
+    <td>180</td>
+            <td>
+                            180
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>240</td>
+            <td>
+                            240
+                    </td>
+        <td>
+                    -60
+            </td>
+            <td>
+                            -60
+                    </td>
+        <td>
+                    -33
+            </td>
+            <td>
+                            -33
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-8">FIVE-8</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Student Login - HTML page interface display 
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>5</td>
+            <td>
+                            5
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-6">FIVE-6</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Login
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>17</td>
+            <td>
+                            17
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-5">FIVE-5</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Student Account Management
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>8</td>
+            <td>
+                            8
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Story</td>
+    <td><a href="/jira/browse/FIVE-4">FIVE-4</a></td>
+    <td>Resolved</td>
+    <td>Must Have</td>
+    <td>
+                Staff Management Page
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>540</td>
+            <td>
+                            540
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>        <tr valign="top">
+    <td>
+                Task</td>
+    <td><a href="/jira/browse/FIVE-3">FIVE-3</a></td>
+    <td>Resolved</td>
+    <td>Minor</td>
+    <td>
+                Welcome page - HTML interface
+    </td>
+    <td></td>
+            <td>
+                            
+                    </td>
+        <td>0</td>
+            <td>
+                            0
+                    </td>
+        <td>3</td>
+            <td>
+                            3
+                    </td>
+        <td>
+            </td>
+            <td>
+                    </td>
+        <td>
+            </td>
+            <td>
+                            
+                    </td>
+    </tr>    
+<tr>
+    <td colspan="4" align="right">
+        &nbsp;
+    </td>
+    <td><b>Total</b></td>
+    <td>6270</td>
+            <td>6270</td>
+        <td>3300</td>
+            <td>3300</td>
+        <td>9605</td>
+            <td>9605</td>
+        <td>-6635</td>
+            <td>-6635</td>
+        <td>-105</td>
+            <td>-105</td>
+    </tr>
+
+<tr>
+    <td bgcolor="#ffffff" colspan="15">&nbsp;</td>
+</tr>
+<tr>
+    <td bgcolor="#dddddd" colspan="15"><font size=1>
+                    Generated at 5/30/18 11:28 PM by Seok Yoon using JIRA 6.2.7#6265-sha1:91604a8de81892a3e362e0afee505432f29579b0.
+            </font></td>
+</tr>
+</table>
+
+
+</body>
+</html>
